@@ -1,0 +1,5 @@
+*.bbl
+*.log
+*.aux
+.DS_Store
+TSW*

@@ -1,0 +1,221 @@
+\def\abstract#1{\gdef\@abstract{#1}}
+\def\@abstract{\@latex@warning@no@line{No \noexpand\abstract given}}
+
+% goshikku bold
+\newcommand\sfbf[1]{\sf{\bfseries#1}}
+
+\newcommand\sfbfem[1]{\noindent\sf{\bfseries\emph{#1}}}
+
+%\definecolor{Dblue}{rgb}{0.27,0.4,0.65}
+\definecolor{Dblue}{rgb}{0.27,0.4,0.52}
+
+% footnote line
+\makeatletter
+\renewcommand{\footnoterule}{\kern-3\p@
+\hrule width 21pc
+\kern2.6\p@}
+\makeatletter
+
+% footnote
+%\makeatletter
+%\renewcommand{\footnoterule}{\kern-2\p@\kern2.0\p@}
+%\makeatletter
+
+\def\ps@myheadings{%
+    \let\@oddfoot\@empty\let\@evenfoot\@empty
+    \def\@evenhead{\thepage\hfil\slshape\leftmark}%
+    \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+    \let\@mkboth\@gobbletwo
+    \let\sectionmark\@gobble
+    \let\subsectionmark\@gobble
+    }
+  \if@titlepage
+  \renewcommand\maketitle{\begin{titlepage}%
+  \let\footnotesize\small
+  \let\footnoterule\relax
+  \let \footnote \thanks
+  \null\vfil
+  \vskip 60\p@
+  \begin{center}%
+    {\LARGE \@title \par}%
+    \vskip 3em%
+    {\large
+     \lineskip .75em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+      \vskip 1.5em%
+    {\large \@date \par}%       % Set date in \large size.
+  \end{center}\par
+  \@thanks
+  \vfil\null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+  \global\let\thanks\relax
+  \global\let\maketitle\relax
+  \global\let\@thanks\@empty
+  \global\let\@author\@empty
+  \global\let\@date\@empty
+  \global\let\@title\@empty
+  \global\let\title\relax
+  \global\let\author\relax
+  \global\let\date\relax
+  \global\let\and\relax
+}
+\else
+\renewcommand\maketitle{\par
+  \begingroup
+    \renewcommand\thefootnote{\@arabic\c@footnote}%
+    \def\@makefnmark{\rlap{\@textsuperscript{\normalfont\@thefnmark}}}%
+    \long\def\@makefntext##1{\parindent 1em\noindent
+            \hb@xt@0.2em{%%%% for footnote indent
+                \hss\@textsuperscript{\sf\@thefnmark}}{\sf ##1}}% for footnote
+    \if@twocolumn
+      \ifnum \col@number=\@ne
+        \@maketitle
+      \else
+        \twocolumn[\@maketitle]%
+      \fi
+    \else
+      \newpage
+      \global\@topnum\z@   % Prevents figures from going at top of page.
+      \@maketitle
+    \fi
+    \thispagestyle{plain}\@thanks
+  \endgroup
+  \setcounter{footnote}{0}%
+  \global\let\thanks\relax
+  \global\let\maketitle\relax
+  \global\let\@maketitle\relax
+  \global\let\@thanks\@empty
+  \global\let\@author\@empty
+  \global\let\@date\@empty
+  \global\let\@title\@empty
+  \global\let\title\relax
+  \global\let\author\relax
+  \global\let\date\relax
+  \global\let\and\relax
+}
+\renewcommand\@maketitle{%
+  \newpage
+  \null
+   \begin{picture}(600,1)(10,20)\put(442,60) {\textcolor{Dblue}{\sfbf{INVESTIGATION}}}\end{picture}
+   \begin{picture}(600,1)(10,20)\linethickness{6pt}\put(533,75) {{\color{Dblue}{\line(1,0){40}}}}\end{picture}
+  \begin{flushright}%
+  \let \footnote \thanks
+    {\LARGE \sfbf{\@title} \par}%
+    \vskip 1.5em%
+    {
+      \lineskip .5em%
+      \begin{tabular}[t]{r}%
+      \@author
+       %{\small \sfbf \@author} 
+      \end{tabular}\par}%
+    \vskip .5em%
+    {\small \@date}%
+    \vskip 2em%
+    %{\normalsize \sfbf{ABSTRACT}}%
+    \begin{list}{}{%
+        \setlength{\leftmargin}{0.1cm}%
+        \setlength{\rightmargin}{\leftmargin}%
+        \setlength{\itemindent}{0.5cm}}%
+        \begin{picture}(600,1)(10,20)\put(8,15) {\line(1,0){507}}\end{picture}
+      \item \noindent \small \sfbf{ABSTRACT} \sf \@abstract%
+    \end{list}%
+  \end{flushright}%
+  \par
+  \vskip 1.5em}
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                     {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                     {1.3ex \@plus.2ex}%
+                                     {\large\sfbf}}
+                                     %{\normalfont\large\centering}}
+                                     
+\renewcommand\subsection{\@startsection {subsection}{2}{\z@}%
+                                     {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                     {1.3ex \@plus.2ex}%
+                                     {\sfbfem}}
+%\renewcommand\subsection[1]{{\sfbf #1: }}
+
+\renewcommand\subsubsection[1]{\noindent {\bf \emph{#1}: }}
+
+\renewcommand\tablename{\textbf{Table}}
+\renewcommand\figurename{Figure}
+\renewcommand\refname{Literature Cited}
+
+% Genetics uses very different styles for figures and tables.  The
+% easy solution is to run latex with one version of ``makecaption'',
+% print all pages except those that are wrong, then change this file
+% and repeat.
+
+\long\def\@makecaption#1#2{% % This one does figures
+   \vskip 10\p@
+   \setbox\@tempboxa\hbox{\sfbf{\small #1} \sfbf{\small #2}}%
+   \ifdim \wd\@tempboxa >\hsize
+      \sfbf{#1} \sf #2\par
+     \else
+       \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+   \fi}
+
+%\long\def\@makecaption#1#2{% % This one does Table
+%   \vskip 10\p@
+%  \setbox\@tempboxa\hbox{\sfbf{#1} #2}%
+%   \ifdim \wd\@tempboxa >\hsize
+%       \sfbf{#1} #2\par
+%     \else
+%       \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+%   \fi}
+
+%\long\def\@makecaption#1#2{% % This one does tables
+%   \vskip 10\p@
+%   \setbox\@tempboxa\hbox{#1: #2}%
+%   \ifdim \wd\@tempboxa >\hsize
+%       \begin{center}{\bf #1}\end{center}{\bf #2}\par
+%     \else
+%       \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+%   \fi}
+
+\newenvironment{acknowledgments}[1]{%
+  \begin{list}{}{
+      \setlength{\leftmargin}{0pt}
+      \setlength{\rightmargin}{\leftmargin}
+      \setlength{\itemindent}{0.25cm}
+      }
+      \vskip 3.5em
+\item \noindent \sfbf {Acknowledgements}
+  \item \small \normalfont #1}{
+\end{list}
+}
+
+\renewcommand{\appendix}
+{
+  \setcounter{equation}{0}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \renewcommand{\theequation}{A\arabic{equation}}
+  \renewcommand{\thefigure}{A\arabic{figure}}
+  \renewcommand{\thetable}{A\arabic{table}}
+
+}
+
+\newcommand{\suppl}
+{
+\clearpage
+\onecolumn
+  \setcounter{equation}{0}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \setcounter{page}{1}
+  %\renewcommand\tablename{\textbf{SUPPLEMENTAL TABLE}}
+  %\renewcommand\figurename{SUPPLEMENTAL FIGURE}
+  \renewcommand\tablename{\textbf{TABLE}}
+  \renewcommand\figurename{FIGURE}
+  \renewcommand{\theequation}{\arabic{equation}}
+  \renewcommand{\thefigure}{\arabic{figure}}
+  \renewcommand{\thetable}{\arabic{table}}
+\fancyhead[LE,RO]{}
+\fancyhead[CE]{}
+\fancyhead[CO]{}
+\fancyfoot[CE,CO]{\thepage}
+}

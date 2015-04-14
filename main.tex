@@ -1,0 +1,155 @@
+\documentclass[twocolumn,twoside,letterpaper]{article} 
+
+\usepackage{color}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{geneticsT2}
+\usepackage{times}
+\usepackage{hyperref}
+
+\addtolength{\oddsidemargin}{-.2cm}
+\addtolength{\evensidemargin}{-1.2cm}
+\addtolength{\textwidth}{1.5cm}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textheight}{3.5cm}
+
+\renewcommand{\textfraction}{0.01}
+\renewcommand{\topfraction}{0.99}
+\renewcommand{\bottomfraction}{0.65}
+\renewcommand{\floatpagefraction}{0.90}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\dblfloatpagefraction}{0.80}
+\renewcommand{\sfdefault}{phv}
+
+
+% %%%
+% % for latexml
+% \usepackage{latexml}
+% 
+% % only do this stuff if latexml is not parsing the document
+% \iflatexml
+%   \renewcommand\sfbf[1]{\sf{\bfseries#1}}
+% \else 
+% % do this stuff:
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyfoot[LE,RO]{{\sfbf \thepage}}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{
+	\fancyhf{}
+}
+
+%editing commands (please leave in for now)
+\newcommand{\jri}[1]{\textcolor{blue}{ \emph{\scriptsize  #1}} }
+\definecolor{gerkegreen} {rgb} {0,0.6,0}
+\newcommand{\jpg}[1]{\textcolor{mattgreen}{ \em{\scriptsize  #1}} }
+
+\usepackage[normalem]{ulem}
+\def\dt{\bgroup
+ \markoverwith{\lower-0.2ex\hbox
+ {\kern-.03em\vbox{\hrule width.2em\kern0.45ex\hrule}\kern-.03em}}%
+ \ULon}
+\MakeRobust\dt
+\usepackage[normalem]{ulem}
+\def\dt{\bgroup
+ \markoverwith{\lower-0.2ex\hbox
+ {\kern-.03em\vbox{\hrule width.2em\kern0.45ex\hrule}\kern-.03em}}%
+ \ULon}
+\MakeRobust\dt
+% ok latexml pay attention again
+\fi
+
+%%%%
+
+\setcounter{footnote}{1}
+%
+%\title{The genomic impacts of drift and selection for hybrid performance in maize}
+%Corresponding author:  Department of Plant Sciences, University of California, Davis, California 95616, USA. 
+%    E-mail: \mbox{rossibarra@ucdavis.edu}}\\[0.3cm]
+%   \small\sf $^{\ast}$Division of Plant Sciences, University of Missouri, Columbia MO 65211,\\
+%   \small\sf $^\dag$Corn Insects and Crop Genetics Research Unit, USDA-Agricultural Research Service, Ames, IA, 50011\\
+%   \small\sf $^\ddag$Plant Genetics Research Unit, USDA-Agricultural Research Service, Columbia MO 65211,\\
+%   \small\sf $^\S$Department of Plant Sciences, The Center for Population Biology and the Genome Center, University of California, Davis, California 95616 , USA,\\
+%   \small\sf $^1$ Present address:  DuPont Pioneer, Johnston, Iowa
+%}
+   %\small\sf  Present address: Graduate University for Advanced Studies, Hayama, Kanagawa 240-0193, Japan\\
+%}
+
+\title{Independent molecular basis of convergent highland adaptation in maize}
+\author{
+ \small\sfbf{Justin P. Gerke$^{\ast,1}$\thanks{
+Corresponding author:  DuPont Pioneer, 8305 NW 62ND Ave, P.O. Box 7060
+Johnston, IA, 50131   E-mail: \mbox{justin.gerke@gmail.com}}, Jode W. Edwards$^{\dag}$, Katherine E. Guill$^{\ddag}$, Jeffrey Ross-Ibarra$^{\S}$}\thanks{
+Corresponding author:  Department of Plant Sciences, University of California, Davis, California 95616. 
+    E-mail: \mbox{rossibarra@ucdavis.edu}},\\ 
+\small\sfbf{and Michael D. McMullen$^{\ast,\ddag}$}\\[0.3cm]
+   \small\sf $^{\ast}$Division of Plant Sciences, University of Missouri, Columbia MO 65211\\
+   \small\sf $^\dag$Corn Insects and Crop Genetics Research Unit, USDA-Agricultural Research Service, Ames, IA, 50011\\
+   \small\sf $^\ddag$Plant Genetics Research Unit, USDA-Agricultural Research Service, Columbia MO 65211\\
+   \small\sf $^\S$Department of Plant Sciences, Center for Population Biology, and Genome Center, University of California, Davis, CA 95616  
+}
+
+
+ 
+%\date{Revised manuscript for \emph{Genetics}, \today}
+
+\abstract{
+ Modern maize breeding relies upon selection in inbreeding populations to improve the performance of cross-population hybrids. 
+The United States Department of Agriculture - Agricultural Research Service (USDA-ARS) reciprocal recurrent selection experiment between the Iowa Stiff Stalk Synthetic (BSSS) and the Iowa Corn Borer Synthetic No. 1 (BSCB1) populations represents one of the longest standing models of selection for hybrid performance. 
+To investigate the genomic impact of this selection program, we used the Illumina MaizeSNP50 high-density SNP array to determine genotypes of progenitor lines and over 600 individuals across multiple cycles of selection. 
+Consistent with previous research (Messmer et al., 1991; Labate et al., 1997; Hagdorn et al., 2003; Hinze et al., 2005), we found that genetic diversity within each population steadily decreases, with a corresponding increase in population structure. 
+High marker density also enabled the first view of haplotype ancestry, fixation and recombination within this historic maize experiment. 
+Extensive regions of haplotype fixation within each population are visible in the pericentromeric regions, where large blocks trace back to single founder inbreds. 
+Simulation attributes most of the observed reduction in genetic diversity to genetic drift. 
+Signatures of selection were difficult to observe in the background of this strong genetic drift, but heterozygosity in each population has fallen more than expected. 
+Regions of haplotype fixation represent the most likely targets of selection, but as observed in other germplasm selected for hybrid performance (Feng et al., 2006), there is no overlap between the most likely targets of selection in the two populations. 
+We discuss how this pattern is likely to occur during selection for hybrid performance, and how it poses challenges for dissecting the impacts of modern breeding and selection on the maize genome. }
+
+
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{}{,}
+
+\usepackage{amsmath}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRO
+\input{intro}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRO
+
+\input{methods}
+
+\input{results}
+
+\input{discussion}
+
+\begin{acknowledgments}
+We thank O. S. Smith and members of the Ross-Ibarra lab for comments on earlier versions of the manuscript. J.P.G received support for this research as a Merck Fellow of the Life Sciences Research Foundation. This research was supported by the National Science Foundation (IOS-0820619) and funds provided to USDA-ARS (MDM). Names of products are necessary to report factually on available data: however, neither the USDA, nor any other participating institution guarantees or warrants the standard of the product and the use of the name does not imply approval of the product to the exclusion of others that may also be suitable.
+\end{acknowledgments}
+
+\bibliography{references/references.bib}
+\bibliographystyle{geneticsT2}
+
+%\suppl
+
+
+
+%%%%%%%
+% put supplemental figures and tables here:
+% e.g.
+% \begin{figure}
+% ...
+
+
+%%%%%
+% appendices to follow
+%\input{HighLowSup1} 
+
+\end{document}
+
