@@ -1,64 +1,89 @@
 \section*{Methods}
-\subsection*{The BSSS and BSCB1 Recurrent Selection Program}
+\subsection*{The BSSS and BSCB1 recurrent selection program}
 The Iowa RRS experiment began with founder inbred lines (Table S1) that were randomly mated to create the BSSS and BSCB1 ‘cycle 0’ base populations. 
-Each group was then recurrently selected for improved combining ability with the other group (Penny and Eberhart, 1971; Keeratinijakal and Lamkey, 1993). 
+Each group was then recurrently selected for improved combining ability with the other group \citep{penny1971twenty,  keeratinijakal1993responses}. 
 Initially approximately 200-250 starting ‘S0’ plants within each population were simultaneously self-fertilized to generate ‘S1’ lines and crossed to a random sample (4-6) of plants from the other population to generate testcross seed. 
 The material was evaluated for highly heritable traits including standability, disease resistance and ear rot resistance in the nursery at the time the testcross seed was made, and 100 testcrosses were then grown in replicated field trials and evaluated for grain yield, grain moisture, and standability.  
 S1 seed of 10 selected families within each population were randomly mated to create a new ‘cycle n+1’ population. 
-After cycle 4, the testcrosses were carried out on the S1 lines themselves rather than at S0, which leads to another round of selfing prior to the creation of the next cycle. Ten lines (out of 100) were selected and advanced to form the next cycle between cycles 1 and 8, and twenty lines were selected between cycles 9 and 16 (Keeratinijakal and Lamkey, 1993). 
+After cycle 4, the testcrosses were carried out on the S1 lines themselves rather than at S0, which leads to another round of selfing prior to the creation of the next cycle. Ten lines (out of 100) were selected and advanced to form the next cycle between cycles 1 and 8, and twenty lines were selected between cycles 9 and 16 \citep{keeratinijakal1993responses}. 
 Founder inbreds and samples from cycles 0, 4, 8, 12, and 16 were genotyped at 39,258 SNPs that passed a set of quality filters and could be assigned collinear genetic and physical map positions. 
 
 \subsection*{Plants and inbred lines used}
 The plants and inbred lines used in this experiment are listed in Table S1. 
-We genotyped 36 plants from each of the BSSS and BSCB1 populations at selection cycles 0, 4, 8, 12, and 16. These plants represent descendants of the original populations which have been randomly mated to maintain seed. 
-We also genotyped the founder inbreds for each population, however, seed for the founder lines F1B1, CI.617, WD456, and K230 were not available. 
+We genotyped 36 plants from each of the BSSS and BSCB1 populations at selection cycles 0, 4, 8, 12, and 16. 
+These plants represent descendants of the original populations which have been randomly mated to maintain seed. 
+We also genotyped the founder inbreds for each population, with the exception of lines F1B1, CI.617, WD456, and K230 for which seed was not available. 
 The data for founder line CI.540 was not used because the genotyped material was heterozygous. 
 A number of derived lines were also genotyped for calibrating phasing and imputation procedures (see below).
 
 \subsection*{Genotype data}
- Plants from the cycles of selection, founders, and derived lines were grown in a greenhouse and tissue was collected at the 3 leaf stage. Tissue was lyophilized, ground, and DNA extracted by a CTAB procedure (Saghai-Maroof et al., 1984). 
-Samples were genotyped using the 24-sample Illumina MaizeSNP50 array (Ganal et al., 2011) according to the Illumina Infinium protocol, and imaged on an Illumina BeadStation at the University of Missouri DNA core facility. Genotypes were determined with the GenomeStudio v2010.2 software using the manufacturer's MaizeSNP50\_B.egt cluster file. \jri{this is an edit because url listed in pages doc no longer valid. correct that this is not a custom .egt file?}
-The design of the maize SNP50 Chip included a relatively small ascertainment panel of inbred lines, introducing a bias in the frequencies of SNPs included on the chip (Ganal et al., 2011). 
-However, because our simulations are based not on theoretical expectations but instead on sampling from the observed data at cycle 0, we expect ascertainment bias to have a minimal impact on our results. The effect of this ascertainment bias was shown to be minimal in another study of North American germplasm (van Heerwaarden et al., 2012). 
+Plants from the cycles of selection, founders, and derived lines were grown in a greenhouse and tissue was collected at the 3 leaf stage. 
+Tissue was lyophilized, ground, and DNA extracted by a CTAB procedure \citep{saghai-maroof1984ribosomal}. 
+Samples were genotyped using the 24-sample Illumina MaizeSNP50 array \citep{ganal2011a-large} according to the Illumina Infinium protocol, and imaged on an Illumina BeadStation at the University of Missouri DNA core facility. 
+Genotypes were determined with the GenomeStudio v2010.2 software using the manufacturer's MaizeSNP50\_B.egt cluster file. \jri{this is an edit because url listed in pages doc no longer valid. correct that this is not a custom .egt file?}
+The design of the maize SNP50 Chip included a relatively small ascertainment panel of inbred lines, introducing a bias in the frequencies of SNPs included on the chip \citep{ganal2011a-large}. 
+However, because our simulations are based not on theoretical expectations but instead on sampling from the observed data at cycle 0, we expect ascertainment bias to have a minimal impact on our results. 
+The effect of this ascertainment bias was shown to be minimal in another study of North American germplasm \citep{van2012historical}. 
 
-48,919 SNPs were called on the Illumina platform from the MaizeSNP50_B.egt cluster file. Genotypes with quality scores of 50 or less were recoded as missing data. Three plants were removed from the data due to an excess of missing data (the derived line B10, a cycle 0 plant from BSSS, and a cycle 8 plant from BSSS). 
+We called 48,919 SNPs on the Illumina platform from the MaizeSNP50_B.egt cluster file. Genotypes with quality scores of 50 or less were recoded as missing data. 
+Three plants were removed from the data due to an excess of missing data (the derived line B10, a cycle 0 plant from BSSS, and a cycle 8 plant from BSSS). 
 In addition, BSCB1 plant 31 from cycle 4 appeared switched with plant 31 from cycle 8 based on our principal component analysis (PCA), so we switched the labels for these two genotypes to correct the mistake. 
-To avoid structure among the missing data, we removed any SNP that was coded as missing in more than 3 plants in either group of founders or any group of plants from a particular cycle and population. Preliminary analysis by PCA and heatmap plots of distance matrices revealed two additional likely mix-ups. 
+To avoid structure among the missing data, we removed any SNP that was coded as missing in more than 3 plants in either group of founders or any group of plants from a particular cycle and population. 
+Preliminary analysis by PCA and heatmap plots of distance matrices revealed two additional likely mix-ups. 
 Plant 23 from BSSS cycle 8 was a clear outlier from the BSSS population as a whole and plant 2 from BSSS cycle 0 is likely a mislabeled plant from cycle 16. Since there was no evidence suggesting when mis-labelings occurred, each of these plants was removed from the analysis.
 	
-Integrating the genetic and physical map:  The interpretation of our results depends upon a genetic and physical map that is as accurate as possible. We therefore took steps to improve the positions of the SNP markers on the genetic and physical maps relative to version 5A.59 of the maize genome assembly (maizesequence.org). 
-The probable physical position of each SNP based was obtained by comparing SNP context sequences to the genome sequence. For this purpose, SNP context sequences were defined as the sequence 25 bp upstream of the SNP, the bp representing the SNP itself, followed by 25 bp downstream of the SNP, making a total sequence length of 51bp. 
+\subsection*{Integrating the genetic and physical map}
+The interpretation of our results depends upon a genetic and physical map that is as accurate as possible. 
+We therefore took steps to improve the positions of the SNP markers on the genetic and physical maps relative to version 5A.59 of the maize genome assembly. 
+The probable physical position of each SNP based was obtained by comparing SNP context sequences to the genome sequence. 
+For this purpose, SNP context sequences were defined as the sequence 25 bp upstream of the SNP, the bp representing the SNP itself, followed by 25 bp downstream of the SNP, making a total sequence length of 51bp. 
 When a single genomic location was queried by two separate probes on the array, we chose the probe with higher quality calls and dropped the other marker from the dataset. 
-To assign a genetic position for each SNP, we used a map derived from the B73xMo17 (IBM) mapping population similar to the IBM framework map in Ganal et al. (Ganal et al., 2011). 
-This genetic map contains 4,217 framework SNP markers, which provides a much higher density than the map used to order the 5A.59 release of the maize genome sequence. As a result, we identified several places in the genome where the physical positions were incorrect according to our genetic map. 
-These cases included both simple reversals of the physical map relative to the genetic map, and also the assignment of blocks of markers to the wrong linkage group, which we refer to as mis-mapped blocks. SNPs at these loci were reordered to match our genetic map. To maintain collinearity between the genetic and physical map, the physical positions of these SNPs were reassigned as follows. Individual mis-mapped markers were simply removed from the data. 
-We also removed small reversals and mis-mapped blocks (<10 kb). 
+To assign a genetic position for each SNP, we used a map derived from the B73xMo17 (IBM) mapping population similar to the IBM framework map in \citet{ganal2011a-large}. 
+This genetic map contains 4,217 framework SNP markers, which provides a much higher density than the map used to order the 5A.59 release of the maize genome sequence. 
+As a result, we identified several places in the genome where the physical positions were incorrect according to our genetic map. 
+These cases included both simple reversals of the physical map relative to the genetic map, and also the assignment of blocks of markers to the wrong linkage group, which we refer to as mis-mapped blocks. 
+SNPs at these loci were reordered to match our genetic map. To maintain collinearity between the genetic and physical map, the physical positions of these SNPs were reassigned as follows. 
+Individual mis-mapped markers small reversals and mis-mapped blocks (<10 kb) were removed from the data. 
 Small rearrangements of this sort are more likely to represent mis-mapped paralagous sequence than true errors in the physical map. 
 When larger reversals were identified, we transposed the physical positions of the SNPs from one end of the segment to the other. 
 Mis-mapped blocks were often larger than the physical gap into which they were moved. 
-We therefore assigned the first SNP of the block to a position 10 kb downstream from the previous SNP on the correct linkage group. We then recalculated genomic coordinates for the rest of the chromosome based on the marker distances within the translocated segment. The last SNP of the block was also given a 10 kb cushion between itself and the next SNP on the correct linkage group. 
+We therefore assigned the first SNP of the block to a position 10 kb downstream from the previous SNP on the correct linkage group. 
+We then recalculated genomic coordinates for the rest of the chromosome based on the marker distances within the translocated segment. 
+The last SNP of the block was also given a 10 kb cushion between itself and the next SNP on the correct linkage group. 
 
-Only a portion of the SNPs on the array had genetically mapped positions. ‘Unmapped’ SNPs (those with a physical position but no genetic position) bounded by two mapped markers were moved along with their mapped neighbors if both anchoring mapped markers were also moved. However, it is unclear whether unmapped SNPs just outside of these anchors should be kept in place or moved along with the adjacent SNPs. Since most inversions were small relative to the genetic map (and would therefore still fall in the same window of a sliding window analysis), these SNPs were left in place. However, markers bordering translocations were removed to ensure there were no markers mapped to the incorrect linkage group. Unmapped SNPs were then assigned a genetic position by linear interpolation of genetic vs. physical distance using the approx() function in R (www.R-project.org). 
-The IBM genetic map distances were then converted to single-meiosis map distances using the formulae of Winkler et al. (Winkler et al., 2003). 
-Finally, SNPs located at physical positions outside of those bounded by the genetic map (such as the telomeres) were assigned the genetic position of their nearest mapped neighbor. Since moved segments were arbitrarily joined 10 kb from their nearest genetic neighbor, we acknowledge that the physical positions of these markers are only estimates. However, the estimated junctions are small relative to the genetic windows used for our analysis. 
+Only a portion of the SNPs on the array had genetically mapped positions. 
+‘Unmapped’ SNPs (those with a physical position but no genetic position) bounded by two mapped markers were moved along with their mapped neighbors if both anchoring mapped markers were also moved. 
+However, it is unclear whether unmapped SNPs just outside of these anchors should be kept in place or moved along with the adjacent SNPs. 
+Since most inversions were small relative to the genetic map (and would therefore still fall in the same window of a sliding window analysis), these SNPs were left in place. 
+However, markers bordering translocations were removed to ensure there were no markers mapped to the incorrect linkage group. 
+Unmapped SNPs were then assigned a genetic position by linear interpolation of genetic vs. physical distance using the approx() function in R \citep{rteam}. 
+The IBM genetic map distances were then converted to single-meiosis map distances using the formulae of \citet{winkler2003determination}. 
+Finally, SNPs located at physical positions outside of those bounded by the genetic map (such as the telomeres) were assigned the genetic position of their nearest mapped neighbor. \jri{so everything beyond 0 gets a 0 position on the map instead of negative?}
+Since moved segments were arbitrarily joined 10 kb from their nearest genetic neighbor, we acknowledge that the physical positions of these markers are only estimates. 
+However, the estimated junctions are small relative to the genetic windows used for our analysis. 
 The final map used is provided as supplemental material (Supplementary File S1).
 	
 \subsection*{Haplotype phasing}
- Although the genotypes of the plants from each population are unphased, the homozygous genotypes of the founders and derived inbreds provide excellent prior information for a probabilistic estimation of genotype phase in the populations. We therefore used fastPHASE (Scheet and Stephens, 2006) to estimate the genotype phase of each plant. To estimate the error in phasing, we created test cases by combining the genotypes of two derived inbreds into a hypothetical “F1 hybrid” of unknown phase. This F1 was presented to fastPHASE with the rest of the data, except that its parent inbreds were removed. Analyses of several hypothetical F1’s from different cycles of selection revealed very low phasing error rates (Table S3). Therefore the phased genotypes of cycle 0 plants were used as the starting data for simulations (see below).
+Although the genotypes of the plants from each population are unphased, the homozygous genotypes of the founders and derived inbreds provide excellent prior information for a probabilistic estimation of genotype phase in the populations. 
+We therefore used fastPHASE \citep{scheet2006fast} to estimate the genotype phase of each plant. To estimate the error in phasing, we created test cases by combining the genotypes of two derived inbreds into a hypothetical “F1 hybrid” of unknown phase. 
+This F1 was presented to fastPHASE with the rest of the data, except that its parent inbreds were removed. 
+Analyses of several hypothetical F1’s from different cycles of selection revealed very low phasing error rates (Table S3). 
+Therefore the phased genotypes of cycle 0 plants were used as the starting data for simulations (see below).
 
 \subsection*{Diversity and principal component analysis}
- Heterozygosity (H) was measured as:
+Heterozygosity (H) was measured as:
 	
 \begin{align*}
 H = 2p(1-p)
 \end{align*}
 
-where p and (1-p) are the frequencies of the two SNP alleles. FST (Hudson et al., 1992) was calculated using the HBKpermute program in the analysis package of the software library libsequence (Thornton, 2003). 
-All results were plotted using the R package ggplot2 (Wickham, 2009). 
-We conducted PCA by singular value decomposition, as described in (McVean, 2009). 
+where $p$ and $(1-p)$ are the frequencies of the two SNP alleles. 
+$F_{ST}$ \citep{hudson1992statistical} was calculated using the HBKpermute program in the analysis package (\url{https://github.com/molpopgen/analysis}) of the software library libsequence \citep{thornton2003libsequence}. 
+All results were plotted using the R package ggplot2 \citep{wickham2009ggplot2}. 
+We conducted PCA by singular value decomposition, as described in \cite{mcvean2009genealogical}. 
 
 \subsection*{Simulations}  
-Our simulation sought to model the effects of genetic drift in the Iowa RRS experiment independent of any selection, and our model thus closely followed the published methods of the Iowa RRS (Penny and Eberhart, 1971; Keeratinijakal and Lamkey, 1993). 
+Our simulation sought to model the effects of genetic drift in the Iowa RRS experiment independent of any selection, and our model thus closely followed the published methods of the Iowa RRS \citep{penny1971twenty,  keeratinijakal1993responses}. 
 Starting individuals in each population were constructed by randomly sampling two distinct haplotypes with replacement from the phased haplotypes of cycle 0. 
 In the actual random mating scheme used in the Iowa RRS experiment, a single pairing could only contribute four gametes to the next generation (two kernels each from two ears), and our simulation reflects this. 
 Advanced cycles were simulated by randomly mating gametes from self-fertilized plants of the previous cycle until 10 new individuals were created. 
@@ -66,6 +91,10 @@ The first cycle involved two rounds of random mating, whereas all subsequent cyc
 After cycle 5, the process employed two rounds of selfing instead of one. 
 After cycle 7, the population size was increased from 10 to 20. 
 At cycles 4, 8, 12, and 16, the plants were randomly mated to match the sample size of the observed data. 
-The genotypes of these simulated random matings are the final results of each simulation that were analyzed in the same way as the observed data. 
+The genotypes of these simulated random matings are the final results of each simulation and were analyzed in the same way as the observed data. 
 
-All recombination events in the simulations were carried out in R with the hypred software package (cran.r-project.org/web/packages/hypred/). The simulations were executed in parallel on a computing cluster, with unique random number seeds drawn for each simulation. Statistics were calculated for each simulation using the same formula as with the experimental data. We used non-overlapping sliding windows of equal genetic distance to account for the non-independence of markers in low-recombination regions when calculating measures of significance. For the haplotype-based, single-locus simulations, recombination was simply replaced with binomial sampling of two alleles.
+All recombination events in the simulations were carried out in R with the hypred software package (\url{cran.r-project.org/web/packages/hypred/}). 
+Simulations were executed in parallel on a computing cluster, with unique random number seeds drawn for each simulation. 
+Statistics were calculated for each simulation using the same formula as the experimental data. 
+We used non-overlapping sliding windows of equal genetic distance to account for the non-independence of markers in low-recombination regions when calculating measures of significance. 
+For the haplotype-based, single-locus simulations, recombination was simply replaced with binomial sampling of two alleles.
