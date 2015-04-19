@@ -20,12 +20,13 @@ A number of derived lines were also genotyped for calibrating phasing and imputa
 Plants from the cycles of selection, founders, and derived lines were grown in a greenhouse and tissue was collected at the 3 leaf stage. 
 Tissue was lyophilized, ground, and DNA extracted by a CTAB procedure \citep{saghai-maroof1984ribosomal}. 
 Samples were genotyped using the 24-sample Illumina MaizeSNP50 array \citep{ganal2011a-large} according to the Illumina Infinium protocol, and imaged on an Illumina BeadStation at the University of Missouri DNA core facility. 
-Genotypes were determined with the GenomeStudio v2010.2 software using the manufacturer's MaizeSNP50\_B.egt cluster file. \jri{this is an edit because url listed in pages doc no longer valid. correct that this is not a custom .egt file?}
+Genotypes were determined with the GenomeStudio v2010.2 software using the manufacturer's MaizeSNP50\_B.egt cluster file. 
+\jri{this is an edit because url listed in pages doc no longer valid. correct that this is not a custom .egt file?}
 The design of the maize SNP50 Chip included a relatively small ascertainment panel of inbred lines, introducing a bias in the frequencies of SNPs included on the chip \citep{ganal2011a-large}. 
 However, because our simulations are based not on theoretical expectations but instead on sampling from the observed data at cycle 0, we expect ascertainment bias to have a minimal impact on our results. 
 The effect of this ascertainment bias was shown to be minimal in another study of North American germplasm \citep{van2012historical}. 
 
-We called 48,919 SNPs on the Illumina platform from the MaizeSNP50_B.egt cluster file. Genotypes with quality scores of 50 or less were recoded as missing data. 
+We called 48,919 SNPs on the Illumina platform from the MaizeSNP50\_B.egt cluster file. Genotypes with quality scores of 50 or less were recoded as missing data. 
 Three plants were removed from the data due to an excess of missing data (the derived line B10, a cycle 0 plant from BSSS, and a cycle 8 plant from BSSS). 
 In addition, BSCB1 plant 31 from cycle 4 appeared switched with plant 31 from cycle 8 based on our principal component analysis (PCA), so we switched the labels for these two genotypes to correct the mistake. 
 To avoid structure among the missing data, we removed any SNP that was coded as missing in more than 3 plants in either group of founders or any group of plants from a particular cycle and population. 

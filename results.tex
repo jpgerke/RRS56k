@@ -16,10 +16,11 @@ The distance between cycles then decreases dramatically after cycle 8, and corre
 \begin{figure}[tb]   
   \begin{center}
    \vspace{-0mm}
-   \includegraphics[width=0.4\textwidth]{fig1}
+   \includegraphics[width=0.5\textwidth]{fig1}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{BLAH} 
+   \caption{Principal component analysis of the SNP data from Iowa RRS. The axes represent the first two eigenvectors from an analysis of cycles 0-16, with projection of the founder lines onto the vector space. The variation explained by each eigenvector is given in parentheses on the axes. The populations steadily diverge at increasing cycles, with less distinction visible between the founder groups. The comparatively large distance between cycles 4 and 8 corresponds to a switch from one to two generations of selfing at each cycle. The smaller separation between cycles 8-16 corresponds to an increase in effective population size from ten to twenty. The BSSS cycle 0 population has drifted away from the BSSS founders, despite the absence of intentional selection during the creation and maintenance of cycle 0.
+} 
 \vspace{-6mm}
     \label{fig:pca}
   \end{center}
@@ -36,10 +37,11 @@ This genetic differentiation is reflected by the tenfold increase in $F_{ST}$ be
 \begin{figure}[tb]   
   \begin{center}
    \vspace{-0mm}
-   \includegraphics[width=0.4\textwidth]{fig2}
+   \includegraphics[width=0.5\textwidth]{fig2}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{BLAH} 
+   \caption{Heterozygosity and $F_{ST}$ across cycles. $H$ (left panel) and $F_{ST}$ (right panel) plotted as a function of selection cycle in each population.
+} 
 \vspace{-6mm}
     \label{fig:decline}
   \end{center}
@@ -64,10 +66,11 @@ In general, the majority of fixed haplotype segments are small (<2 cM) in geneti
 \begin{figure}[tb]   
   \begin{center}
    \vspace{-0mm}
-   \includegraphics[width=0.4\textwidth]{fig3}
+   \includegraphics[width=0.5\textwidth]{fig3}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{BLAH} 
+   \caption{ Heterozygosity ($H$) at cycle16 across all ten chromosomes in each population.  $H$ is calculated on 15-marker sliding windows with 5 marker steps. Each point is plotted at the midpoint of the 15-marker window. 
+} 
 \vspace{-6mm}
     \label{fig:heterotic}
   \end{center}
@@ -78,7 +81,7 @@ The sheer physical size of the pericentromeric regions yields extremely high mar
 To further examine the fixation in these regions, we computationally imputed haplotype phase in the BSSS and BSCB1 populations and used the phased data to track haplotype frequencies and founder of origin. 
 In most cases, these fixed haplotypes can be traced back to single founder inbreds. 
 For example, in BSSS, a 60 Mb (1.2 cM) region of chromosome 9 became fixed by cycle 12 (Figure \ref{fig:genphys}) and traces back to the founder Os420. 
-In BSCB1, a 60 Mb (0.7 cM) region became fixed on chromosome 4 and traces back to A340 (Figure \ref{fig:genphys2}). 
+In BSCB1, a 60 Mb (0.7 cM) region became fixed on chromosome 4 and traces back to A340 (Figure \ref{fig:genphys2}). \jri{should figures 4 and 5 be made into a single 4-panel figure?}
 Table \ref{tab:fix} gives a summary of the large genomic regions that have become fixed or nearly fixed by cycle 16. 
 These regions represent blocks of linked loci that show no evidence of recombination since at least the development of the founding inbred lines in the 1920’s and 1930’s.
 	
@@ -86,10 +89,11 @@ These regions represent blocks of linked loci that show no evidence of recombina
 \begin{figure}[tb]   
   \begin{center}
    \vspace{-0mm}
-   \includegraphics[width=0.4\textwidth]{fig4}
+   \includegraphics[width=0.5\textwidth]{fig4}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{BLAH} 
+   \caption{Heterozygosity ($H$) across chromosome 9 in each cycle of BSSS plotted on the physical (A) or genetic (B) map. H is calculated on 15-marker sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). Shaded regions represent 2 cM windows found to have heterozygosity values significantly lower than expected by simulation at a given cycle. Light shading denotes significance at P < 0.0025, whereas the darker shading represents significance at P < 0.001. Comparing the physical and genetic maps reveals that the regions of fixation are extremely small genetically, but some contain much of the physical content of the chromosome.
+} 
 \vspace{-6mm}
     \label{fig:genphys}
   \end{center}
@@ -102,10 +106,11 @@ These regions represent blocks of linked loci that show no evidence of recombina
 \begin{figure}[tb]   
   \begin{center}
    \vspace{-0mm}
-   \includegraphics[width=0.4\textwidth]{fig5}
+   \includegraphics[width=0.5\textwidth]{fig5}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{BLAH} 
+   \caption{Heterozygosity ($H$) across chromosome 4 in each cycle of BSCB1 plotted on the physical (A) or genetic (B) map.  $H$ is calculated on 15 marker-sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). Shaded regions represent 2 cM windows found to have heterozygosity values significantly lower than expected by simulation at a given cycle. Light shading denotes significance at P < 0.0025, whereas the darker shading represents significance at P < 0.001.
+} 
 \vspace{-6mm}
     \label{fig:genphys2}
   \end{center}
@@ -154,11 +159,13 @@ In other cases, the haplotypes which eventually fixed were at moderate frequency
 {\fontsize{6}{9}\sf
 \begin{tabular}{llllll}
 
-Population &	 Chr.& Interval \%(cM) & Interval \%(Mb) &	Founder  & Derived Lines \\
+Population &	 Chr.& Interval (cM) & Interval (Mb) &	Founder & Derived Lines \\
+ \hline
 BSSS &3	&40.2-41.4	&67.7-123	&CI187-2&	B94  \\
-    \hline
+BSSS&	3	&43-48.5&	129.2-157.1	&NDa	&B89, B94 \\
+BSSS	&4	&39.7-42.1	&39.9-82.7&	CI187-2	&B89, B94, B67, B72, B39, B43\\
+   
  &  &  &  &  &   \\ 
-
     \hline
     \end{tabular}
     \label{tabfix}
@@ -173,8 +180,8 @@ BSSS &3	&40.2-41.4	&67.7-123	&CI187-2&	B94  \\
 
 
 %BSSS	
-%BSSS	3	43-48.5	129.2-157.1	NDa	B89, B94
-%BSSS	4	39.7-42.1	39.9-82.7	CI187-2	B89, B94, B67, B72, B39, B43
+%
+%
 %BSSS	9	30.6-33.5	20.8-26.6	Oh7b	B89, B94, B43, B17, B72, B84, B67
 %BSSS	9	34.3-35.6c	30.8-90.4c	Os420	B89, B94
 %BSCB1	2	50.2-51.8	80.6-114.5	CC5	B90, B91, B95, B97, B99
