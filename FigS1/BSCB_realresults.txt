@@ -1,0 +1,1 @@
+Cycle	Pruning	HCycle4	all	0.275Cycle8	all	0.2Cycle12	all	0.18Cycle16	all	0.157
