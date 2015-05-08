@@ -3,3 +3,6 @@
 *.aux
 .DS_Store
 TSW*
+*.RData
+/Fig1/data
+/Fig3/data
