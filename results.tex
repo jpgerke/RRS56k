@@ -80,8 +80,7 @@ In general, the majority of fixed haplotype segments are small (<2 cM) in geneti
 The sheer physical size of the pericentromeric regions yields extremely high marker density on the genetic map, allowing for clear resolution of haplotype phasing and recombination breakpoints. 
 To further examine the fixation in these regions, we computationally imputed haplotype phase in the BSSS and BSCB1 populations and used the phased data to track haplotype frequencies and founder of origin. 
 In most cases, these fixed haplotypes can be traced back to single founder inbreds. 
-For example, in BSSS, a 60 Mb (1.2 cM) region of chromosome 9 became fixed by cycle 12 (Figure \ref{fig:genphys}) and traces back to the founder Os420. 
-In BSCB1, a 60 Mb (0.7 cM) region became fixed on chromosome 4 and traces back to A340 (Figure \ref{fig:genphys2}). \jri{should figures 4 and 5 be made into a single 4-panel figure?}
+For example, in BSSS, a 60 Mb (1.2 cM) region of chromosome 9 became fixed by cycle 12 and traces back to the founder Os420, and in BSCB1, a 60 Mb (0.7 cM) region became fixed on chromosome 4 and traces back to A340 (Figure \ref{fig:genphys}).
 Table \ref{tab:fix} gives a summary of the large genomic regions that have become fixed or nearly fixed by cycle 16. 
 These regions represent blocks of linked loci that show no evidence of recombination since at least the development of the founding inbred lines in the 1920’s and 1930’s.
 	
@@ -92,15 +91,13 @@ These regions represent blocks of linked loci that show no evidence of recombina
    \includegraphics[width=\linewidth]{fig45}
  %  \renewcommand{\baselinestretch}{0.9}
  %  \vspace{-3mm}
-   \caption{Heterozygosity ($H$) across chromosomes 9 (left) and 4 (right) in each cycle of BSSS plotted on the physical (top) or genetic (bottom) map. H is calculated on 15-marker sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). Shaded regions represent 2 cM windows found to have heterozygosity values significantly lower than expected by simulation at a given cycle. Light shading denotes significance at P < 0.0025, whereas the darker shading represents significance at P < 0.001. Comparing the physical and genetic maps reveals that the regions of fixation are extremely small genetically, but some contain much of the physical content of the chromosome.
+   \caption{Heterozygosity ($H$) in each cycle across chromosome 9 of the BSSS (left) and chromosome 4 of the BSCB1 (right) plotted on the physical (top) and genetic (bottom) map. $H$ is calculated on 15-marker sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). Shaded regions represent 2 cM windows found to have heterozygosity values significantly lower than expected by simulation at a given cycle. Light shading denotes significance at $P<0.0025$, whereas the darker shading represents significance at $P<0.001$. Comparing the physical and genetic maps reveals that the regions of fixation are extremely small genetically, but some contain much of the physical content of the chromosome.
 } 
 \vspace{-6mm}
     \label{fig:genphys}
   \end{center}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE	
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 %\begin{figure}[tb]   
@@ -120,12 +117,13 @@ These regions represent blocks of linked loci that show no evidence of recombina
 \subsection*{The role of genetic drift}
 There is clear evidence of phenotypic improvement in response to selection in the Iowa RRS populations (Smith, 1983; Keeratinijakal and Lamkey, 1993; Schnicker and Lamkey, 1993; Holthaus and Lamkey, 1995; Brekke et al., 2011a; Brekke et al., 2011b; Edwards, 2011) and large changes in genetic structure indicated by molecular markers. 
 A central issue for these maize populations and others like them is whether the changes observed at the molecular level are caused directly by selection on phenotype, or indirectly due to the genetic drift that selection imposes through inbreeding and small effective population sizes. 
-To gauge the roles of selection and drift, we conducted simulations of the crossing and selection schemes used in the RRS experiment, with genetic recombination modeled on a framework map of a cross between B73 (a BSSS derived line used to construct the reference genome) with Mo17 (an inbred with some co-ancestry to both the BSSS and BSCB1 founder germplasm)\citep{gerdes1993compilation}\citex{Lee et al., 2002}. 
-Selections were executed at random in each simulation, so the patterns observed across simulations represent the expected distribution of effects caused only by recombination and genetic drift. 
-We conducted 10,000 simulations, sampled individuals from each cycle equal in number to the observed samples, measured heterozygosity, and compared the results to the observed data. 	
-	
+To gauge the roles of selection and drift, we conducted simulations of the crossing and selection schemes used in the RRS experiment.
+Selection was executed at random in each simulation, so the patterns observed across simulations represent the expected distribution of effects caused only by recombination and genetic drift. 
+We conducted 10,000 simulations, with genetic recombination modeled on a framework map derived from the IBM population \citep{lee2002expanding}, a cross between inbred lines B73 (a BSSS derived line used to construct the reference genome) and Mo17 (an inbred with some co-ancestry to both the BSSS and BSCB1 founder germplasm). 
+We sampled individuals from each cycle equal in number to the observed samples, measured heterozygosity, and compared the results to the observed data. 	
+
 Averaged across the genome, the vast majority of the reduction in diversity observed in both populations can be attributed to genetic drift. 
-Nonetheless, do observe deviations from the simulated values (Figure S1). 
+Nonetheless, we do observe deviations from the simulated values (Figure \ref{fig:s1}). 
 The observed data show higher than expected heterozygosity at cycle 4, suggesting selection for heterozygosity in early cycles, a deviation from simulated and actual breeding practices, or an under-sampling of the diversity present in the original cycle 0 populations. \jri{where is this excess of diversity? if it's all pericentromeric can we argue for the first hypothesis?}
 As the cycles progress, heterozygosity falls more rapidly than expected in both populations, and the observed values at cycle 16 are significantly lower than the simulated data.  
 Simulations across a number of different marker densities were consistent with this result (data not shown). 

@@ -1,27 +1,23 @@
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+
 \begin{figure}[tb]   
   \begin{center}
-   \vspace{-0mm}
-   \includegraphics[width=0.4\textwidth]{FigS1}
-   \renewcommand{\baselinestretch}{0.9}
-   \vspace{-3mm}
+   \includegraphics[width=\linewidth]{figs1_jri}
    \caption{Heterozygosity in each population, observed vs. simulated data. Heterozygosity was calculated as the average across all markers genome-wide  in the BSSS (A)  and BSCB1 (B) populations. The observed data is marked by the red line, the simulations by gray dots, and the median of the simulations by a green dot. } 
-\vspace{-6mm}
     \label{fig:s1}
   \end{center}
 \end{figure}
 
-\begin{figure}[tb]   
+\pagebreak
+
+\begin{figure*}[tb]   
   \begin{center}
-   \vspace{-0mm}
-   \includegraphics[width=0.4\textwidth]{S2}
-\includegraphics[width=0.4\textwidth]{S2_genetic}
-   \renewcommand{\baselinestretch}{0.9}
-   \vspace{-3mm}
-   \caption{Heterozygosity ($H$) at cycle16 across all ten chromosomes in each population, calculated on 15-marker sliding windows with 5 marker steps as in Figure 3. Heterozygosity values in BSSS (blue dots) and BSCB1 (red dots) are superimposed in one panel. 2 cM windows of low heterozygosity that were reproduced in less than 10 of 10,000 simulations (P<0.001) are shaded in light blue (BSSS) or pink (BSCB). At this cutoff, there is no overlap between highlighted windows in the two populations. (A) Physical map. (B) Genetic map. } 
-\vspace{-6mm}
-    \label{fig:s1}
+\includegraphics[width=\linewidth]{figs2_jri}
+   \caption{Heterozygosity ($H$) at cycle 16 across all ten chromosomes in each population, calculated on 15-marker sliding windows with 5 marker steps as in Figure 3. Heterozygosity values in BSSS (blue dots) and BSCB1 (red dots) are superimposed in one panel. 2 cM windows of low heterozygosity that were reproduced in less than 10 of 10,000 simulations (P<0.001) are shaded in light blue (BSSS) or pink (BSCB). At this cutoff, there is no overlap between highlighted windows in the two populations. (A) Physical map. (B) Genetic map. } 
+    \label{fig:s2}
   \end{center}
-\end{figure}
+\end{figure*}
 
 \newpage
 
@@ -119,8 +115,7 @@ Backgrounds of the founder inbreds are from \citet{hagdorn2003molecular}}
 \caption{Evidence of minor contamination between cycles 4 and 8 in BSSS.}
 \begin{tabular}{ | l | l | l | l | }
 \hline
-	\  & \  & \  & \  \\ \hline
-	SNPS polymorphic in cycle: & But not cycle: & in BSSS & in BSCB1 \\ \hline
+	\textbf{SNPs polymorphic in cycle} & \textbf{But not cycle} & \textbf{BSSS} & \textbf{BSCB1} \\ \hline
 	4 & 0 & 290 & 225 \\ \hline
 	8 & 0 & 2242 & 319 \\ \hline
 	12 & 0 & 1227 & 181 \\ \hline
@@ -136,15 +131,20 @@ Backgrounds of the founder inbreds are from \citet{hagdorn2003molecular}}
 	8 & Founders & 1201 & 798 \\ \hline
 	12 & Founders & 816 & 550 \\ \hline
 	16 & Founders & 445 & 460 \\ \hline
-	 &  &  &  \\ \hline
-	Heterozygosity (H) of SNPS present in cycle 8 but not cycle 4 &  &  &  \\ \hline
-	Statistic & BSSS & BSCB &  \\ \hline
-	Mean & 0.052 & 0.052 &  \\ \hline
-	Median & 0.028 & 0.028 &  \\ \hline
-	    \label{tab:s2}  % caption is needed to make this work
 \end{tabular}
+		    \label{tab:s2}  % caption is needed to make this work
 \end{table}
 \newpage
+
+\begin{table}
+\caption{Heterozygosity of SNPs in cycle 8 but not cycle 4 of the BSSS. \jri{are these numbers supposed to be the same? I checked the Pages doc and they are the same there too.}}
+\begin{tabular}{  l | l | l | }
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{BSSS} & \multicolumn{1}{l}{BSSS}   \\ \cline{2-3}
+	Mean & 0.052 & 0.052   \\ \cline{2-3}
+	Median & 0.028 & 0.028   \\ \cline{2-3}
+\end{tabular}
+\end{table}
+
 
 
 
@@ -153,8 +153,7 @@ Backgrounds of the founder inbreds are from \citet{hagdorn2003molecular}}
 \begin{tabular}{ | l | l | l | l | l | l | }
 
 \hline
-	\  & \  & \  & \  & \  & \  \\ \hline
-	Simulated 'Hybrid' & Derived Lines Used as Priors & Population & Possible Switches & Switch errors & Rate \\ \hline
+	\textbf{Simulated 'Hybrid'} & \textbf{Derived Lines Used as Priors} & \textbf{Population} & \textbf{Possible Switches} & \textbf{Switch errors} & \textbf{Rate} \\ \hline
 	B11xB67 & all & BSSS & 12195 & 41 & 0.003 \\ \hline
 	B17xB44 & all & BSSS & 12230 & 58 & 0.005 \\ \hline
 	B39xB37 & all & BSSS & 11485 & 129 & 0.011 \\ \hline
@@ -170,7 +169,7 @@ Backgrounds of the founder inbreds are from \citet{hagdorn2003molecular}}
 	B90xB97 & all & BSCB1 & 6499 & 52 & 0.008 \\ \hline
 	B91xB95 & all & BSCB1 & 7830 & 56 & 0.007 \\ \hline
 	B99xB97 & all & BSCB1 & 6779 & 52 & 0.008 \\ \hline
-	BB42xB54 & cycle 0 & BSCB1 & 11260 & 57 & 0.005 \\ \hline
-	    \label{tab:s3}  % caption is needed to make this work
+	BB42xB54 & cycle 0 & BSCB1 & 11260 & 57 & 0.005 \\\hline
 \end{tabular}
+	\label{tab:s3}  % caption is needed to make this work
 \end{table}
