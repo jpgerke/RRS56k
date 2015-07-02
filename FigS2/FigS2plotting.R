@@ -19,16 +19,24 @@ levels(sigs$Sigat001) = c("BSCB1", "BSSS", "Both")
 blocks=geom_rect(data=sigs, aes(fill=Sigat001, xmin=phystart/1000000, xmax=phystop/1000000, ymin=0, ymax=0.5)) 
 BSSS_H <- geom_point(data=alldata, aes(x=physpos/1000000, y=HetSS), colour="blue", size=1)
 BSCB1_H <- geom_point(data=alldata, aes(x=physpos/1000000, y=HetNSS), colour="red2", size=1)
-png('../FigS2A.png')
-ggplot(data=alldata) + blocks + BSSS_H + BSCB1_H + facet_grid(LG~.) + ylab("Heterozygosity") + xlab("Position (Mb)") + theme_bw() +
-scale_fill_manual(values=c("pink1", "skyblue2", "green"), name="P < 0.001") + theme(panel.border=element_rect(size=0.1))  + theme(axis.text.y=element_text(size=8))
-dev.off()
+#png('../FigS2A.png')
+physplot = ggplot(data=alldata) + blocks + BSSS_H + BSCB1_H + facet_grid(LG~.) + ylab("Heterozygosity") + xlab("Position (Mb)") + theme_bw() +
+  scale_fill_manual(values=c("pink1", "skyblue2", "green"), name="P < 0.001") + theme(panel.border=element_rect(size=0.1))  + theme(axis.text.y=element_text(size=6)) +
+  ggtitle("Physical Space")
+#dev.off()
 
 blocks=geom_rect(data=sigs, aes(fill=Sigat001, xmin=genstart, xmax=genstop, ymin=0, ymax=0.5)) 
 BSSS_H <- geom_point(data=alldata, aes(x=genpos, y=HetSS), colour="blue", size=1)
 BSCB1_H <- geom_point(data=alldata, aes(x=genpos, y=HetNSS), colour="red2", size=1)
-png('../FigS2B.png')
-ggplot(data=alldata) + blocks + BSSS_H + BSCB1_H + facet_grid(LG~.) + ylab("Heterozygosity") + xlab("Position (cM)") + theme_bw() +
-  scale_fill_manual(values=c("pink1", "skyblue2", "green"), name="P < 0.001") + theme(panel.border=element_rect(size=0.1))  + theme(axis.text.y=element_text(size=8))
-dev.off()
+#png('../FigS2B.png')
+genplot = ggplot(data=alldata) + blocks + BSSS_H + BSCB1_H + facet_grid(LG~.) + ylab("Heterozygosity") + xlab("Position (cM)") + theme_bw() +
+  scale_fill_manual(values=c("pink1", "skyblue2", "green"), name="P < 0.001") + theme(panel.border=element_rect(size=0.1))  + theme(axis.text.y=element_text(size=6)) +
+  ggtitle("Genetic Space")
+#dev.off()
+
+combined = plot_grid(physplot, genplot, labels=c("A", "B"), nrow=2)
+save_plot("../fig_S2_combined.pdf", combined,
+          base_aspect_ratio = 0.9,
+          base_height = 10
+)
 
