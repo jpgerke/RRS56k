@@ -59,7 +59,7 @@ Since most inversions were small relative to the genetic map (and would therefor
 However, markers bordering translocations were removed to ensure there were no markers mapped to the incorrect linkage group. 
 Unmapped SNPs were then assigned a genetic position by linear interpolation of genetic vs. physical distance using the approx() function in R \citep{rteam}. 
 The IBM genetic map distances were then converted to single-meiosis map distances using the formulae of \citet{winkler2003determination}. 
-Finally, SNPs located at physical positions outside of those bounded by the genetic map (such as the telomeres) were assigned the genetic position of their nearest mapped neighbor. \jri{so everything beyond 0 gets a 0 position on the map instead of negative?}
+Finally, SNPs located at physical positions outside of those bounded by the genetic map (such as the telomeres) were assigned the genetic position of their nearest mapped neighbor. 
 Since moved segments were arbitrarily joined 10 kb from their nearest genetic neighbor, we acknowledge that the physical positions of these markers are only estimates. 
 However, the estimated junctions are small relative to the genetic windows used for our analysis. 
 The final map used is provided as supplemental material (Supplementary File S1).

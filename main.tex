@@ -43,10 +43,11 @@
 }
 
 %editing commands (please leave in for now)
-\newcommand{\jri}[1]{\textcolor{blue}{ \emph{\scriptsize  #1}} }
+\newcommand{\jri}[1]{\textcolor{red}{ \emph{\scriptsize  #1}} }
 \definecolor{gerkegreen} {rgb} {0,0.6,0}
-\newcommand{\jpg}[1]{\textcolor{mattgreen}{ \em{\scriptsize  #1}} }
+\newcommand{\jpg}[1]{\textcolor{gerkegreen}{ \em{\scriptsize  #1}} }
 \newcommand{\citex}[1]{\textcolor{red}{\bf #1}}
+\newcommand{\rev}[1]{\textcolor{blue}{\bf #1}}
 
 \usepackage[normalem]{ulem}
 \def\dt{\bgroup
@@ -109,17 +110,345 @@ We discuss how this pattern is likely to occur during selection for hybrid perfo
 \maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRO
-\input{intro}
+\section*{Introduction}
+Although maize is naturally an outcrossing organism, modern breeding takes advantage of highly inbred lines that are used in controlled crosses to produce hybrids. 
+Hybrid maize, first developed in the early 20th century \citep{crow1998}, was so successful that within a few decades it had completely replaced mass-selected open pollinated varieties in the United States \citep{crabb1947hybrid}. 
+The shift towards selection of inbred lines based on their ability to generate good hybrids – referred to as ‘combining ability’ – constituted an abrupt change from the open-pollinated mass selection that breeders practiced for millennia \citep{anderson1944sources, troyer1999background}.
+Maize inbred lines are now partitioned into separate ‘heterotic groups’ that maximize performance and hybrid vigor (heterosis) \rev{for yield} when inbreds from different heterotic groups are crossed with each other \citep{tracy2006historical}. 
+
+Multiple studies with molecular markers have indicated that these heterotic groups have diverged genetically over time to become highly structured and isolated populations, resulting in a dramatic restructuring of population genetic variation \citep{duvick2004long, ho2005extent, feng2006temporal}. 
+Advances in high throughput genotyping and the development of a maize reference genome now enable the observation of maize population structure at high marker density across the whole genome \citep{ganal2011a-large,chia2012maize}. 
+These studies have examined a broad spectrum of germplasm at various points in the history of maize to search for the signals of population structure and artificial selection \citep{Hufford2012b, van2012historical,jiao2012genome}. 
+Although selective sweeps remaining from domestication are clearly visible, the impact of selection during modern breeding appears comparatively small in terms of its impact on genomic diversity \citep{Hufford2012b,van2012historical}, despite steady, heritable improvement in phenotype \citep{duvick2005contribution}. 
+The lack of distinct selection signals from modern breeding may be due to population-specific selection; this interpretation is supported by the measured success in identifying targets of selection in individual experimental populations selected for a limited number of phenotypes \citep{hirsch2014insights, beissinger2014genome}.
+
+Here we take a detailed look at the dynamics of genome-wide patterns of diversity over time within an individual breeding program. 
+The Iowa Stiff Stalk Synthetic (BSSS) and the Iowa Corn Borer Synthetic No. 1 (BSCB1) Reciprocal Recurrent Selection Program of the USDA-ARS at Ames, Iowa (hereafter referred to as the Iowa RRS) represents one of the best-documented public experiments on selection for combining ability and hybrid performance. 
+BSSS and BSCB1 have been recurrently selected for improved cross-population hybrids \citep{penny1971twenty}. 
+\jri{add some text explaining recurrent selection}
+This model of selection, named reciprocal recurrent selection, provides the generalized model for strategies commonly used in commercial maize breeding \citep{comstock1949breeding, duvick2004long}. 
+The Iowa RRS experiment proves especially relevant because lines derived from the BSSS population have had a major impact upon the development of commercial hybrids \citep{duvick2004long, darrah1986}, the formation of modern heterotic groups \citep{troyer1999background, senior1998utility}, and the choice of a maize reference genome \citep{schnable2009the-b73-maize}.
+\jri{something about heterosis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRO
 
-\input{methods}
+\section*{Methods}
+\subsection*{The BSSS and BSCB1 recurrent selection program}
+The Iowa RRS experiment began with founder inbred lines (Table S1) that were randomly mated to create the BSSS and BSCB1 ‘cycle 0’ base populations. 
+Each group was then recurrently selected for improved combining ability with the other group \citep{penny1971twenty,  keeratinijakal1993responses}. 
+Initially approximately 200-250 starting ‘S0’ plants within each population were simultaneously self-fertilized to generate ‘S1’ lines and crossed to a random sample (4-6) of plants from the other population to generate testcross seed. 
+The material was evaluated for highly heritable traits including standability, disease resistance and ear rot resistance in the nursery at the time the testcross seed was made, and 100 testcrosses were then grown in replicated field trials and evaluated for grain yield, grain moisture, and standability.  
+S1 seed of 10 selected families within each population were randomly mated to create a new ‘cycle n+1’ population. 
+After cycle 4, the testcrosses were carried out on the S1 lines themselves rather than at S0, which leads to another round of selfing prior to the creation of the next cycle. Ten lines (out of 100) were selected and advanced to form the next cycle between cycles 1 and 8, and twenty lines were selected between cycles 9 and 16 \citep{keeratinijakal1993responses}. 
+Founder inbreds and samples from cycles 0, 4, 8, 12, and 16 were genotyped at 39,258 SNPs that passed a set of quality filters and could be assigned collinear genetic and physical map positions. 
 
-\input{results}
+\subsection*{Plants and inbred lines used}
+The plants and inbred lines used in this experiment are listed in Table S1. 
+We genotyped 36 plants from each of the BSSS and BSCB1 populations at selection cycles 0, 4, 8, 12, and 16. 
+These plants represent descendants of the original populations which have been randomly mated to maintain seed. 
+We also genotyped the founder inbreds for each population, with the exception of lines F1B1, CI.617, WD456, and K230 for which seed was not available. 
+The data for founder line CI.540 was not used because the genotyped material was heterozygous. 
+A number of derived lines were also genotyped for calibrating phasing and imputation procedures (see below).
 
-\input{discussion}
+\subsection*{Genotype data}
+Plants from the cycles of selection, founders, and derived lines were grown in a greenhouse and tissue was collected at the 3 leaf stage. 
+Tissue was lyophilized, ground, and DNA extracted by a CTAB procedure \citep{saghai-maroof1984ribosomal}. 
+Samples were genotyped using the 24-sample Illumina MaizeSNP50 array \citep{ganal2011a-large} according to the Illumina Infinium protocol, and imaged on an Illumina BeadStation at the University of Missouri DNA core facility. 
+Genotypes were determined with the GenomeStudio v2010.2 software using the manufacturer's MaizeSNP50\_B.egt cluster file. 
+\jri{this is an edit because url listed in pages doc no longer valid. correct that this is not a custom .egt file?}
+The design of the maize SNP50 Chip included a relatively small ascertainment panel of inbred lines, introducing a bias in the frequencies of SNPs included on the chip \citep{ganal2011a-large}. 
+However, because our simulations are based not on theoretical expectations but instead on sampling from the observed data at cycle 0, we expect ascertainment bias to have a minimal impact on our results. 
+The effect of this ascertainment bias was shown to be minimal in another study of North American germplasm \citep{van2012historical}. 
+
+We called 48,919 SNPs on the Illumina platform from the MaizeSNP50\_B.egt cluster file. Genotypes with quality scores of 50 or less were recoded as missing data. 
+Three plants were removed from the data due to an excess of missing data (the derived line B10, a cycle 0 plant from BSSS, and a cycle 8 plant from BSSS). 
+In addition, BSCB1 plant 31 from cycle 4 appeared switched with plant 31 from cycle 8 based on our principal component analysis (PCA), so we switched the labels for these two genotypes to correct the mistake. 
+To avoid structure among the missing data, we removed any SNP that was coded as missing in more than 3 plants in either group of founders or any group of plants from a particular cycle and population. 
+Preliminary analysis by PCA and heatmap plots of distance matrices revealed two additional likely mix-ups. 
+Plant 23 from BSSS cycle 8 was a clear outlier from the BSSS population as a whole and plant 2 from BSSS cycle 0 is likely a mislabeled plant from cycle 16. Since there was no evidence suggesting when mis-labelings occurred, each of these plants was removed from the analysis.
+	
+\subsection*{Integrating the genetic and physical map}
+The interpretation of our results depends upon a genetic and physical map that is as accurate as possible. 
+We therefore took steps to improve the positions of the SNP markers on the genetic and physical maps relative to version 5A.59 of the maize genome assembly. 
+The probable physical position of each SNP based was obtained by comparing SNP context sequences to the genome sequence. 
+For this purpose, SNP context sequences were defined as the sequence 25 bp upstream of the SNP, the bp representing the SNP itself, followed by 25 bp downstream of the SNP, making a total sequence length of 51bp. 
+When a single genomic location was queried by two separate probes on the array, we chose the probe with higher quality calls and dropped the other marker from the dataset. 
+To assign a genetic position for each SNP, we used a map derived from the B73xMo17 (IBM) mapping population similar to the IBM framework map in \citet{ganal2011a-large}. 
+This genetic map contains 4,217 framework SNP markers, which provides a much higher density than the map used to order the 5A.59 release of the maize genome sequence. 
+As a result, we identified several places in the genome where the physical positions were incorrect according to our genetic map. 
+These cases included both simple reversals of the physical map relative to the genetic map, and also the assignment of blocks of markers to the wrong linkage group, which we refer to as mis-mapped blocks. 
+SNPs at these loci were reordered to match our genetic map. To maintain collinearity between the genetic and physical map, the physical positions of these SNPs were reassigned as follows. 
+Individual mis-mapped markers small reversals and mis-mapped blocks ($<10$ kb) were removed from the data. 
+Small rearrangements of this sort are more likely to represent mis-mapped paralagous sequence than true errors in the physical map. 
+When larger reversals were identified, we transposed the physical positions of the SNPs from one end of the segment to the other. 
+Mis-mapped blocks were often larger than the physical gap into which they were moved. 
+We therefore assigned the first SNP of the block to a position 10 kb downstream from the previous SNP on the correct linkage group. 
+We then recalculated genomic coordinates for the rest of the chromosome based on the marker distances within the translocated segment. 
+The last SNP of the block was also given a 10 kb cushion between itself and the next SNP on the correct linkage group. 
+
+Only a portion of the SNPs on the array had genetically mapped positions. 
+‘Unmapped’ SNPs (those with a physical position but no genetic position) bounded by two mapped markers were moved along with their mapped neighbors if both anchoring mapped markers were also moved. 
+However, it is unclear whether unmapped SNPs just outside of these anchors should be kept in place or moved along with the adjacent SNPs. 
+Since most inversions were small relative to the genetic map (and would therefore still fall in the same window of a sliding window analysis), these SNPs were left in place. 
+However, markers bordering translocations were removed to ensure there were no markers mapped to the incorrect linkage group. 
+Unmapped SNPs were then assigned a genetic position by linear interpolation of genetic vs. physical distance using the approx() function in R \citep{rteam}. 
+The IBM genetic map distances were then converted to single-meiosis map distances using the formulae of \citet{winkler2003determination}. 
+Finally, SNPs located at physical positions outside of those bounded by the genetic map (such as the telomeres) were assigned the genetic position of their nearest mapped neighbor. 
+Since moved segments were arbitrarily joined 10 kb from their nearest genetic neighbor, we acknowledge that the physical positions of these markers are only estimates. 
+However, the estimated junctions are small relative to the genetic windows used for our analysis. 
+The final map used is provided as supplemental material (Supplementary File S1).
+	
+\subsection*{Haplotype phasing}
+Although the genotypes of the plants from each population are unphased, the homozygous genotypes of the founders and derived inbreds provide excellent prior information for a probabilistic estimation of genotype phase in the populations. 
+We therefore used fastPHASE \citep{scheet2006fast} to estimate the genotype phase of each plant. To estimate the error in phasing, we created test cases by combining the genotypes of two derived inbreds into a hypothetical “F1 hybrid” of unknown phase. 
+This F1 was presented to fastPHASE with the rest of the data, except that its parent inbreds were removed. 
+Analyses of several hypothetical F1’s from different cycles of selection revealed very low phasing error rates (Table S3). 
+Therefore the phased genotypes of cycle 0 plants were used as the starting data for simulations (see below).
+
+\subsection*{Diversity and principal component analysis}
+Heterozygosity (H) was measured as:
+	
+\begin{align*}
+H = 2p(1-p)
+\end{align*}
+
+where $p$ and $(1-p)$ are the frequencies of the two SNP alleles. 
+$F_{ST}$ \citep{hudson1992statistical} was calculated using the HBKpermute program in the analysis package (\url{https://github.com/molpopgen/analysis}) of the software library libsequence \citep{thornton2003libsequence}. 
+All results were plotted using the R package ggplot2 \citep{wickham2009ggplot2}. 
+We conducted PCA by singular value decomposition, as described in \cite{mcvean2009genealogical}. 
+
+\subsection*{Simulations}  
+Our simulation sought to model the effects of genetic drift in the Iowa RRS experiment independent of any selection, and our model thus closely followed the published methods of the Iowa RRS \citep{penny1971twenty,  keeratinijakal1993responses}. 
+Starting individuals in each population were constructed by randomly sampling two distinct haplotypes with replacement from the phased haplotypes of cycle 0. 
+In the actual random mating scheme used in the Iowa RRS experiment, a single pairing could only contribute four gametes to the next generation (two kernels each from two ears), and our simulation reflects this. 
+Advanced cycles were simulated by randomly mating gametes from self-fertilized plants of the previous cycle until 10 new individuals were created. 
+The first cycle involved two rounds of random mating, whereas all subsequent cycles used one round. 
+After cycle 5, the process employed two rounds of selfing instead of one. 
+After cycle 7, the population size was increased from 10 to 20. 
+At cycles 4, 8, 12, and 16, the plants were randomly mated to match the sample size of the observed data. 
+The genotypes of these simulated random matings are the final results of each simulation and were analyzed in the same way as the observed data. 
+
+All recombination events in the simulations were carried out in R with the hypred software package (\url{cran.r-project.org/web/packages/hypred/}). 
+Simulations were executed in parallel on a computing cluster, with unique random number seeds drawn for each simulation. 
+Statistics were calculated for each simulation using the same formula as the experimental data. 
+We used non-overlapping sliding windows of equal genetic distance to account for the non-independence of markers in low-recombination regions when calculating measures of significance. 
+For the haplotype-based, single-locus simulations, recombination was simply replaced with binomial sampling of two alleles.
+
+\section*{Results}
+
+\subsection*{Population structure and genetic diversity}
+Founder inbreds and samples from cycles 0, 4, 8, 12, and 16 were genotyped at 39,258 SNPs that passed a set of quality filters and could be assigned collinear genetic and physical map positions (See Materials and Methods for details). 
+Change in population structure throughout the Iowa RRS experiment can be observed visually by a principal component analysis (PCA). 
+A joint analysis of individuals from all the selection cycles (Figure \ref{fig:pca}) clearly separates the BSSS and BSCB1 populations along the first axis of variation, with increasing separation as the experiment progressed. 
+The second axis of variation primarily separates the cycles from one another within each population. 
+There is no separation between the founders of the two populations, but at cycle 0, the BSSS population shows more divergence from the founders than does BSCB1. 
+This could be due to drift during either the population’s construction or subsequent maintenance. 
+Structure continued to develop within each population over the course of the experiment. 
+There is an especially wide gap between cycles 4 and 8, which correlates with the addition of an extra generation of self-pollination prior to selection at each cycle. 
+The distance between cycles then decreases dramatically after cycle 8, and corresponding to the increased effective population size (See Materials and Methods).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
+\begin{figure}[tb]   
+  \begin{center}
+   \vspace{-0mm}
+   \includegraphics[width=0.5\textwidth]{fig1}
+   \renewcommand{\baselinestretch}{0.9}
+   \vspace{-3mm}
+   \caption{Principal component analysis of the SNP data from Iowa RRS. The axes represent the first two eigenvectors from an analysis of cycles 0-16, with projection of the founder lines onto the vector space. The variation explained by each eigenvector is given in parentheses on the axes. The populations steadily diverge at increasing cycles, with less distinction visible between the founder groups. The comparatively large distance between cycles 4 and 8 corresponds to a switch from one to two generations of selfing at each cycle. The smaller separation between cycles 8-16 corresponds to an increase in effective population size from ten to twenty. The BSSS cycle 0 population has drifted away from the BSSS founders, despite the absence of intentional selection during the creation and maintenance of cycle 0.
+} 
+\vspace{-6mm}
+    \label{fig:pca}
+  \end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
+
+No new genetic material was intentionally introduced into either population after the experiment's inception, so the substantial increase in genetic distance could only arise from the loss of genetic diversity within each population. 
+Consistent with previous studies of the Iowa RRS \citep{messmer1991genetic, labate1997molecular,  hagdorn2003molecular, hinze2005population}, genome-wide genetic diversity (expected heterozygosity, H) decreases steadily across cycles of selection in both populations (Figure \ref{fig:decline}). \jri{do all these citations make sense here? I just copied these from the abstract}
+The loss of heterozygosity is smaller when the two populations are considered together, indicating the loss of different alleles within BSCB1 and BSSS. 
+This genetic differentiation is reflected by the tenfold increase in $F_{ST}$ between the founder lines and the populations at cycle 16. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
+\begin{figure}[tb]   
+  \begin{center}
+   \vspace{-0mm}
+   \includegraphics[width=0.5\textwidth]{fig2}
+   \renewcommand{\baselinestretch}{0.9}
+   \vspace{-3mm}
+   \caption{Heterozygosity and $F_{ST}$ across cycles. $H$ (left panel) and $F_{ST}$ (right panel) plotted as a function of selection cycle in each population.
+} 
+\vspace{-6mm}
+    \label{fig:decline}
+  \end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
+
+We noticed an irregular increase in the number of polymorphic markers between BSSS cycles 4 and 8 (Table \ref{tab:s2}). 
+All of these newly polymorphic markers were present at extremely low frequency and were spread among various individuals. 
+This may represent a series of minor alleles that were not captured in our sample of cycle 4 individuals and thus appeared to ‘resurface’ at cycle 8. 
+Alternatively, the pattern may be the result of minor contamination at some point in the population’s history. 
+It was observed that an allele of the sugary gene associated with sweet corn appeared in the population at this time (O.S. Smith, personal communication), suggesting contamination may be the cause. 
+However, the low frequency of the ‘new’ alleles (typically only one or two alleles out of 72 possible in 36 diploid samples) means their effect on population diversity is minimal.  
+We did not attempt to incorporate this contamination into our simulation approaches, as it only makes our tests for low heterozygosity slightly more conservative.
+
+\subsection*{Fixation of large genomic regions}
+Figure \ref{fig:heterotic} shows heterozygosity varying along the genome at cycle 16 of each population. 
+Of particular note are extremely large pericentromeric regions of zero or near-zero heterozygosity spanning tens of megabases. 
+These regions experience low rates of meiotic recombination, which creates an expanded physical map relative to their genetic length \citep{ganal2011a-large}. 
+In general, the majority of fixed haplotype segments are small ($<2$ cM) in genetic space regardless of their physical size; one exception is 7 cM region on chromosome 1 in the BSCB1 population. 
+
+\begin{figure*}[tb]   
+  \begin{center}
+\includegraphics[width=\linewidth]{figs2_jri}
+   \caption{Heterozygosity ($H$) at cycle 16 across all ten chromosomes in each population, calculated on 15-marker sliding windows with 5 marker steps. Heterozygosity values in BSSS (blue dots) and BSCB1 (red dots) are superimposed in one panel. 2 cM windows of heterozygosity lower than 10 of 10,000 simulations ($P<0.001$) are shaded in light blue (BSSS) or pink (BSCB1). Two regions genome-wide show significantly low heterozygosity in both populations and are shaded green. (A) Physical map. (B) Genetic map. \rev{The same data plotted are plotted separately for each population in Figure \ref{fig:s2}.}} 
+    \label{fig:heterotic}
+  \end{center}
+\end{figure*}
+
+The sheer physical size of the pericentromeric regions yields extremely high marker density on the genetic map, allowing for clear resolution of haplotype phasing and recombination breakpoints. 
+To further examine the fixation in these regions, we computationally imputed haplotype phase in the BSSS and BSCB1 populations and used the phased data to track haplotype frequencies and founder of origin. 
+In most cases, these fixed haplotypes can be traced back to single founder inbreds. 
+For example, in BSSS, a 60 Mb (1.2 cM) region of chromosome 9 became fixed by cycle 12 and traces back to the founder Os420, and in BSCB1, a 60 Mb (0.7 cM) region became fixed on chromosome 4 and traces back to A340 (Figure \ref{fig:genphys}).
+Table \ref{tab:fix} gives a summary of the large genomic regions that have become fixed or nearly fixed by cycle 16. 
+These regions represent blocks of linked loci that show no evidence of recombination since at least the development of the founding inbred lines in the 1920’s and 1930’s.
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
+\begin{figure*}[tb]   
+  \begin{center}
+  % \vspace{-0mm}
+   \includegraphics[width=\linewidth]{fig4_combined}
+ %  \renewcommand{\baselinestretch}{0.9}
+ %  \vspace{-3mm}
+   \caption{Heterozygosity ($H$) in each cycle across chromosome 9 of the BSSS (left) and chromosome 4 of the BSCB1 (right) plotted on the physical (top) and genetic (bottom) map. $H$ is calculated on 15-marker sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). Shaded regions represent 2 cM windows found to have heterozygosity values significantly lower than expected by simulation at a given cycle. Light shading denotes significance at $P<0.0025$, whereas the darker shading represents significance at $P<0.001$. Comparing the physical and genetic maps reveals that the regions of fixation are extremely small genetically, but some contain much of the physical content of the chromosome.
+} 
+\vspace{-6mm}
+    \label{fig:genphys}
+  \end{center}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE	
+
+
+
+
+\begin{table*}[t]
+\caption{Ancestry of haplotypes fixed in the cycle 16 population.}
+\fontsize{10}{12}\sf
+\centering
+\label{tab:fix}
+\begin{tabular}{llllll}
+Population &	 Chr.& Interval (cM) & Interval (Mb) &	Founder & Derived Lines \\
+BSSS       & 3          & 40.2-41.4            & 67.7-123              & CI187-2        & B94                               \\
+BSSS       & 3          & 43-48.5              & 129.2-157.1           & NDa            & B89, B94                          \\
+BSSS       & 4          & 39.7-42.1            & 39.9-82.7             & CI187-2        & B89, B94, B67, B72, B39, B43      \\
+BSSS       & 9          & 30.6-33.5            & 20.8-26.6             & Oh7b           & B89, B94, B43, B17, B72, B84, B67 \\
+BSSS       & 9          & 34.3-35.6c           & 30.8-90.4c            & Os420          & B89, B94                          \\
+BSCB1      & 2          & 50.2-51.8            & 80.6-114.5            & CC5            & B90, B91, B95, B97, B99           \\
+BSCB1      & 4          & 42.1-42.8            & 82.7-140              & NDa            & B90, B95, B97                     \\
+BSCB1      & 8          & 46.1-50.7            & 125.1-145.6           & P8             & B90, B97, B91, B99, B54           \\\hline 
+\end{tabular}
+\end{table*}
+%a ND = Not Determined (Either a recombinant haplotype or originates from an un-genotyped founder)
+%
+%b Although Oh7 is a BSCB1 founder, it is a descendant of CI.540, an un-genotyped BSSS founder. BSSS segments matching Oh7 presumably derive from CI.540
+%
+%c  Founders Ind_B2 (BSSS), CI187-2 (BSSS), R4 (BSCB1), and I205 (BSCB1) are all IBD at this region of chromosome 9
+
+\subsection*{The role of genetic drift}
+There is clear evidence of phenotypic improvement in response to selection in the Iowa RRS populations (Smith, 1983; Keeratinijakal and Lamkey, 1993; Schnicker and Lamkey, 1993; Holthaus and Lamkey, 1995; Brekke et al., 2011a; Brekke et al., 2011b; Edwards, 2011) and large changes in genetic structure indicated by molecular markers. 
+A central issue for these maize populations and others like them is whether the changes observed at the molecular level are caused directly by selection on phenotype, or indirectly due to the genetic drift that selection imposes through inbreeding and small effective population sizes. 
+To gauge the roles of selection and drift, we conducted simulations of the crossing and selection schemes used in the RRS experiment.
+Selection was executed at random in each simulation, so the patterns observed across simulations represent the expected distribution of effects caused only by recombination and genetic drift. 
+We conducted 10,000 simulations, with genetic recombination modeled on a framework map derived from the IBM population \citep{lee2002expanding}, a cross between inbred lines B73 (a BSSS derived line used to construct the reference genome) and Mo17 (an inbred with some co-ancestry to both the BSSS and BSCB1 founder germplasm). 
+We sampled individuals from each cycle equal in number to the observed samples, measured heterozygosity, and compared the results to the observed data. 	
+
+\begin{figure*}[tb]   
+   \includegraphics[width=0.7\linewidth]{Fig_S1_combined.pdf}
+   \caption{Heterozygosity in each population, observed vs. simulated data. Heterozygosity was calculated as the average across all markers genome-wide  in the BSSS (A)  and BSCB1 (B) populations. The observed data is marked by the red line, the simulations by gray dots, and the median of the simulations by a green dot. \rev{Black lines represent the 95\% quantiles of the simulated data.} \jri{is that interpretation of the black lines correct?}} 
+    \label{fig:compare_to_sims}
+\end{figure*}
+
+Averaged across the genome, the vast majority of the reduction in diversity observed in both populations can be attributed to genetic drift. 
+Nonetheless, we do observe deviations from the simulated values (Figure \ref{fig:compare_to_sims}). 
+The observed data show higher than expected heterozygosity at cycle 4, suggesting selection for heterozygosity in early cycles, a deviation from simulated and actual breeding practices, or an under-sampling of the diversity present in the original cycle 0 populations. \jri{where is this excess of diversity? if it's all pericentromeric can we argue for the first hypothesis?}
+As the cycles progress, heterozygosity falls more rapidly than expected in both populations, and the observed values at cycle 16 are significantly lower than the simulated data.  
+Simulations across a number of different marker densities were consistent with this result (data not shown). 
+
+To examine the behavior of specific regions, we also calculated the observed and simulated results for each 2 cM segment of the genome. 
+The dynamics observed across most of the genome are largely insensitive to changes in window size (we tested from 2-4 cM, data not shown), and are consistent with strong genetic drift imposed by selection practices. \jri{did we test smaller regions? not enough markers?}
+A subset of loci were flagged as significant, and these loci almost always overlapped regions of fixation or near-zero heterozygosity in one population. 
+However, in these regions the values obtained by simulation are often quite low, such that the extreme simulated values sometimes lie only a few percentage points away from the observed value (Supplementary File S2), indicating that drift alone can explain most of the drop in diversity. 
+
+Since the population size of the Iowa RRS is small (10-20), many biallelic SNPs should fix by chance regardless of their starting minor allele frequencies. The deviation from simulation arises not from changes in allele frequencies per se, but rather from the fixation of linked markers across larger than expected genetic distances. 
+The validity of significance cutoffs therefore depend on the accuracy of our genetic map, and the maize genetic map is known to vary among genetic backgrounds across short genetic distances ($<5$cM) (McMullen et al., 2009). \jri{need to cite either \citep{bauer2013intraspecific} who shows there's lots of variation or maybe also \citep{rodgers2015recombination} who argues it's stable (but stable vs. variable is somewhat subjective}
+Deviations of the observed and simulated results could be due to selection, variation or inaccuracy in the genetic map, or a combination of these factors. 
+
+To explore the roles of selection and drift independent of the genetic map, we returned to the large regions of fixation in the centromeres which showed no recombination across the full RRS experiment. 
+Given the lack of recombination, each of these regions can be analyzed by the simulation of a single locus, and the high density of markers allows the clear resolution of the individual haplotypes. 
+We used the computationally phased data to measure the frequency of the fixed haplotype at each cycle, and assessed the probability of observing the fixation event given the initial frequency. 
+The BSSS chromosome 9 haplotype fixed at cycle 16 was at low frequency at cycle 0 (7 out of 68 haplotypes), but increased rapidly in frequency by cycle 8 (66 out of 70 haplotypes). 
+Simulation of the haplotype as a single locus in the RRS experiment produces this increase in frequency in only 3.9\% of 1000 independent simulations, whereas the haplotype was lost in over 80\% of the simulations. 
+In BSCB1, a 30 Mb, 1.6 cM region of chromosome 2 became nearly fixed by cycle 8 (67/70) despite a prevalence of 4/72 at cycle 0, which occurred 1.5\% of the time by simulation. 
+Although these results suggest that selection may have pushed these haplotypes to fixation, the fact that fixation of such a rare haplotype still occurred in some simulations speaks to the strong genetic drift imposed upon the BSSS and BSCB1 populations. \jri{do you think we need to do more to explain here or above? in the previous paragraph we argue biallelic loci should fix by chance regardless of starting allele freq.}  
+Interestingly, each of these two genomic regions harbored a different cycle 0 haplotype at higher frequency, but these higher-frequency haplotypes were subsequently lost within the RRS population. 
+In other cases, the haplotypes which eventually fixed were at moderate frequency in the cycle 0 populations and drift to fixation in the majority of simulations.
+
+\section*{Discussion}
+ 
+Our analysis of diversity in the Iowa RRS experiment reveals a steady loss of diversity in the BSSS and BSCB1 populations as they became increasingly differentiated from one another over time.
+Principal component analysis shows that as the effective population size and the rates of inbreeding were altered, the rates of change in population structure were altered as well. 
+These patterns of population structure, diversity, and differentiation between BSSS and BSCB1 can be largely reproduced by simulation without any selection, supporting the hypothesis that the majority of the genetic structure observed can be attributed to genetic drift alone, despite effective selection for phenotypic improvement. 
+This drift was driven by inbreeding through self-pollination and the small effective population sizes used to select a limited number of high-performing, potentially related individuals at each cycle.  
+
+Reciprocal recurrent selection serves as a model for the method of hybrid maize improvement employed broadly in North America \citep{duvick2004long}.
+The trends observed in the Iowa RRS are also a common theme in similar recurrent selection experiments \citep{romay2012effect,lamkey2014relative}.
+Increased population structure due to increased inbreeding and lowered effective population size are visible in the modern ‘stiff-stalk’ and ‘non stiff-stalk’ heterotic groups as well \citep{van2012historical}. 
+Given the lack of strong selection signals in each case, genetic drift has most likely played a large role in the current genetic structure of modern maize. 
+	
+Several key inbreds in the ‘stiff-stalk’ heterotic group, B73, B37 and B14, were derived from the BSSS population \citep{darrah1986, troyer1999background}. 
+B37 and B14 were derived from cycle 0, and B73 was derived from a half-sib recurrent selection program also started with the BSSS population. 
+We examined these three inbreds at the pericentromeric regions listed in Table \ref{tabfix} \jri{correct?}, and found that in most cases they carry different haplotypes from those that rose to high frequency in the RRS experiment.  
+Near isogenic lines that substitute these centromeric haplotypes from key inbreds could be used to determine if the haplotypes at high frequency in cycle 16 of BSSS provide a phenotypic advantage when crossed with BSCB1. 
+
+Both our study and previous work \citep{labate1997molecular} identified genetic differentiation between cycle 0 of BSSS and the founder inbreds. 
+The loss of diversity in the cycle 0 population likely led to the loss of some rare alleles and haplotypes. 
+The BSSS was maintained for several years before RRS was initiated, and the differentiation could have occurred due to low effective population size during maintenance. 
+If so, then this drift will have impacted the trajectory of the RRS program and of the key inbreds derived from BSSS. 
+However, cycle 0 has also undergone maintenance since the beginning of the RRS experiment, so some genetic drift may have occurred during this time as well.
+	
+Although drift can explain most of the genetic structure genome-wide, phenotypic data provide clear evidence that selection has altered the frequencies of favorable alleles in the BSSS and BSCB1 populations. 
+Numerous experiments have shown that the selected populations and the hybrids formed from them are superior to their cycle 0 ancestors \citep{smith1983evaluation, keeratinijakal1993responses, schnicker1993interpopulation, holthaus1995population}. 
+Improvement occurred not only for hybrid yield, but concurrently for plant architecture and tolerance to high-density planting in both hybrids and inbreds \citep{brekke2011selection, brekke2011selectionb, edwards2011changes, lauer2012morphological}. 
+Since these same trends are observed across wider North American germplasm \citep{tollenaar1989genetic}, identification and characterization of the loci conferring phenotypic improvement in BSSS and BSCB1 could reveal some of the genetic mechanisms by which maize yield has steadily improved over the decades. 
+We find that the genomic regions of extremely low diversity evident at cycle 16 are unlikely to be produced by simulation, and heterozygosity falls more than expected across the genome as a whole.  
+However, simulated and observed values are often close, so overall the signature of selection is difficult to detect at any given locus. 
+This is due in large part to a limitation of statistical power imposed by inbreeding and low effective population sizes.
+\citet{lorenz2015selection} analyze a similar selection experiment with comparable effective population size and also find little little statistical evidence for selection on individual loci in spite of genetic gain for the trait of interest.
+Nonetheless, we show that an identity-by-descent, haplotype based approach provides additional power, as it can distinguish between the fixation of rare and common haplotypes. 
+However, the results of single locus simulations are sensitive to sampling error and drift caused by population maintenance. 
+In this case, it is difficult to assess significance with only a single population to test. This type of analysis is more effective across several replicated populations, which can control for genetic drift due to the independence between the selections in each replicate \citep{lamkey2014relative}. 
+	
+\citet{van2012historical} assessed variation in and tested for selection across a wider range of North American maize germplasm using the same SNP array. 
+Although selected loci were identified in that study, the overall effects on genomic diversity and haplotype patterns were relatively small compared with the impact of domestication. 
+That study was a wide survey across many germplasm sources. 
+The limited overall impact of selection could arise because different haplotypes and loci are selected in different breeding programs. 
+In support of this idea, we find that the most likely targets of selection between the BSSS and BSCB1 populations occur at non-overlapping loci. 
+This non-overlap between putatively selected loci in complementary populations has also been observed in commercial breeding programs \citep{feng2006temporal}.
+
+The observation that the same targets of selection are not observed in the opposing heterotic populations bears implications for the genetic mechanisms responsible for heterosis and the success of maize hybrids. 
+Classic overdominance models of heterosis predict that at a single locus, two distinct alleles confer heterozygote advantage when combined, while the dominance model predicts that heterosis is driven by dominance effects and the complementation of linked alleles in low-recombination regions (dominance or pseudo-overdominance). 
+In the case of true overdominance, we expect selection should lead to decreased heterozygosity at a locus in both populations as complementary haplotypes are fixed in each group. 
+We find no evidence of this genetic phenomenon. 
+The observed pattern instead favors a dominance model, where fixation of a haplotype in one population simply selects against that same haplotype in the other population. 
+Because most deleterious alleles are rare in both heterotic groups \citep{Mezmouk2014}, most haplotypes in the second population will have a different suite of deleterious variants and will complement the fixed haplotype reasonably well, such that selection will have little impact on diversity in the second population. 
+Our data are consistent with such a process having been important for hybrid improvement in the Iowa RSS experiment, and the lack of extreme differentiation seen over time across US Corn Belt germplasm is consistent with a role for such selection in maize hybrid improvement in general \citep{van2012historical}.
+
+Our results are consistent with the dominance and pseudo-overdominance models, but we caution that the exact outcome of particular models will depend strongly on the effects of selection, drift, and the frequencies of beneficial alleles. 
+Disentangling these factors remains a major challenge that will require careful simulation of maize breeding using a wider range of parameters. 
+This is especially true because in a model of hybrid complementation, genetic drift in one population can alter the selective value of alleles in the other population. 
+When drift and selection interact in such a manner, tests for selection that attempt to independently partition the effects of each force may not provide the full picture. Furthermore, uncertainties in the fine-scale relationship between genetic and physical distance make it difficult to assign significance in forward-simulation approaches. 
+In the end, the best test for selection of specific genomic regions will ultimately be conducted by phenotypic observation in the field in balanced tests of different haplotypes. 
+In the case of individual breeding programs, genome-wide genotyping such as we conducted here can identify the lines carrying the recombinant haplotypes and introgressions necessary to conduct such an experiment. 
 
 \begin{acknowledgments}
-We thank O. S. Smith and members of the Ross-Ibarra lab for comments on earlier versions of the manuscript. J.P.G received support for this research as a Merck Fellow of the Life Sciences Research Foundation. This research was supported by the National Science Foundation (IOS-0820619) and funds provided to USDA-ARS (MDM). Names of products are necessary to report factually on available data: however, neither the USDA, nor any other participating institution guarantees or warrants the standard of the product and the use of the name does not imply approval of the product to the exclusion of others that may also be suitable.
+We thank Oscar ``Howie'' Smith and members of the Ross-Ibarra lab for comments on earlier versions of the manuscript. J.P.G received support for this research as a Merck Fellow of the Life Sciences Research Foundation. This research was supported by the National Science Foundation (IOS-0820619) and funds provided to USDA-ARS (MDM). Names of products are necessary to report factually on available data: however, neither the USDA, nor any other participating institution guarantees or warrants the standard of the product and the use of the name does not imply approval of the product to the exclusion of others that may also be suitable.
 \end{acknowledgments}
 
 \bibliography{references.bib}

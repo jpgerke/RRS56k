@@ -1,23 +1,22 @@
 \renewcommand{\thefigure}{S\arabic{figure}}
 \renewcommand{\thetable}{S\arabic{table}}
 
-\begin{figure}[tb]   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
+\begin{figure*}   
   \begin{center}
-   \includegraphics[width=\linewidth]{figs1_jri}
-   \caption{Heterozygosity in each population, observed vs. simulated data. Heterozygosity was calculated as the average across all markers genome-wide  in the BSSS (A)  and BSCB1 (B) populations. The observed data is marked by the red line, the simulations by gray dots, and the median of the simulations by a green dot. } 
-    \label{fig:s1}
-  \end{center}
-\end{figure}
-
-\pagebreak
-
-\begin{figure*}[tb]   
-  \begin{center}
-\includegraphics[width=\linewidth]{figs2_jri}
-   \caption{Heterozygosity ($H$) at cycle 16 across all ten chromosomes in each population, calculated on 15-marker sliding windows with 5 marker steps as in Figure 3. Heterozygosity values in BSSS (blue dots) and BSCB1 (red dots) are superimposed in one panel. 2 cM windows of low heterozygosity that were reproduced in less than 10 of 10,000 simulations (P<0.001) are shaded in light blue (BSSS) or pink (BSCB). At this cutoff, there is no overlap between highlighted windows in the two populations. (A) Physical map. (B) Genetic map. } 
+   \vspace{-0mm}
+   \includegraphics[\linewidth]{fig3}
+   %\renewcommand{\baselinestretch}{0.9}
+   \vspace{-3mm}
+   \caption{ Heterozygosity ($H$) at cycle16 across all ten chromosomes in each population.  $H$ is calculated on 15-marker sliding windows with 5 marker steps. Each point is plotted at the midpoint of the 15-marker window. 
+} 
+\vspace{-6mm}
     \label{fig:s2}
   \end{center}
 \end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
+
+
 
 \newpage
 
@@ -27,7 +26,7 @@ Backgrounds of the founder inbreds are from \citet{hagdorn2003molecular}}
 \begin{tabular}{ | l | l | l | l | }
 
 	{\bf Plants from the selection cycles} &  &  &  \\ 
-	Population  & Cycle & \# plants &   \\ 
+	Population  & Cycle & \# plants &   \\ 
 	BSSS & 0 & 34 &  \\ 
 	BSSS & 4 & 36 &  \\ 
 	BSSS & 8 & 35 &  \\ 
