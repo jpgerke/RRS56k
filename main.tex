@@ -46,7 +46,8 @@
 \newcommand{\jri}[1]{\textcolor{red}{ \emph{\scriptsize  #1}} }
 \definecolor{gerkegreen} {rgb} {0,0.6,0}
 \newcommand{\jpg}[1]{\textcolor{gerkegreen}{ \em{\scriptsize  #1}} }
-\newcommand{\citex}[1]{\textcolor{red}{\bf #1}}
+
+
 \newcommand{\rev}[1]{\textcolor{blue}{\bf #1}}
 
 \usepackage[normalem]{ulem}
@@ -145,7 +146,7 @@ Founder inbreds and samples from cycles 0, 4, 8, 12, and 16 were genotyped at 39
 The plants and inbred lines used in this experiment are listed in Table S1. 
 We genotyped 36 plants from each of the BSSS and BSCB1 populations at selection cycles 0, 4, 8, 12, and 16. 
 These plants represent descendants of the original populations which have been randomly mated to maintain seed. 
-We also genotyped the founder inbreds for each population, with the exception of lines F1B1, CI.617, WD456, and K230 for which seed was not available. 
+We also genotyped the founder inbreds for each population, with the exception of F1B1, CI.617, WD456, and K230 for which seed was not available. 
 The data for founder line CI.540 was not used because the genotyped material was heterozygous. 
 A number of derived lines were also genotyped for calibrating phasing and imputation procedures (see below).
 
@@ -159,7 +160,7 @@ The design of the maize SNP50 Chip included a relatively small ascertainment pan
 However, because our simulations are based not on theoretical expectations but instead on sampling from the observed data at cycle 0, we expect ascertainment bias to have a minimal impact on our results. 
 The effect of this ascertainment bias was shown to be minimal in another study of North American germplasm \citep{van2012historical}. 
 
-We called 48,919 SNPs on the Illumina platform from the MaizeSNP50\_B.egt cluster file. Genotypes with quality scores of 50 or less were recoded as missing data. 
+\rev{We called 48,919 SNPs} on the Illumina platform from the MaizeSNP50\_B.egt cluster file. Genotypes with quality scores of 50 or less were recoded as missing data. 
 Three plants were removed from the data due to an excess of missing data (the derived line B10, a cycle 0 plant from BSSS, and a cycle 8 plant from BSSS). 
 In addition, BSCB1 plant 31 from cycle 4 appeared switched with plant 31 from cycle 8 based on our principal component analysis (PCA), so we switched the labels for these two genotypes to correct the mistake. 
 To avoid structure among the missing data, we removed any SNP that was coded as missing in more than 3 plants in either group of founders or any group of plants from a particular cycle and population. 
@@ -176,7 +177,8 @@ To assign a genetic position for each SNP, we used a map derived from the B73xMo
 This genetic map contains 4,217 framework SNP markers, which provides a much higher density than the map used to order the 5A.59 release of the maize genome sequence. 
 As a result, we identified several places in the genome where the physical positions were incorrect according to our genetic map. 
 These cases included both simple reversals of the physical map relative to the genetic map, and also the assignment of blocks of markers to the wrong linkage group, which we refer to as mis-mapped blocks. 
-SNPs at these loci were reordered to match our genetic map. To maintain collinearity between the genetic and physical map, the physical positions of these SNPs were reassigned as follows. 
+The \rev{XXX} SNPs at these loci were reordered to match our genetic map. 
+To maintain collinearity between the genetic and physical map, the physical positions of these SNPs were reassigned as follows. 
 Individual mis-mapped markers small reversals and mis-mapped blocks ($<10$ kb) were removed from the data. 
 Small rearrangements of this sort are more likely to represent mis-mapped paralagous sequence than true errors in the physical map. 
 When larger reversals were identified, we transposed the physical positions of the SNPs from one end of the segment to the other. 
@@ -226,8 +228,13 @@ After cycle 5, the process employed two rounds of selfing instead of one.
 After cycle 7, the population size was increased from 10 to 20. 
 At cycles 4, 8, 12, and 16, the plants were randomly mated to match the sample size of the observed data. 
 The genotypes of these simulated random matings are the final results of each simulation and were analyzed in the same way as the observed data. 
+\rev{Simulated recombination was carried out in R with the hypred software package (\url{cran.r-project.org/web/packages/hypred/}).
+The number of crossovers between two parental gametes is drawn from a Poisson distribution with $\labmda=L$, where L is the length of the chromosome in Morgans.
+Crossover breakpoints are drawn from a uniform distribution over the interval $(0,L)$}
 
-All recombination events in the simulations were carried out in R with the hypred software package (\url{cran.r-project.org/web/packages/hypred/}). 
+The meiosis is simulated according to the count-location model that assumes no interference and agrees with the Haldane mapping function.[c]1 Here the number of crossing over on a random meiotic product of a chro- mosome is Poisson distributed with parameter λ = L (L being the length of the chromosome in Morgan). The locations of the crossing over follow a uniform distribution over the interval (0, L).
+
+
 Simulations were executed in parallel on a computing cluster, with unique random number seeds drawn for each simulation. 
 Statistics were calculated for each simulation using the same formula as the experimental data. 
 We used non-overlapping sliding windows of equal genetic distance to account for the non-independence of markers in low-recombination regions when calculating measures of significance. 
@@ -273,7 +280,7 @@ This genetic differentiation is reflected by the tenfold increase in $F_{ST}$ be
    \includegraphics[width=0.5\textwidth]{fig2}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{Heterozygosity and $F_{ST}$ across cycles. $H$ (left panel) and $F_{ST}$ (right panel) plotted as a function of selection cycle in each population.
+   \caption{Heterozygosity \rev{(H, left panel) and $F_{ST}$ (right panel)} plotted as a function of selection cycle in each population. \rev{Heterozygosity is shown for each population separately and then for the total population pooling all plants.}
 } 
 \vspace{-6mm}
     \label{fig:decline}
@@ -298,7 +305,7 @@ In general, the majority of fixed haplotype segments are small ($<2$ cM) in gene
 \begin{figure*}[tb]   
   \begin{center}
 \includegraphics[width=\linewidth]{figs2_jri}
-   \caption{Heterozygosity ($H$) at cycle 16 across all ten chromosomes in each population, calculated on 15-marker sliding windows with 5 marker steps. Heterozygosity values in BSSS (blue dots) and BSCB1 (red dots) are superimposed in one panel. 2 cM windows of heterozygosity lower than 10 of 10,000 simulations ($P<0.001$) are shaded in light blue (BSSS) or pink (BSCB1). Two regions genome-wide show significantly low heterozygosity in both populations and are shaded green. (A) Physical map. (B) Genetic map. \rev{The same data plotted are plotted separately for each population in Figure \ref{fig:s2}.}} 
+   \caption{Heterozygosity at cycle 16 across all ten chromosomes in each population, calculated on 15-marker sliding windows with 5 marker steps. Heterozygosity values in BSSS (blue dots) and BSCB1 (red dots) are superimposed in one panel. 2 cM windows of heterozygosity lower than 10 of 10,000 simulations ($P<0.001$) are shaded in light blue (BSSS) or pink (BSCB1). Two regions genome-wide show significantly low heterozygosity in both populations and are shaded green. (A) Physical map. (B) Genetic map. \rev{The same data are plotted separately for each population in Figure \ref{fig:s2}.}} 
     \label{fig:heterotic}
   \end{center}
 \end{figure*}
@@ -317,7 +324,7 @@ These regions represent blocks of linked loci that show no evidence of recombina
    \includegraphics[width=\linewidth]{fig4_combined}
  %  \renewcommand{\baselinestretch}{0.9}
  %  \vspace{-3mm}
-   \caption{Heterozygosity ($H$) in each cycle across chromosome 9 of the BSSS (left) and chromosome 4 of the BSCB1 (right) plotted on the physical (top) and genetic (bottom) map. $H$ is calculated on 15-marker sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). Shaded regions represent 2 cM windows found to have heterozygosity values significantly lower than expected by simulation at a given cycle. Light shading denotes significance at $P<0.0025$, whereas the darker shading represents significance at $P<0.001$. Comparing the physical and genetic maps reveals that the regions of fixation are extremely small genetically, but some contain much of the physical content of the chromosome.
+   \caption{\rev{Heterozygosity} in each cycle across chromosome 9 of the BSSS (left) and chromosome 4 of the BSCB1 (right) plotted on the physical (top) and genetic (bottom) map. \rev{Each panel consists of five plots representing cycles 0,4,8,12, and 16 of the experiment.} \rev{Heterozygosity} is calculated on 15-marker sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). Shaded regions represent 2 cM windows found to have heterozygosity values significantly lower than expected by simulation at a given cycle. Light shading denotes significance at $P<0.0025$, whereas the darker shading represents significance at $P<0.001$. Comparing the physical and genetic maps reveals that the regions of fixation are extremely small genetically, but some contain much of the physical content of the chromosome.
 } 
 \vspace{-6mm}
     \label{fig:genphys}
@@ -366,19 +373,20 @@ We sampled individuals from each cycle equal in number to the observed samples, 
 \end{figure*}
 
 Averaged across the genome, the vast majority of the reduction in diversity observed in both populations can be attributed to genetic drift. 
-Nonetheless, we do observe deviations from the simulated values (Figure \ref{fig:compare_to_sims}). 
-The observed data show higher than expected heterozygosity at cycle 4, suggesting selection for heterozygosity in early cycles, a deviation from simulated and actual breeding practices, or an under-sampling of the diversity present in the original cycle 0 populations. \jri{where is this excess of diversity? if it's all pericentromeric can we argue for the first hypothesis?}
+Nonetheless, we do observe \rev{differences from values generated under our neutral simulations} (Figure \ref{fig:compare_to_sims}). 
+The observed data show higher than expected heterozygosity at cycle 4, \rev{which could be explained by several factors, including differences between simulated and actual breeding practices, under-sampling of diversity in cycle 0, selection acting to increase the frequency of initially rare haplotypes, or even selection acting to maintain heterozygosity \citep[e.g.][]{McMullen2009,Gore2009a} } \jri{where is this excess of diversity? if it's all pericentromeric can we argue for the first hypothesis?}
+
 As the cycles progress, heterozygosity falls more rapidly than expected in both populations, and the observed values at cycle 16 are significantly lower than the simulated data.  
 Simulations across a number of different marker densities were consistent with this result (data not shown). 
 
 To examine the behavior of specific regions, we also calculated the observed and simulated results for each 2 cM segment of the genome. 
-The dynamics observed across most of the genome are largely insensitive to changes in window size (we tested from 2-4 cM, data not shown), and are consistent with strong genetic drift imposed by selection practices. \jri{did we test smaller regions? not enough markers?}
+The dynamics observed across most of the genome are largely insensitive to changes in window size (we tested from 2-4 cM, data not shown), and are consistent with strong genetic drift imposed by \rev{the experimental design}. \jri{did we test smaller regions? not enough markers?}
 A subset of loci were flagged as significant, and these loci almost always overlapped regions of fixation or near-zero heterozygosity in one population. 
 However, in these regions the values obtained by simulation are often quite low, such that the extreme simulated values sometimes lie only a few percentage points away from the observed value (Supplementary File S2), indicating that drift alone can explain most of the drop in diversity. 
 
-Since the population size of the Iowa RRS is small (10-20), many biallelic SNPs should fix by chance regardless of their starting minor allele frequencies. The deviation from simulation arises not from changes in allele frequencies per se, but rather from the fixation of linked markers across larger than expected genetic distances. 
+Since the population size of the Iowa RRS is small (10-20), many biallelic SNPs should fix by chance regardless of their starting minor allele frequencies. \rec{Observed differences from the simulated neutral expectation} thus do not arise from changes in allele frequencies per se, but rather from the fixation of linked markers across larger than expected genetic distances. 
 The validity of significance cutoffs therefore depend on the accuracy of our genetic map, and the maize genetic map is known to vary among genetic backgrounds across short genetic distances ($<5$cM) (McMullen et al., 2009). \jri{need to cite either \citep{bauer2013intraspecific} who shows there's lots of variation or maybe also \citep{rodgers2015recombination} who argues it's stable (but stable vs. variable is somewhat subjective}
-Deviations of the observed and simulated results could be due to selection, variation or inaccuracy in the genetic map, or a combination of these factors. 
+\rev{Differences between} observed and simulated results could be due to selection, variation or inaccuracy in the genetic map, or a combination of these factors. 
 
 To explore the roles of selection and drift independent of the genetic map, we returned to the large regions of fixation in the centromeres which showed no recombination across the full RRS experiment. 
 Given the lack of recombination, each of these regions can be analyzed by the simulation of a single locus, and the high density of markers allows the clear resolution of the individual haplotypes. 
@@ -391,6 +399,7 @@ Interestingly, each of these two genomic regions harbored a different cycle 0 ha
 In other cases, the haplotypes which eventually fixed were at moderate frequency in the cycle 0 populations and drift to fixation in the majority of simulations.
 
 \section*{Discussion}
+\jri{need to mention that the complementation we are seeing is not large effect deleterious that were likely purged during early inbreeding but instead many weakly deleterious things.} 
  
 Our analysis of diversity in the Iowa RRS experiment reveals a steady loss of diversity in the BSSS and BSCB1 populations as they became increasingly differentiated from one another over time.
 Principal component analysis shows that as the effective population size and the rates of inbreeding were altered, the rates of change in population structure were altered as well. 
@@ -431,6 +440,8 @@ That study was a wide survey across many germplasm sources.
 The limited overall impact of selection could arise because different haplotypes and loci are selected in different breeding programs. 
 In support of this idea, we find that the most likely targets of selection between the BSSS and BSCB1 populations occur at non-overlapping loci. 
 This non-overlap between putatively selected loci in complementary populations has also been observed in commercial breeding programs \citep{feng2006temporal}.
+
+\subsection*{Heterosis}
 
 The observation that the same targets of selection are not observed in the opposing heterotic populations bears implications for the genetic mechanisms responsible for heterosis and the success of maize hybrids. 
 Classic overdominance models of heterosis predict that at a single locus, two distinct alleles confer heterozygote advantage when combined, while the dominance model predicts that heterosis is driven by dominance effects and the complementation of linked alleles in low-recombination regions (dominance or pseudo-overdominance). 
