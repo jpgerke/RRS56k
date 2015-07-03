@@ -7,6 +7,7 @@
 \usepackage{times}
 \usepackage{hyperref}
 \usepackage{multirow}
+\usepackage{amsmath}
 
 \addtolength{\oddsidemargin}{-.2cm}
 \addtolength{\evensidemargin}{-1.2cm}
@@ -229,11 +230,8 @@ After cycle 7, the population size was increased from 10 to 20.
 At cycles 4, 8, 12, and 16, the plants were randomly mated to match the sample size of the observed data. 
 The genotypes of these simulated random matings are the final results of each simulation and were analyzed in the same way as the observed data. 
 \rev{Simulated recombination was carried out in R with the hypred software package (\url{cran.r-project.org/web/packages/hypred/}).
-The number of crossovers between two parental gametes is drawn from a Poisson distribution with $\labmda=L$, where L is the length of the chromosome in Morgans.
+The number of crossovers between two parental gametes is drawn from a Poisson distribution with $\lambda = L$, where $L$ is the length of the chromosome in Morgans.
 Crossover breakpoints are drawn from a uniform distribution over the interval $(0,L)$}
-
-The meiosis is simulated according to the count-location model that assumes no interference and agrees with the Haldane mapping function.[c]1 Here the number of crossing over on a random meiotic product of a chro- mosome is Poisson distributed with parameter λ = L (L being the length of the chromosome in Morgan). The locations of the crossing over follow a uniform distribution over the interval (0, L).
-
 
 Simulations were executed in parallel on a computing cluster, with unique random number seeds drawn for each simulation. 
 Statistics were calculated for each simulation using the same formula as the experimental data. 
@@ -304,7 +302,7 @@ In general, the majority of fixed haplotype segments are small ($<2$ cM) in gene
 
 \begin{figure*}[tb]   
   \begin{center}
-\includegraphics[width=\linewidth]{figs2_jri}
+\includegraphics[width=\linewidth]{fig_S2_combined}
    \caption{Heterozygosity at cycle 16 across all ten chromosomes in each population, calculated on 15-marker sliding windows with 5 marker steps. Heterozygosity values in BSSS (blue dots) and BSCB1 (red dots) are superimposed in one panel. 2 cM windows of heterozygosity lower than 10 of 10,000 simulations ($P<0.001$) are shaded in light blue (BSSS) or pink (BSCB1). Two regions genome-wide show significantly low heterozygosity in both populations and are shaded green. (A) Physical map. (B) Genetic map. \rev{The same data are plotted separately for each population in Figure \ref{fig:s2}.}} 
     \label{fig:heterotic}
   \end{center}
@@ -384,7 +382,7 @@ The dynamics observed across most of the genome are largely insensitive to chang
 A subset of loci were flagged as significant, and these loci almost always overlapped regions of fixation or near-zero heterozygosity in one population. 
 However, in these regions the values obtained by simulation are often quite low, such that the extreme simulated values sometimes lie only a few percentage points away from the observed value (Supplementary File S2), indicating that drift alone can explain most of the drop in diversity. 
 
-Since the population size of the Iowa RRS is small (10-20), many biallelic SNPs should fix by chance regardless of their starting minor allele frequencies. \rec{Observed differences from the simulated neutral expectation} thus do not arise from changes in allele frequencies per se, but rather from the fixation of linked markers across larger than expected genetic distances. 
+Since the population size of the Iowa RRS is small (10-20), many biallelic SNPs should fix by chance regardless of their starting minor allele frequencies. \rev{Observed differences from the simulated neutral expectation} thus do not arise from changes in allele frequencies per se, but rather from the fixation of linked markers across larger than expected genetic distances. 
 The validity of significance cutoffs therefore depend on the accuracy of our genetic map, and the maize genetic map is known to vary among genetic backgrounds across short genetic distances ($<5$cM) (McMullen et al., 2009). \jri{need to cite either \citep{bauer2013intraspecific} who shows there's lots of variation or maybe also \citep{rodgers2015recombination} who argues it's stable (but stable vs. variable is somewhat subjective}
 \rev{Differences between} observed and simulated results could be due to selection, variation or inaccuracy in the genetic map, or a combination of these factors. 
 
