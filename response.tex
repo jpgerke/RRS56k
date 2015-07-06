@@ -27,7 +27,7 @@
 
 \newcommand{\jri}[1]{\textcolor{red}{ \emph{\scriptsize  #1}} }
 \newcommand{\citex}[1]{\textcolor{red}{\bf #1}}
-\newcommand{\blah}{\texcolor{red}{\bf blah}}
+\newcommand{\blah}{\textcolor{red}{\bf blah}}
 
 \renewcommand{\textfraction}{0.01}
 \renewcommand{\topfraction}{0.99}
@@ -40,7 +40,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyfoot[CE,CO]{\thepage}
+\fancyfoot[C,CO]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{plain}{
 	\fancyhf{}
@@ -78,14 +78,14 @@ On the statistical side, candidate selected regions are picked out and effective
 
 Do the results provide sufficient power to reject the overdominance model? How strong would the signal be likely to be?
 
-\response{\blah}
+\response{While we are not making a formal hypothesis test of the overdominance model (which seems difficult to do as it would depend on the number of loci proposed to be overdominant), we believe the preponderance of the evidence supports a simple dominance model. While we can not rule out any overdominance -- and have now added text citing one such example -- the genome-wide pattern does not appear to us to support such a model as the major driver of heterosis for yield.}
 
 One additional comment: the authors note that heterozygosity increases early in the experiment, and discuss various possible explanations for this. But couldn't directional selection on rare alleles be the driver of this, i.e. early on there will be a rise in allele frequencies, increasing diversity, and then subsequently a loss due to fixations?
 
 \response{This is a good point and we have added this to the text.}
 
 \section*{Reviews}
-\subsection*{Reviewer 1}
+\subsection{Reviewer 1}
 I really enjoyed reading this manuscript.  I think this is a well done study 
 that provides novel insight in to basic processes in breeding of maize.  Many of 
 these results have implications for other species as well.  I have a number of 
@@ -96,7 +96,7 @@ The abstract could use some editing.  There are a number of references in this
 abstract and the abstract is not well focused on the specific findings of this 
 study.  
 
-\response{\blah}
+\response{The abstract has been extensivley edited to better reflect our findings, and references in the abstract have been removed.}
 
 In the introduction the authors describe the concept of heterotic groups and state that these lines maximize performance and heterosis when crossed.  I would caution that this should be clarified to heterosis for yield rather than for all traits. Research by other groups (ie Flint-Garcia et al 2009) suggests that heterosis can vary for different traits and that the definition of heterotic groups is primarily based on yield heterosis, not heterosis for other traits.  
 
@@ -110,11 +110,11 @@ hesitate to even make this suggestion (do to potential flaws) but it might be ap
 
 I was quite intrigued by the difference in distance between cycles 4 and then 8-16.  The authors suggest that this could be due to some differences in genetic maintenance of the populations.  I am curious if there were any particular environmental influences during that time period that may have led to stronger selection or if there were any differences in agronomic practices that have occurred during the long-term experiment (ie irrigation, fertilization, plant density, etc).  it would be helpful to know if any of these factors may have contributed.
 
-\response{\jri{Jode? Justin? I don't have the answer here, but suspect it is ``no''}}
+\response{The major difference is the change to 20 (instead of 10) lines at cycle 8. Machine harvest was introduced at cycle 6, but we have no reason to believe this would have dramatically changed diversity patterns. From our reading of the literature and consultation with breeders who have run the experiment we are not aware of any other significant changes. }
 
 It was a bit surprising to me that there was no differentiation among the founder inbreds of the two populations.  If PCA was run only on the founders (without any other lines) do you get separation of the two groups or not?
 
-\response{\jri{Justin, have you done this? Easy to do?}}
+\response{PCA of just the founder lines does not show differentiation corresponding to the two populations. \jri{Justin, can you do this quick and dirty to confirm?}}
 
 Figure 3 is quite useful and helps to show large physical regions that have lost heterozygosity.  The authors discuss the physical-genetic difference.  It would be useful to have a supplemental figure that shows these same values (cycle 16 heterozygosity on y-axis) versus genetic position on x-axis.  I am curious if there are ever regions of multiple cM on chromosome arms that become fixed.  This would be a nice complementary figure.  These are provided for some chromosomes in 4B and 5B but would be useful to see genome wide.  
 
@@ -122,7 +122,7 @@ Figure 3 is quite useful and helps to show large physical regions that have lost
 
 The large regions of fixation are quite intriguing.  Is there any evidence for major flowering time or disease resistance QTL in these regions?
 
-\response{\jri{Justin, any ideas? Do we do some formal correspondence with NAM results? Or say ``geez this is hard because QTL are big and we're not sure we'd believe the results?''}
+\response{\jri{Justin, any ideas? Do we do some formal correspondence with NAM results? Or say ``geez this is hard because QTL are big and we're not sure we'd believe the results?''}}
 
 I am somewhat baffled as to why the Fig S1 was put in supplemental materials.  A central aspect of this study is this issue of genetic drift relative to selection and there are two pages of results text for this section.  However, this useful figure is only in supplemental materials.  I would strongly encourage moving this figure to the actual manuscript.  If space is an issue then only use figu 4 or fig 5 as these are quite redundant with each other in terms of conceptual views. 
 The legend to fig S1 could use additional detail.  I am guessing that the black lines are 95\% CI but this is not clear.  Please explain the black lines.
@@ -162,7 +162,7 @@ might be slightly different.
 
 \response{This is an excellent point.  We currently have experiments underway to test preciesly this point using selfed progeny of both landrace and teosinte populations. We have added discussion of this point to the text.}
 
-\subsection*{Reviewer 2}
+\subsection{Reviewer 2}
 Girke et al. in ``The genomic impacts of drift and selection for hybrid performance in maize'' report a retrospective examination of genomic patterns of diversity in a maize experimental population. The data set consists of genotyping of ~38,000 SNPs genotyped in individuals from various phases of the selection experiment. While the manuscript consists primarily of population genetic analysis, the authors attempted 
 to better integrate a popular maize genetic map with the current reference genome.
 
@@ -188,7 +188,7 @@ The other major weakness of the paper is that relatively little background on th
 is provided. There is a long list of citations of prior work on this experimental population, but little 
 exposition.
 
-\response{\jri{Jode?}}
+\response{\jri{Justin? Jode?}}
 
 A better presentation of the specific target of selection is needed (I infer that selection is on 
 improved yield through increased hybrid performance). Ultimately in the Discussion, there is additional 
@@ -205,11 +205,11 @@ citations of personal communication (p 17 and 19), where ideas about loss of div
 replication of experimental populations have been reported in the primary literature. See Drosophila papers 
 by Tom Turner and Anthony Long and colleagues.
 
-\response{\blah}
+\response{This was an oversight on our part; we have now incorporated citation to some of this literature and hopefully clarified the discussion.}
 
 Finally, the Discussion seems a bit overly long and could potentially be more tightly written.
 
-\response{\blah}
+\response{We have endeavored to streamline the discussion where possible while incorporating additional citations (as above) and discussion of load as mentioend by reviewer 1.}
 
 Minor points: 
 - Careful copy editing is needed. Heterozygsoity in the figures and figure captions is referred to variously 
@@ -241,7 +241,7 @@ Figure 2 caption: What is “H combined” and how was it calculated?
 
 Figure 4 and 5: Please include the simulated data (mean + variance) so the pattern is more apparent.
 
-\response{\blah}
+\response{We were unable to devise a means of adding simulated data to the plot in the new Figure 4 without substantially obfuscating the main points of the figure.  We have however marked individual regions which have lower heterozygosity than seen in our simulations.}
 
 Figures could be better labeled, for example, simply label panels A \& B of Figure 4  as "Genetic Map and 
 "Physical Map" and the cycles as "Cycle."
