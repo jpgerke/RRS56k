@@ -32,19 +32,19 @@ simresults = read.table("../data/2cm_sim_collated_results.txt", header=T)
   
   sigregions001 = filter(simresults, Sigat001 == "BSSS" | Sigat001 == "Both") %>% filter(LG==Chrom)
   sigregions0025 = filter(simresults, Sigat0025 == "BSSS" | Sigat0025 == "Both") %>% filter(LG==Chrom)
-	sigat001rect_phys <-  geom_rect(data=sigregions001, aes(xmin=phystart/1000000, xmax=phystop/1000000, ymin=0, ymax=0.5), fill="lightskyblue1") 
-	sigat0025rect_phys <- geom_rect(data=sigregions0025, aes(xmin=phystart/1000000, xmax=phystop/1000000, ymin=0, ymax=0.5), fill="lightskyblue") 
+	sigat001rect_phys <-  geom_rect(data=sigregions001, aes(xmin=phystart/1000000, xmax=phystop/1000000, ymin=0, ymax=0.5), fill="lightskyblue") 
+#	sigat0025rect_phys <- geom_rect(data=sigregions0025, aes(xmin=phystart/1000000, xmax=phystop/1000000, ymin=0, ymax=0.5), fill="lightskyblue") 
 	Hplot_phys <- geom_point(size = 1, data=Hdata, aes(x=physpos/1000000, y=HetSS, colour=sqrt(rate^(1/4)))) 
-	myphysplot=ggplot(data=Hdata) + facet_grid(Cycle~.) + sigat001rect_phys + sigat0025rect_phys + Hplot_phys  + xlab("Position(Mb)")+ ylab("Heterozygosity") + scale_colour_gradient2(low="red", mid="orange", high="yellow", midpoint=median(Hdata$rate^(1/4))) + theme_bw() + ggtitle("BSSS, Chromosome 9")
+	myphysplot=ggplot(data=Hdata) + facet_grid(Cycle~.) + sigat001rect_phys + Hplot_phys  + xlab("Position(Mb)")+ ylab("Heterozygosity") + scale_colour_gradient2(low="red", mid="orange", high="yellow", midpoint=median(Hdata$rate^(1/4))) + theme_bw() + ggtitle("BSSS, Chromosome 9")
 
   axesopts = theme(axis.text.y=element_text(size=6), axis.text.x=element_text(size=6), axis.title.y=element_text(size=8, angle=90), axis.title.x=element_text(size=8))
 
   myphysplot = myphysplot + axesopts + theme(legend.position="None")  #+ ggtitle(mytitle)
 
-  simdata1rect_gen <-  geom_rect(data=sigregions001, aes(xmin=genstart, xmax=genstop, ymin=0, ymax=0.5), fill="lightskyblue1") 
-  simdata2rect_gen <- geom_rect(data=sigregions0025, aes(xmin=genstart, xmax=genstop, ymin=0, ymax=0.5), fill="lightskyblue") 
+  simdata1rect_gen <-  geom_rect(data=sigregions001, aes(xmin=genstart, xmax=genstop, ymin=0, ymax=0.5), fill="lightskyblue") 
+ # simdata2rect_gen <- geom_rect(data=sigregions0025, aes(xmin=genstart, xmax=genstop, ymin=0, ymax=0.5), fill="lightskyblue") 
   Hplot_gen <- geom_point(size = 1, data=Hdata, aes(x=genpos, y=HetSS, colour=sqrt(rate^(1/4)))) 
-  mygenplot=ggplot(data=Hdata) + facet_grid(Cycle~.) + simdata1rect_gen + simdata2rect_gen + Hplot_gen + xlab("Position(cM)")+ ylab("Heterozygosity") + scale_colour_gradient2(low="red", mid="orange", high="yellow", midpoint=median(Hdata$rate^(1/4))) + theme_bw() #+ ggtitle("BSSS Chromosome 9")
+  mygenplot=ggplot(data=Hdata) + facet_grid(Cycle~.) + simdata1rect_gen  + Hplot_gen + xlab("Position(cM)")+ ylab("Heterozygosity") + scale_colour_gradient2(low="red", mid="orange", high="yellow", midpoint=median(Hdata$rate^(1/4))) + theme_bw() #+ ggtitle("BSSS Chromosome 9")
   
   mygenplot = mygenplot + axesopts + theme(legend.position="None")
   
@@ -71,19 +71,19 @@ mytitle = paste("Chromosome ", Chrom, ", ", Hetgrp, sep="" )
 
 sigregions001 = filter(simresults, Sigat001 == "BSCB" | Sigat001 == "Both") %>% filter(LG==Chrom)
 sigregions0025 = filter(simresults, Sigat0025 == "BSCB" | Sigat0025 == "Both") %>% filter(LG==Chrom)
-sigat001rect_phys <-  geom_rect(data=sigregions001, aes(xmin=phystart/1000000, xmax=phystop/1000000, ymin=0, ymax=0.5), fill="lightskyblue1") 
-sigat0025rect_phys <- geom_rect(data=sigregions0025, aes(xmin=phystart/1000000, xmax=phystop/1000000, ymin=0, ymax=0.5), fill="lightskyblue") 
+sigat001rect_phys <-  geom_rect(data=sigregions001, aes(xmin=phystart/1000000, xmax=phystop/1000000, ymin=0, ymax=0.5), fill="lightskyblue") 
+#sigat0025rect_phys <- geom_rect(data=sigregions0025, aes(xmin=phystart/1000000, xmax=phystop/1000000, ymin=0, ymax=0.5), fill="lightskyblue") 
 Hplot_phys <- geom_point(size = 1, data=Hdata, aes(x=physpos/1000000, y=HetNSS, colour=sqrt(rate^(1/4)))) 
-myphysplot=ggplot(data=Hdata) + facet_grid(Cycle~.) + sigat001rect_phys + sigat0025rect_phys + Hplot_phys + xlab("Position(Mb)")+ ylab("Heterozygosity") + scale_colour_gradient2(low="red", mid="orange", high="yellow", midpoint=median(Hdata$rate^(1/4))) + theme_bw() + ggtitle("BSCB1, Chromosome 4")
+myphysplot=ggplot(data=Hdata) + facet_grid(Cycle~.) + sigat001rect_phys + Hplot_phys + xlab("Position(Mb)")+ ylab("Heterozygosity") + scale_colour_gradient2(low="red", mid="orange", high="yellow", midpoint=median(Hdata$rate^(1/4))) + theme_bw() + ggtitle("BSCB1, Chromosome 4")
 
 axesopts = theme(axis.text.y=element_text(size=6), axis.text.x=element_text(size=6), axis.title.y=element_text(size=8, angle=90), axis.title.x=element_text(size=8))
 
 myphysplot = myphysplot + axesopts + theme(legend.position="None")  #+ ggtitle(mytitle)
 
-simdata1rect_gen <-  geom_rect(data=sigregions001, aes(xmin=genstart, xmax=genstop, ymin=0, ymax=0.5), fill="lightskyblue1") 
-simdata2rect_gen <- geom_rect(data=sigregions0025, aes(xmin=genstart, xmax=genstop, ymin=0, ymax=0.5), fill="lightskyblue") 
+simdata1rect_gen <-  geom_rect(data=sigregions001, aes(xmin=genstart, xmax=genstop, ymin=0, ymax=0.5), fill="lightskyblue") 
+#simdata2rect_gen <- geom_rect(data=sigregions0025, aes(xmin=genstart, xmax=genstop, ymin=0, ymax=0.5), fill="lightskyblue") 
 Hplot_gen <- geom_point(size = 1, data=Hdata, aes(x=genpos, y=HetNSS, colour=sqrt(rate^(1/4)))) 
-mygenplot=ggplot(data=Hdata) + facet_grid(Cycle~.) + simdata1rect_gen + simdata2rect_gen + Hplot_gen  + xlab("Position(cM)")+ ylab("Heterozygosity") + scale_colour_gradient2(low="red", mid="orange", high="yellow", midpoint=median(Hdata$rate^(1/4))) + theme_bw()#+ ggtitle("BSCB1 Chromosome 4")n 
+mygenplot=ggplot(data=Hdata) + facet_grid(Cycle~.) + simdata1rect_gen + Hplot_gen  + xlab("Position(cM)")+ ylab("Heterozygosity") + scale_colour_gradient2(low="red", mid="orange", high="yellow", midpoint=median(Hdata$rate^(1/4))) + theme_bw()#+ ggtitle("BSCB1 Chromosome 4")n 
 
 mygenplot = mygenplot + axesopts + theme(legend.position="None")
 
