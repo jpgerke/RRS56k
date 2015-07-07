@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \usepackage{multirow}
 \usepackage{amsmath}
+\usepackage{capt-of}
 
 \addtolength{\oddsidemargin}{-.2cm}
 \addtolength{\evensidemargin}{-1.2cm}
@@ -15,6 +16,10 @@
 \addtolength{\topmargin}{-2cm}
 \addtolength{\textheight}{3.5cm}
 
+\newcommand\Image[3][]{%
+  \tabular[b]{@{}c@{}}\includegraphics[#1]{#2}\\
+    #3
+  \endtabular}
 \renewcommand{\textfraction}{0.01}
 \renewcommand{\topfraction}{0.99}
 \renewcommand{\bottomfraction}{0.65}
@@ -320,10 +325,10 @@ These regions represent blocks of linked loci that show no evidence of recombina
 \begin{figure*}[tb]   
   \begin{center}
   % \vspace{-0mm}
-   \includegraphics[width=0.8\linewidth]{Fig4/fig4_combined}
+   \includegraphics[width=0.8\linewidth]{Fig4/chrom4_combined}
  %  \renewcommand{\baselinestretch}{0.9}
  %  \vspace{-3mm}
-   \caption{\rev{Heterozygosity} in each cycle across chromosome 4 of the BSSS (left) and  BSCB1 (right) plotted on the physical (top) and genetic (bottom) map. \rev{Each panel consists of five plots representing cycles 0,4,8,12, and 16 of the experiment.} \rev{Heterozygosity} is calculated on 15-marker sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). Shaded regions represent 2 cM windows found to have heterozygosity values significantly lower than expected by simulation at a given cycle. Light shading denotes significance at $P<0.0025$, whereas the darker shading represents significance at $P<0.001$. Comparing the physical and genetic maps reveals that the regions of fixation are extremely small genetically, but some contain much of the physical content of the chromosome.
+   \caption{\rev{Heterozygosity} in each cycle across chromosome 4 of the BSSS (left) and  BSCB1 (right) plotted on the physical (top) and genetic (bottom) map. \rev{Each panel consists of five plots representing cycles 0,4,8,12, and 16 of the experiment. Heterozygosity} is calculated on 15-marker sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). Shaded regions represent 2 cM windows with heterozygosity values significantly lower than expected by simulation at a given cycle. \rev{Light and darker shading denotes significance at $P<0.0025$ and $P<0.001$, respectively. Plots for other chromosomes are shown in in Figure \ref{fig:others2}}. Comparing the physical and genetic maps reveals that the regions of fixation are extremely small genetically, but some contain much of the physical content of the chromosome.
 } 
 \vspace{-6mm}
     \label{fig:genphys}
