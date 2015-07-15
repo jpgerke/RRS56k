@@ -1,4 +1,6 @@
 *.blg
+.Rhistory
+/data
 *.out
 *.synctex.gz
 *.bbl
@@ -9,3 +11,4 @@ TSW*
 *.RData
 /Fig1/data
 /Fig3/data
+/dataforupload
