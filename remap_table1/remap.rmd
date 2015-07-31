@@ -1,0 +1,105 @@
+---
+output: 
+  html_document: 
+    highlight: tango
+    theme: cosmo
+---
+#Mapping the fixed haplotype regions to genetic coordinates.
+
+```{r loadup, message=FALSE, warning=FALSE}
+rm(list=ls())
+library(dplyr)
+snps = load("../data/new_full_set.RData")
+
+#turn the dataset object into a dataframe
+df <- data.frame(Chrom = new_full_set$LG,
+                 Position = new_full_set$position,
+                 Name = as.character(new_full_set$markernames),
+                 Code = as.character(new_full_set$markercodes),
+                 Gen = new_full_set$F2map,
+                 stringsAsFactors = F)
+```
+##BSSS3.1
+```{r}
+chr3 = filter(df, Chrom==3)
+head(chr3[order(abs(67.7e6-chr3$Position)),])
+```
+###Starting cM: 53.6 
+```{r}
+head(chr3[order(abs(chr3$Position-123e6)),], n=10)
+```
+###Ending cM:  55.3
+
+##BSSS3.2
+```{r}
+head(chr3[order(abs(129.2e6-chr3$Position)),])
+```
+###Starting cM: 57.3
+```{r}
+head(chr3[order(abs(157.1e6-chr3$Position)),], n=10)
+```
+###Ending cM: 64.8
+
+##BSSS4
+```{r}
+chr4 = filter(df, Chrom==4)
+head(chr4[order(abs(39.9e6-chr4$Position)),],n=10)
+```
+###Starting cM: 52.8
+```{r}
+head(chr4[order(abs(82.7e6-chr4$Position)),],n=10)
+```
+###Ending cM: 55.6
+
+##BSSS9.1
+```{r}
+chr9 = filter(df, Chrom==9)
+head(chr9[order(abs(20.8e6-chr9$Position)),],n=10)
+```
+###Starting cM: 41.1
+```{r}
+head(chr9[order(abs(26.6e6-chr9$Position)),],n=10)
+```
+###Ending cM: 44.8
+
+##BSSS9.2
+```{r}
+head(chr9[order(abs(30.8e6-chr9$Position)),],n=10)
+```
+###Starting cM: 45.7
+```{r}
+head(chr9[order(abs(90.4e6-chr9$Position)),],n=10)
+```
+###Ending cM: 47.5
+
+#BSCB2
+```{r}
+chr2 = filter(df, Chrom==2)
+head(chr2[order(abs(80.6e6-chr2$Position)),],n=10)
+```
+###Starting cM: 67
+```{r}
+head(chr2[order(abs(114.5e6-chr2$Position)),],n=10)
+```
+###Ending cM: 67.5
+
+#BSCB4
+```{r}
+head(chr4[order(abs(82.7e6-chr4$Position)),],n=10)
+```
+###Starting cM: 55.6
+```{r}
+head(chr4[order(abs(140e6-chr4$Position)),],n=10)
+```
+###Ending cM: 57
+
+##BSCB8
+```{r}
+chr8= filter(df, Chrom==8)
+head(chr8[order(abs(125.1e6-chr8$Position)),],n=10)
+```
+###Starting cM: 61.5
+```{r}
+head(chr8[order(abs(145.6e6-chr8$Position)),],n=10)
+```
+###Ending cM: 67.7
