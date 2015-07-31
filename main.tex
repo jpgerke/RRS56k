@@ -9,6 +9,7 @@
 \usepackage{multirow}
 \usepackage{amsmath}
 \usepackage{capt-of}
+\usepackage{threeparttable}
 
 \addtolength{\oddsidemargin}{-.2cm}
 \addtolength{\evensidemargin}{-1.2cm}
@@ -337,30 +338,33 @@ These regions represent blocks of linked loci that show no evidence of recombina
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE	
 
 
-
-
 \begin{table*}[t]
 \caption{Ancestry of haplotypes fixed in the cycle 16 population.}
 \fontsize{10}{12}\sf
 \centering
+   \begin{threeparttable}
+
 \label{tab:fix}
 \begin{tabular}{llllll}
 Population &	 Chr.& Interval (cM) & Interval (Mb) &	Founder & Derived Lines \\
 BSSS       & 3          & 53.6-55.3            & 67.7-123              & CI187-2        & B94                               \\
-BSSS       & 3          & 57.3-64.8              & 129.2-157.1           & NDa            & B89, B94                          \\
+BSSS       & 3          & 57.3-64.8              & 129.2-157.1           & ND\tnote{\emph{a}}           & B89, B94                          \\
 BSSS       & 4          & 52.8-55.6            & 39.9-82.7             & CI187-2        & B89, B94, B67, B72, B39, B43      \\
-BSSS       & 9          & 41.1-44.8            & 20.8-26.6             & Oh7b           & B89, B94, B43, B17, B72, B84, B67 \\
-BSSS       & 9          & 45.7-47.5c           & 30.8-90.4c            & Os420          & B89, B94                          \\
+BSSS       & 9          & 41.1-44.8            & 20.8-26.6             & Oh7\tnote{\emph{b}}           & B89, B94, B43, B17, B72, B84, B67 \\
+BSSS       & 9          & 45.7-47.5\tnote{\emph{c}}           & 30.8-90.4             & Os420          & B89, B94                          \\
 BSCB1      & 2          & 67-67.5            & 80.6-114.5            & CC5            & B90, B91, B95, B97, B99           \\
-BSCB1      & 4          & 55.6-57            & 82.7-140              & NDa            & B90, B95, B97                     \\
+BSCB1      & 4          & 55.6-57            & 82.7-140              & ND\tnote{\emph{a}}            & B90, B95, B97                     \\
 BSCB1      & 8          & 61.5-67.7            & 125.1-145.6           & P8             & B90, B97, B91, B99, B54           \\\hline 
 \end{tabular}
+   \begin{tablenotes}
+      \footnotesize
+      \item[\emph{a}]{ND = Not Determined (Either a recombinant haplotype or originates from an un-genotyped founder)}
+      \item[\emph{b}]{Although Oh7 is a BSCB1 founder, it is a descendant of CI.540, an un-genotyped BSSS founder. BSSS segments matching Oh7 presumably derive from CI.540}            
+      \item[\emph{c}]{Founders Ind\_B2 (BSSS), CI187-2 (BSSS), R4 (BSCB1), and I205 (BSCB1) are all IBD at this region of chromosome 9}
+   \end{tablenotes}
+\end{threeparttable}
 \end{table*}
-%a ND = Not Determined (Either a recombinant haplotype or originates from an un-genotyped founder)
-%
-%b Although Oh7 is a BSCB1 founder, it is a descendant of CI.540, an un-genotyped BSSS founder. BSSS segments matching Oh7 presumably derive from CI.540
-%
-%c  Founders Ind_B2 (BSSS), CI187-2 (BSSS), R4 (BSCB1), and I205 (BSCB1) are all IBD at this region of chromosome 9
+
 
 \subsection*{The role of genetic drift}
 There is clear evidence of phenotypic improvement in response to selection in the Iowa RRS populations (Smith, 1983; Keeratinijakal and Lamkey, 1993; Schnicker and Lamkey, 1993; Holthaus and Lamkey, 1995; Brekke et al., 2011a; Brekke et al., 2011b; Edwards, 2011) and large changes in genetic structure indicated by molecular markers. 
@@ -378,8 +382,6 @@ We conducted 10,000 simulations, \rev{modeling recombination using the IBM genet
 Averaged across the genome, the vast majority of the reduction in diversity observed in both populations can be attributed to genetic drift. 
 Nonetheless, we do observe \rev{differences from values generated under our neutral simulations} (Figure \ref{fig:compare_to_sims}). 
 The observed data show higher than expected heterozygosity at cycle 4, \rev{which could be explained by several factors, including differences between simulated and actual breeding practices, under-sampling of diversity in cycle 0, selection acting to increase the frequency of initially rare haplotypes, or even selection acting to maintain heterozygosity \citep[e.g.][]{McMullen2009,Gore2009a} } \jri{where is this excess of diversity? if it's all pericentromeric can we argue for the first hypothesis?}
-
-
 
 As the cycles progress, heterozygosity falls more rapidly than expected in both populations, and the observed values at cycle 16 are significantly lower than the simulated data.  
 Simulations across a number of different marker densities were consistent with this result (data not shown). 
