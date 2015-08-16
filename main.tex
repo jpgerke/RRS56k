@@ -10,6 +10,7 @@
 \usepackage{amsmath}
 \usepackage{capt-of}
 \usepackage{threeparttable}
+
 \usepackage[colorinlistoftodos]{todonotes} % comments in margins
 \definecolor{flame}{rgb}{0.89, 0.35, 0.13}
 \setlength{\marginparwidth}{1.5cm}
@@ -17,7 +18,6 @@
 \definecolor{gerkegreen} {rgb} {0,0.6,0}
 \newcommand{\jpg}[1]{\todo[size=\scriptsize, color=gerkegreen]{#1}}
 \newcommand{\rev}[1]{\textcolor{blue}{\bf #1}}
-
 
 \addtolength{\oddsidemargin}{-.2cm}
 \addtolength{\evensidemargin}{-1.2cm}
@@ -142,7 +142,7 @@ The Iowa RRS experiment proves especially relevant because lines derived from th
 \section*{Methods}
 \subsection*{The BSSS and BSCB1 recurrent selection program}
 The Iowa RRS experiment began with founder inbred lines (Table S1) that were randomly mated to create the BSSS and BSCB1 ‘cycle 0’ base populations. 
-Each group was then recurrently selected for improved combining ability with the other group \citep{penny1971twenty,  keeratinijakal1993responses}. 
+Each group was then recurrently selected for improved combining ability with the other group \citep{penny1971twenty, keeratinijakal1993responses}. 
 Initially approximately 200-250 starting ‘S0’ plants within each population were simultaneously self-fertilized to generate ‘S1’ lines and crossed to a random sample (4-6) of plants from the other population to generate testcross seed. 
 The material was evaluated for highly heritable traits including standability, disease resistance and ear rot resistance in the nursery at the time the testcross seed was made, and 100 testcrosses were then grown in replicated field trials and evaluated for grain yield, grain moisture, and standability.  
 S1 seed of 10 selected families within each population were randomly mated to create a new ‘cycle n+1’ population. 
@@ -215,13 +215,7 @@ Analyses of several hypothetical F1’s from different cycles of selection revea
 Therefore the phased genotypes of cycle 0 plants were used as the starting data for simulations (see below).
 
 \subsection*{Diversity and principal component analysis}
-Heterozygosity (H) was measured as:
-	
-\begin{align*}
-H = 2p(1-p)
-\end{align*}
-
-where $p$ and $(1-p)$ are the frequencies of the two SNP alleles. 
+Heterozygosity (H) was measured as $H = 2p(1-p)$, where $p$ and $(1-p)$ are the frequencies of the two SNP alleles. 
 $F_{ST}$ \citep{hudson1992statistical} was calculated using the HBKpermute program in the analysis package (\url{https://github.com/molpopgen/analysis}) of the software library libsequence \citep{thornton2003libsequence}. 
 All results were plotted using the R package ggplot2 \citep{wickham2009ggplot2}. 
 We conducted PCA by singular value decomposition, as described in \cite{mcvean2009genealogical}. 
@@ -252,7 +246,7 @@ Founder inbreds and samples from cycles 0, 4, 8, 12, and 16 were genotyped at 39
 Change in population structure throughout the Iowa RRS experiment can be observed visually by a principal component analysis (PCA). 
 A joint analysis of individuals from all the selection cycles (Figure \ref{fig:pca}) clearly separates the BSSS and BSCB1 populations along the first axis of variation, with increasing separation as the experiment progressed. 
 The second axis of variation primarily separates the cycles from one another within each population. 
-There is no separation between the founders of the two populations, \rev{and projection of later cycles onto a PCA of the founders shows no distinction between BSSS and BSCB1.
+There is no separation between the founders of the two populations, \rev{and projection of later cycles onto a PCA of the founders shows no distinction between BSSS and BSCB1 (Figure \ref{fig:sfounders}).
 At cycle 0, however,} the BSSS population shows more divergence from the founders than does BSCB1. 
 This could be due to drift during either the population’s construction or subsequent maintenance. 
 Structure continued to develop within each population over the course of the experiment. 
@@ -469,8 +463,8 @@ In the case of individual breeding programs, genome-wide genotyping such as we c
 We thank Oscar ``Howie'' Smith and members of the Ross-Ibarra lab for comments on earlier versions of the manuscript. J.P.G received support for this research as a Merck Fellow of the Life Sciences Research Foundation. This research was supported by the National Science Foundation (IOS-0820619) and funds provided to USDA-ARS (MDM). Names of products are necessary to report factually on available data: however, neither the USDA, nor any other participating institution guarantees or warrants the standard of the product and the use of the name does not imply approval of the product to the exclusion of others that may also be suitable.
 \end{acknowledgments}
 
-\bibliography{references}
 \bibliographystyle{geneticsT2}
+\bibliography{references.bib}
 
 \suppl
 \input{sup1} 
