@@ -10,6 +10,15 @@
 \usepackage{amsmath}
 \usepackage{capt-of}
 \usepackage{threeparttable}
+\usepackage[colorinlistoftodos]{todonotes} % comments in margins
+\definecolor{flame}{rgb}{0.89, 0.35, 0.13}
+
+\setlength{\marginparwidth}{1.5cm}
+\newcommand{\jri}[1]{\todo[size=\scriptsize, color=flame]{#1}}
+\definecolor{gerkegreen} {rgb} {0,0.6,0}
+\newcommand{\jpg}[1]{\todo[size=\scriptsize, color=gerkegreen]{#1}}
+\newcommand{\rev}[1]{\textcolor{blue}{\bf #1}}
+
 
 \addtolength{\oddsidemargin}{-.2cm}
 \addtolength{\evensidemargin}{-1.2cm}
@@ -48,14 +57,6 @@
 \fancypagestyle{plain}{
 	\fancyhf{}
 }
-
-%editing commands (please leave in for now)
-\newcommand{\jri}[1]{\textcolor{red}{ \emph{\scriptsize  #1}} }
-\definecolor{gerkegreen} {rgb} {0,0.6,0}
-\newcommand{\jpg}[1]{\textcolor{gerkegreen}{ \em{\scriptsize  #1}} }
-
-
-\newcommand{\rev}[1]{\textcolor{blue}{\bf #1}}
 
 \usepackage[normalem]{ulem}
 \def\dt{\bgroup
@@ -375,12 +376,12 @@ We conducted 10,000 simulations, \rev{modeling recombination using the IBM genet
 
 \begin{figure*}[tb]   
    \includegraphics[width=0.7\linewidth]{Fig_S1_combined.pdf}
-   \caption{Heterozygosity in each population, observed vs. simulated data. Heterozygosity was calculated as the average across all markers genome-wide  in the BSSS (A)  and BSCB1 (B) populations. The observed data is marked by the red line, the simulations by gray dots, and the median of the simulations by a green dot. \rev{Black lines represent the 95\% quantiles of the simulated data.} \jri{is that interpretation of the black lines correct?}} 
+   \caption{Heterozygosity in each population, observed vs. simulated data. Heterozygosity was calculated as the average across all markers genome-wide  in the BSSS (A)  and BSCB1 (B) populations. The observed data is marked by the red line, the simulations by gray dots, and the median of the simulations by a green dot. \rev{Black lines represent the 95\% quantiles of the simulated data.} } 
     \label{fig:compare_to_sims}
 \end{figure*}
 
 Averaged across the genome, the vast majority of the reduction in diversity observed in both populations can be attributed to genetic drift. 
-Nonetheless, we do observe \rev{differences from values generated under our neutral simulations} (Figure \ref{fig:compare_to_sims}). 
+Nonetheless, we do observe \rev{differences from values generated under our neutral simulations} (Figure \ref{fig:compare_to_sims})\jri{is my interpretation of the black lines in figure correct?}. 
 The observed data show higher than expected heterozygosity at cycle 4, \rev{which could be explained by several factors, including differences between simulated and actual breeding practices, under-sampling of diversity in cycle 0, selection acting to increase the frequency of initially rare haplotypes, or even selection acting to maintain heterozygosity \citep[e.g.][]{McMullen2009,Gore2009a} } \jri{where is this excess of diversity? if it's all pericentromeric can we argue for the first hypothesis?}
 
 As the cycles progress, heterozygosity falls more rapidly than expected in both populations, and the observed values at cycle 16 are significantly lower than the simulated data.  
