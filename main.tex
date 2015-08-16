@@ -12,7 +12,6 @@
 \usepackage{threeparttable}
 \usepackage[colorinlistoftodos]{todonotes} % comments in margins
 \definecolor{flame}{rgb}{0.89, 0.35, 0.13}
-
 \setlength{\marginparwidth}{1.5cm}
 \newcommand{\jri}[1]{\todo[size=\scriptsize, color=flame]{#1}}
 \definecolor{gerkegreen} {rgb} {0,0.6,0}
@@ -174,7 +173,7 @@ In addition, BSCB1 plant 31 from cycle 4 appeared switched with plant 31 from cy
 To avoid structure among the missing data, we removed any SNP that was coded as missing in more than 3 plants in either group of founders or any group of plants from a particular cycle and population. 
 Preliminary analysis by PCA and heatmap plots of distance matrices revealed two additional likely mix-ups. 
 Plant 23 from BSSS cycle 8 was a clear outlier from the BSSS population as a whole and plant 2 from BSSS cycle 0 is likely a mislabeled plant from cycle 16. Since there was no evidence suggesting when mis-labelings occurred, each of these plants was removed from the analysis.
-\rev{The final genotyping data set is available at \jri{Justin, please send me this and I can put online}.}
+\rev{The final genotyping data set is available at .} \jri{Justin, please send me this and I can put online}
 	
 \subsection*{Integrating the genetic and physical map}
 The interpretation of our results depends upon a genetic and physical map that is as accurate as possible. 
@@ -253,7 +252,8 @@ Founder inbreds and samples from cycles 0, 4, 8, 12, and 16 were genotyped at 39
 Change in population structure throughout the Iowa RRS experiment can be observed visually by a principal component analysis (PCA). 
 A joint analysis of individuals from all the selection cycles (Figure \ref{fig:pca}) clearly separates the BSSS and BSCB1 populations along the first axis of variation, with increasing separation as the experiment progressed. 
 The second axis of variation primarily separates the cycles from one another within each population. 
-There is no separation between the founders of the two populations, but at cycle 0, the BSSS population shows more divergence from the founders than does BSCB1. 
+There is no separation between the founders of the two populations, \rev{and projection of later cycles onto a PCA of the founders shows no distinction between BSSS and BSCB1.
+At cycle 0, however,} the BSSS population shows more divergence from the founders than does BSCB1. 
 This could be due to drift during either the population’s construction or subsequent maintenance. 
 Structure continued to develop within each population over the course of the experiment. 
 There is an especially wide gap between cycles 4 and 8, which correlates with the addition of an extra generation of self-pollination prior to selection at each cycle. 
@@ -469,7 +469,7 @@ In the case of individual breeding programs, genome-wide genotyping such as we c
 We thank Oscar ``Howie'' Smith and members of the Ross-Ibarra lab for comments on earlier versions of the manuscript. J.P.G received support for this research as a Merck Fellow of the Life Sciences Research Foundation. This research was supported by the National Science Foundation (IOS-0820619) and funds provided to USDA-ARS (MDM). Names of products are necessary to report factually on available data: however, neither the USDA, nor any other participating institution guarantees or warrants the standard of the product and the use of the name does not imply approval of the product to the exclusion of others that may also be suitable.
 \end{acknowledgments}
 
-\bibliography{references.bib}
+\bibliography{references}
 \bibliographystyle{geneticsT2}
 
 \suppl

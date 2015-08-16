@@ -25,10 +25,14 @@
 \renewcommand{\labelitemi}{$-$}
 
 
-\newcommand{\jri}[1]{\textcolor{red}{ \emph{\scriptsize  #1}} }
-\newcommand{\jpg}[1]{\textcolor{magenta}{ \emph{\scriptsize  #1}} }
+\usepackage[colorinlistoftodos]{todonotes} % comments in margins
+\definecolor{flame}{rgb}{0.89, 0.35, 0.13}
+\setlength{\marginparwidth}{1.5cm}
+\newcommand{\jri}[1]{\todo[size=\scriptsize, color=flame]{#1}}
+\definecolor{gerkegreen} {rgb} {0,0.6,0}
+\newcommand{\jpg}[1]{\todo[size=\scriptsize, color=gerkegreen]{#1}}
+\newcommand{\rev}[1]{\textcolor{blue}{\bf #1}}
 \newcommand{\citex}[1]{\textcolor{red}{\bf #1}}
-\newcommand{\blah}{\textcolor{red}{\bf blah}}
 
 \renewcommand{\textfraction}{0.01}
 \renewcommand{\topfraction}{0.99}
@@ -115,17 +119,16 @@ I was quite intrigued by the difference in distance between cycles 4 and then 8-
 
 It was a bit surprising to me that there was no differentiation among the founder inbreds of the two populations.  If PCA was run only on the founders (without any other lines) do you get separation of the two groups or not?
 
-\response{PCA of just the founder lines does not show differentiation corresponding to the two populations. \jri{Justin, can you do this quick and dirty to confirm?}
-\jpg{Yep, I did it a while back. I don't still have the plot but there was clear structure along that axis.}}
+\response{Projections of all lines onto a PCA of the founders shows no differentiation corresponding to BSSS and BSCB1. }
 
 Figure 3 is quite useful and helps to show large physical regions that have lost heterozygosity.  The authors discuss the physical-genetic difference.  It would be useful to have a supplemental figure that shows these same values (cycle 16 heterozygosity on y-axis) versus genetic position on x-axis.  I am curious if there are ever regions of multiple cM on chromosome arms that become fixed.  This would be a nice complementary figure.  These are provided for some chromosomes in 4B and 5B but would be useful to see genome wide.  
 
-\response{Heterozygosity plotted on a genetic map was shown in the original supplemental figure 2 (which the reviewer pointed out we failed to reference).  We have switched this figure for the original figure 2. As shown in the new figure 3, there are a few regions on chromosome arms that have been fixed and span multiple cM. \jri{do we need to note this in the main text? is it an intesting observation, maybe implying rapid selection?}}
+\response{Heterozygosity plotted on a genetic map was shown in the original supplemental figure 2 (which the reviewer pointed out we failed to reference).  We have switched this figure for the original figure 2. As shown in the new figure 3, there are a few regions on chromosome arms that have been fixed and span multiple cM. \jri{do we need to note in the main text? an interesting observation, maybe implying rapid selection?}}
 
 The large regions of fixation are quite intriguing.  Is there any evidence for major flowering time or disease resistance QTL in these regions?
 
-\response{\jri{Justin, any ideas? Do we do some formal correspondence with NAM results? Or say ``geez this is hard because QTL are big and we're not sure we'd believe the results?''}
-\jpg{I'm sure we can find them, just due to the size of the regions, but I don't think it would tell us much. I would be in favor of adding some more to the discussion about how the pressure for synchronous flowering time may have driven a lot of what we see. That said I could dig through Wallace et al. to see what is there.  Thoughts?}}
+\response{\jri{Justin, any ideas? Do we do some formal correspondence with NAM results? }
+\jpg{I'm sure we can find them, due to the size of the regions, but won't tell us much. I would be in favor of adding some more to the discussion about how pressure for synchronous flowering time may have driven a lot of what we see. But I could dig through Wallace et al. to see what is there.  Thoughts?}}
 
 I am somewhat baffled as to why the Fig S1 was put in supplemental materials.  A central aspect of this study is this issue of genetic drift relative to selection and there are two pages of results text for this section.  However, this useful figure is only in supplemental materials.  I would strongly encourage moving this figure to the actual manuscript.  If space is an issue then only use figu 4 or fig 5 as these are quite redundant with each other in terms of conceptual views. 
 The legend to fig S1 could use additional detail.  I am guessing that the black lines are 95\% CI but this is not clear.  Please explain the black lines.
@@ -256,7 +259,7 @@ appeared to be mislabeled had their labels switched. However, later in the parag
 issue was discovered, and these individuals were removed from the analyses. What is the rationale behind 
 the differential treatment for these two labeling issues?
 
-\response{Four plants were found that appeared noticeably out of place on the PCA. For two of these we have insufficent evidence to know whether they were switched, mislabelled, contamination, etc. These were removed from the analysis.  The remaining two were clearly a label switch in which ``plant 31'' from cycle 4 was labelled as cycle 8 and ``plant 31'' from cycle 8 was labelled as cycle 4. Because the labels corresponded to the position swap seen in the PCA, we were confident in correcting the labels for these plants and kept them in the analysis. }
+\response{Four plants were found that appeared noticeably out of place on the PCA. For two of these we have insufficient evidence to know whether they were switched, mislabelled, contamination, etc. These were removed from the analysis.  The remaining two were clearly a label switch in which ``plant 31'' from cycle 4 was labelled as cycle 8 and ``plant 31'' from cycle 8 was labelled as cycle 4. Because the labels corresponded to the position swap seen in the PCA, we were confident in correcting the labels for these plants and kept them in the analysis. }
 
 For the integration of the physical and genetic maps, there are two concerns:
 1) Do the SNPs on the Maize 50K SNP chip already have reference positions? How were the SNP contextual 
