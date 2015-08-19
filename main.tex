@@ -135,7 +135,7 @@ Proposed by \citet{comstock1949breeding}, reciprocal recurrent selection is a pr
 In this method, the two populations are kept separate and lines from each population are selected based on the phenotype of their cross-population hybrids. 
 Selected lines within each population are then intermated to generate lines for the next cycle. 
 In this way, the two populations simultaneously evolve improved combining ability with one another. 
-The USDA-ARS at Ames, Iowa has conducted a reciprocal recurrent selection program (hereafter referred to as the Iowa RRS) with the Iowa Stiff Stalk Synthetic (BSSS) and Iowa Corn Borer Synthetic No. 1 (BSCB1) populations for 18 cycles of selection\citep{penny1971twenty}. 
+The USDA-ARS at Ames, Iowa has conducted a reciprocal recurrent selection program (hereafter referred to as the Iowa RRS) with the Iowa Stiff Stalk Synthetic (BSSS) and Iowa Corn Borer Synthetic No. 1 (BSCB1) populations for 18 cycles of selection \citep{penny1971twenty}. 
 This program represents one of the best-documented public experiments on selection for combining ability and hybrid performance. 
 Extensive records on population sizes, breeding methods, selection differentials, and seed are available for all cycles of selection. 
 This set of resources on a closed population selected for hybrid yield make the Iowa RRS an ideal test case for the study of the genomic impact of intensive hybrid breeding in maize.} 
@@ -145,13 +145,24 @@ The Iowa RRS experiment \rev{provides additional historical relevance} because l
 
 \section*{Methods}
 \subsection*{The BSSS and BSCB1 recurrent selection program}
-The Iowa RRS experiment began with founder inbred lines (Table S1) that were randomly mated to create the BSSS and BSCB1 ‘cycle 0’ base populations. 
-Each group was then recurrently selected for improved combining ability with the other group \citep{penny1971twenty, keeratinijakal1993responses}. 
-Initially approximately 200-250 starting ‘S0’ plants within each population were simultaneously self-fertilized to generate ‘S1’ lines and crossed to a random sample (4-6) of plants from the other population to generate testcross seed. 
-The material was evaluated for highly heritable traits including standability, disease resistance and ear rot resistance in the nursery at the time the testcross seed was made, and 100 testcrosses were then grown in replicated field trials and evaluated for grain yield, grain moisture, and standability.  
-S1 seed of 10 selected families within each population were randomly mated to create a new ‘cycle n+1’ population. 
-After cycle 4, the testcrosses were carried out on the S1 lines themselves rather than at S0, which leads to another round of selfing prior to the creation of the next cycle. Ten lines (out of 100) were selected and advanced to form the next cycle between cycles 1 and 8, and twenty lines were selected between cycles 9 and 16 \citep{keeratinijakal1993responses}. 
-Founder inbreds and samples from cycles 0, 4, 8, 12, and 16 were genotyped at 39,258 SNPs that passed a set of quality filters and could be assigned collinear genetic and physical map positions. 
+\rev{The Iowa RRS program was initiated in 1949 \citep{penny1971twenty}. 
+The BSSS population was formed from 16 inbred lines selected for stalk strength in 1933 and 1934 (Sprague, 1946) and the BSCB1 population was formed from a set of 12 inbred lines \citep{hallauer1974registration}.} 
+Founder lines (Table S1) from each population were randomly mated to create the `cycle 0' base population.
+\rev{Testcross progenies were formed by self-pollinating 100 individuals in each population and simultaneously crossing the same 100 individuals onto 10 plants (as females) in the reciprocal population (e.g., a BSSS plant was self-pollinated and crossed to 10 females in BSCB1).  
+Seed from the 10 females pollinated by a single male plant was bulked, and the 200 testcross progenies were grown in replicated multi-environment yield trials.  
+Ten testcross families were selected from among the BSSS males (crossed to BSCB1 as a tester) and BSCB1 males (crossed to BSSS as a tester) based primarily on grain yield.  
+Self-pollinated seed from the 10 selected males in each population were planted in the following season and plant-to-plant crosses made between each of the 45 possible pairs; seed from these crosses formed the cycle 1 populations.}
+
+\rev{Additional changes to this procedure occurred in later cycles \citep{penny1971twenty,keeratinijakal1993responses}.
+In cycles six through eight, individual S1 plants (progeny of one generation of self-pollination) were used as males instead of noninbred plants.  
+Beginning in cycle eight, the number of testcross progenies selected to form the next cycle of selection was doubled to 20.  
+Beginning in cycle 10, the method of producing testcross progenies for evaluation was changed to generate a single set of reciprocal full sib families between the populations rather than two sets of half-sib families. \jri{i have commented out a couple lines i think are too much detail. uncomment them if you think they are worth including.} %Specifically, progeny rows resulting from self-pollination of individuals within each population were planted in a breeding nursery.  
+%An individual S1 plant in BSSS was self-pollinated and crossed to four females in an S1-row of BSCB1 while a fifth plant in a BSCB1 row was also self-pollinated and crossed to four females in the S1-row of BSSS, resulting in reciprocal crossing of a BSSS S1-row and BSCB1 S1-row.  
+%Seed of eight females was bulked to form a single reciprocal hybrid.  
+This procedure has been continued to the present, with reciprocal hybrid testcross progeny derived from the cycle 18 population in 2014 and evaluated in 2015 for formation of cycle 19.  
+The phenotypes evaluated for selection have been consistent across all 19 cycles of selection: grain yield (dry matter yield of maize grain per acre) has been the most important, but selection was also applied for reduced moisture content at harvest and reduced root and stalk lodging.  
+A formal selection index was implemented beginning with cycle nine.  
+Plant densities have increased consistently across cycles of selection as the populations have become consistently better adapted to high plant density with continued selection \citep{brekke2011selection}.}
 
 \subsection*{Plants and inbred lines used}
 The plants and inbred lines used in this experiment are listed in Table S1. 
@@ -169,7 +180,7 @@ Genotypes were determined with the GenomeStudio v2010.2 software using the manuf
 \jri{this is an edit because url listed in pages doc no longer valid. correct that this is not a custom .egt file?}
 The design of the maize SNP50 Chip included a relatively small ascertainment panel of inbred lines, introducing a bias in the frequencies of SNPs included on the chip \citep{ganal2011a-large}. 
 However, because our simulations are based not on theoretical expectations but instead on sampling from the observed data at cycle 0, we expect ascertainment bias to have a minimal impact on our results. 
-The effect of this ascertainment bias was shown to be minimal in another study of North American germplasm \citep{van2012historical}. 
+%The effect of this ascertainment bias was shown to be minimal in another study of North American germplasm \citep{van2012historical}. 
 
 \rev{We called 48,919 SNPs} on the Illumina platform from the MaizeSNP50\_B.egt cluster file. Genotypes with quality scores of 50 or less were recoded as missing data. 
 Three plants were removed from the data due to an excess of missing data (the derived line B10, a cycle 0 plant from BSSS, and a cycle 8 plant from BSSS). 
