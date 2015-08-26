@@ -130,7 +130,7 @@ These studies have examined a broad spectrum of germplasm at various points in t
 Although selective sweeps remaining from domestication are clearly visible, the impact of selection during modern breeding appears comparatively small in terms of its impact on genomic diversity \citep{Hufford2012b,van2012historical}, despite steady, heritable improvement in phenotype \citep{duvick2005contribution}. 
 The lack of distinct selection signals \rev{in broad germplasm collections may be due to population-specific selection within germplasm subgroups; in this case selection should be easier to detect in populations maintained in an individual program.} This \rev{possibliity} is supported by the measured success in identifying targets of selection in individual experimental populations \rev{under directional selection for specific phenotypes such as seed size and ear number} \citep{hirsch2014insights, beissinger2014genome}. 
 
-\rev{In this study, we examine a different closed experiment whose phenotypic target and selection method --- reciprocal recurrent aelection --- closely mirrors methods used in the generation of modern maize hybrids \citep{comstock1949breeding, duvick2004long}. 
+\rev{In this study, we examine a different closed experiment whose phenotypic target and selection method --- reciprocal recurrent selection --- closely mirrors methods used in the generation of modern maize hybrids \citep{comstock1949breeding, duvick2004long}. 
 Proposed by \citet{comstock1949breeding}, reciprocal recurrent selection is a procedure to simultaneously improve two populations for their ability to produce high yielding hybrids when individuals from the two populations are crossed. 
 In this method, the two populations are kept separate and lines from each population are selected based on the phenotype of their cross-population hybrids. 
 Selected lines within each population are then intermated to generate lines for the next cycle. 
@@ -156,12 +156,12 @@ Self-pollinated seed from the 10 selected males in each population were planted 
 \rev{Additional changes to this procedure occurred in later cycles \citep{penny1971twenty,keeratinijakal1993responses}.
 In cycles six through eight, individual S1 plants (progeny of one generation of self-pollination) were used as males instead of noninbred plants.  
 Beginning in cycle eight, the number of testcross progenies selected to form the next cycle of selection was doubled to 20.  
-Beginning in cycle 10, the method of producing testcross progenies for evaluation was changed to generate a single set of reciprocal full sib families between the populations rather than two sets of half-sib families. \jri{i have commented out a couple lines i think are too much detail. uncomment them if you think they are worth including.} %Specifically, progeny rows resulting from self-pollination of individuals within each population were planted in a breeding nursery.  
+Beginning in cycle 10, the method of producing testcross progenies for evaluation was changed to generate a single set of reciprocal full sib families between the populations rather than two sets of half-sib families. %Specifically, progeny rows resulting from self-pollination of individuals within each population were planted in a breeding nursery.  
 %An individual S1 plant in BSSS was self-pollinated and crossed to four females in an S1-row of BSCB1 while a fifth plant in a BSCB1 row was also self-pollinated and crossed to four females in the S1-row of BSSS, resulting in reciprocal crossing of a BSSS S1-row and BSCB1 S1-row.  
 %Seed of eight females was bulked to form a single reciprocal hybrid.  
 This procedure has been continued to the present, with reciprocal hybrid testcross progeny derived from the cycle 18 population in 2014 and evaluated in 2015 for formation of cycle 19.  
 The phenotypes evaluated for selection have been consistent across all 19 cycles of selection: grain yield (dry matter yield of maize grain per acre) has been the most important, but selection was also applied for reduced moisture content at harvest and reduced root and stalk lodging.  
-A formal selection index was implemented beginning with cycle nine.  
+%A formal selection index was implemented beginning with cycle nine.  
 Plant densities have increased consistently across cycles of selection as the populations have become consistently better adapted to high plant density with continued selection \citep{brekke2011selection}.}
 
 \subsection*{Plants and inbred lines used}
@@ -177,7 +177,7 @@ Plants from the cycles of selection, founders, and derived lines were grown in a
 Tissue was lyophilized, ground, and DNA extracted by a CTAB procedure \citep{saghai-maroof1984ribosomal}. 
 Samples were genotyped using the 24-sample Illumina MaizeSNP50 array \citep{ganal2011a-large} according to the Illumina Infinium protocol, and imaged on an Illumina BeadStation at the University of Missouri DNA core facility. 
 Genotypes were determined with the GenomeStudio v2010.2 software using the manufacturer's MaizeSNP50\_B.egt cluster file. 
-\jri{this is an edit because url listed in pages doc no longer valid. correct that this is not a custom .egt file?}
+%\jri{this is an edit because url listed in pages doc no longer valid. correct that this is not a custom .egt file?}
 The design of the maize SNP50 Chip included a relatively small ascertainment panel of inbred lines, introducing a bias in the frequencies of SNPs included on the chip \citep{ganal2011a-large}. 
 However, because our simulations are based not on theoretical expectations but instead on sampling from the observed data at cycle 0, we expect ascertainment bias to have a minimal impact on our results. 
 %The effect of this ascertainment bias was shown to be minimal in another study of North American germplasm \citep{van2012historical}. 
@@ -191,8 +191,8 @@ Plant 23 from BSSS cycle 8 was a clear outlier from the BSSS population as a who
 \rev{The final genotyping data set contained 39,261 SNPs and is available at .} \jri{Justin, please send me this and I can put online}
 	
 \subsection*{Integrating the genetic and physical map}
-The interpretation of our results depends upon a genetic and physical map that is as accurate as possible. 
-We therefore took steps to improve the positions of the SNP markers on the genetic and physical maps relative to version 5A.59 of the maize genome assembly. 
+%The interpretation of our results depends upon a genetic and physical map that is as accurate as possible. 
+\rev Our simulation approach requires co-linear genetic and physical maps. We therefore took steps to improve the positions of the SNP markers on the genetic and physical maps relative to version 5A.59 of the maize genome assembly. 
 The probable physical position of each SNP based was obtained by comparing SNP context sequences to the genome sequence. 
 For this purpose, SNP context sequences were defined as the sequence 25 bp upstream of the SNP, the bp representing the SNP itself, followed by 25 bp downstream of the SNP, making a total sequence length of 51bp. 
 When a single genomic location was queried by two separate probes on the array, we chose the probe with higher quality calls and dropped the other marker from the dataset. 
@@ -208,14 +208,15 @@ Mis-mapped blocks were often larger than the physical gap into which they were m
 We therefore assigned the first SNP of the block to a position 10 kb downstream from the previous SNP on the correct linkage group. 
 We then recalculated genomic coordinates for the rest of the chromosome based on the marker distances within the translocated segment. 
 The last SNP of the block was also given a 10 kb cushion between itself and the next SNP on the correct linkage group. 
-\rev Among the SNPs used for analyses, 15 were mis-mapped to a different linkage group and 1,585 were moved within a linkage group.
-
-Only a portion of the SNPs on the array had genetically mapped positions. 
-‘Unmapped’ SNPs (those with a physical position but no genetic position) bounded by two mapped markers were moved along with their mapped neighbors if both anchoring mapped markers were also moved. 
-However, it is unclear whether unmapped SNPs just outside of these anchors should be kept in place or moved along with the adjacent SNPs. 
+\rev Non-framework SNPs which had a physical position but no genetic coordinates were moved along with their framework neighbors if the nearest flanking framework markers were also moved.
+However, it is unclear whether non-framework SNPs just outside of these anchors should be kept in place or moved along with the adjacent SNPs. 
 Since most inversions were small relative to the genetic map (and would therefore still fall in the same window of a sliding window analysis), these SNPs were left in place. 
 However, markers bordering translocations were removed to ensure there were no markers mapped to the incorrect linkage group. 
-Unmapped SNPs were then assigned a genetic position by linear interpolation of genetic vs. physical distance using the approx() function in R \citep{rteam}. 
+\rev Among the SNPs used for analyses, 15 were mis-mapped to a different linkage group and 1,585 were moved within a linkage group.
+%Only a portion of the SNPs on the array had genetically mapped positions. 
+
+\rev Approximate genetic positions for non-framework SNPs were interpolated based on their physical positions with the approx() function in R \citep{rteam} with the 4,217 framework SNPs used as a reference.
+%Unmapped SNPs were then assigned a genetic position by linear interpolation of genetic vs. physical distance using the approx() function in R \citep{rteam}. 
 The IBM genetic map distances were then converted to single-meiosis map distances using the formulae of \citet{winkler2003determination}. 
 Finally, SNPs located at physical positions outside of those bounded by the genetic map (such as the telomeres) were assigned the genetic position of their nearest mapped neighbor. 
 Since moved segments were arbitrarily joined 10 kb from their nearest genetic neighbor, we acknowledge that the physical positions of these markers are only estimates. 
