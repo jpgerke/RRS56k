@@ -192,7 +192,8 @@ Plant 23 from BSSS cycle 8 was a clear outlier from the BSSS population as a who
 	
 \subsection*{Integrating the genetic and physical map}
 %The interpretation of our results depends upon a genetic and physical map that is as accurate as possible. 
-\rev Our simulation approach requires co-linear genetic and physical maps. We therefore took steps to improve the positions of the SNP markers on the genetic and physical maps relative to version 5A.59 of the maize genome assembly. 
+\rev{Our simulation approach requires co-linear genetic and physical maps.}
+We therefore took steps to improve the positions of the SNP markers on the genetic and physical maps relative to version 5A.59 of the maize genome assembly. 
 The probable physical position of each SNP based was obtained by comparing SNP context sequences to the genome sequence. 
 For this purpose, SNP context sequences were defined as the sequence 25 bp upstream of the SNP, the bp representing the SNP itself, followed by 25 bp downstream of the SNP, making a total sequence length of 51bp. 
 When a single genomic location was queried by two separate probes on the array, we chose the probe with higher quality calls and dropped the other marker from the dataset. 
@@ -212,10 +213,10 @@ The last SNP of the block was also given a 10 kb cushion between itself and the 
 However, it is unclear whether non-framework SNPs just outside of these anchors should be kept in place or moved along with the adjacent SNPs. 
 Since most inversions were small relative to the genetic map (and would therefore still fall in the same window of a sliding window analysis), these SNPs were left in place. 
 However, markers bordering translocations were removed to ensure there were no markers mapped to the incorrect linkage group. 
-\rev Among the SNPs used for analyses, 15 were mis-mapped to a different linkage group and 1,585 were moved within a linkage group.
+\rev{Among the SNPs used for analyses, 15 were mis-mapped to a different linkage group and 1,585 were moved within a linkage group.}
 %Only a portion of the SNPs on the array had genetically mapped positions. 
 
-\rev Approximate genetic positions for non-framework SNPs were interpolated based on their physical positions with the approx() function in R \citep{rteam} with the 4,217 framework SNPs used as a reference.
+\rev{Approximate genetic positions for non-framework SNPs were interpolated based on their physical positions with the approx() function in R \citep{rteam} with the 4,217 framework SNPs used as a reference.}
 %Unmapped SNPs were then assigned a genetic position by linear interpolation of genetic vs. physical distance using the approx() function in R \citep{rteam}. 
 The IBM genetic map distances were then converted to single-meiosis map distances using the formulae of \citet{winkler2003determination}. 
 Finally, SNPs located at physical positions outside of those bounded by the genetic map (such as the telomeres) were assigned the genetic position of their nearest mapped neighbor. 
