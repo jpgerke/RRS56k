@@ -94,15 +94,15 @@ Corresponding author:  Department of Plant Sciences, University of California, D
 %\date{Revised manuscript for \emph{Genetics}, \today}
 
 \abstract{
-Modern maize breeding relies upon selection in inbreeding populations to improve the performance of cross-population hybrids. 
-The United States Department of Agriculture reciprocal recurrent selection experiment between the Iowa Stiff Stalk Synthetic (BSSS) and the Iowa Corn Borer Synthetic No. 1 (BSCB1) populations represents one of the longest standing models of selection for hybrid performance. 
+Although maize is naturally an outcrossing organism, modern breeding takes advantage of highly inbred lines that are used in controlled crosses to produce hybrids. 
+The United States Department of Agriculture reciprocal recurrent selection experiment between the Iowa Stiff Stalk Synthetic (BSSS) and the Iowa Corn Borer Synthetic No. 1 (BSCB1) populations represents one of the longest \rev{running experiments to understand the genetic bases} for hybrid performance. 
 To investigate the genomic impact of this selection program, \rev{we genotyped the progenitor lines and over 600 individuals across multiple cycles of selection using a genome-wide panel of $\sim 40,000$ SNPs.
-We first confirm previous results showing a steady temporal decrease in genetic diversity within populations and a corresponding increase in differentiation between populations.  
+We confirmed previous results showing a steady temporal decrease in genetic diversity within populations and a corresponding increase in differentiation between populations.  
 Thanks to detailed historical information on experimental design, we were able to perform extensive simulations using founder haplotypes to replicate the experiment in the absence of selection.
 These simulations demonstrate that while most of the observed reduction in genetic diversity can be attributed to genetic drift,   
 heterozygosity in each population has fallen more than expected. 
-We then take advantage of our high-density genotype data to identify extensive regions of haplotype fixation and trace haplotype ancestry to single founder inbred lines.
-The vast majority of regions showing such evidence of selection differ between the two populations, providing evidence against the overdominance model as a means of explaining selection for hybrid vigor. }
+We then took advantage of our high-density genotype data to identify extensive regions of haplotype fixation and trace haplotype ancestry to single founder inbred lines.
+The vast majority of regions showing such evidence of selection differ between the two populations, providing evidence for the dominance model of heterosis.}
 We discuss how this pattern is likely to occur during selection for hybrid performance, and how it poses challenges for dissecting the impacts of modern breeding and selection on the maize genome. }
 
 
@@ -118,10 +118,9 @@ We discuss how this pattern is likely to occur during selection for hybrid perfo
 \maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRO
-\section*{Introduction}
-Although maize is naturally an outcrossing organism, modern breeding takes advantage of highly inbred lines that are used in controlled crosses to produce hybrids. 
+\section*{Introduction} 
 Hybrid maize, first developed in the early 20th century \citep{crow1998}, was so successful that within a few decades it had completely replaced mass-selected open pollinated varieties in the United States \citep{crabb1947hybrid}. 
-The shift towards selection of inbred lines based on their ability to generate good hybrids – referred to as ‘combining ability’ – constituted an abrupt change from the open-pollinated mass selection that breeders practiced for millennia \citep{anderson1944sources, troyer1999background}.
+The shift towards development of inbred lines based on their ability to generate good hybrids – referred to as ‘combining ability’ – constituted an abrupt change from the open-pollinated mass selection that breeders practiced for millennia \citep{anderson1944sources, troyer1999background}.
 Maize inbred lines are now partitioned into separate ‘heterotic groups’ that maximize performance and hybrid vigor (heterosis) \rev{for yield} when inbreds from different heterotic groups are crossed with each other \citep{tracy2006historical}. 
 
 \rev{While the founders of these heterotic groups were not initially differentiated, m}ultiple studies with molecular markers have indicated that these heterotic groups have diverged genetically over time to become highly structured and isolated populations, resulting in a dramatic restructuring of population genetic variation \citep{duvick2004long, ho2005extent, feng2006temporal}. 
@@ -130,16 +129,16 @@ These studies have examined a broad spectrum of germplasm at various points in t
 Although selective sweeps remaining from domestication are clearly visible, the impact of selection during modern breeding appears comparatively small in terms of its impact on genomic diversity \citep{Hufford2012b,van2012historical}, despite steady, heritable improvement in phenotype \citep{duvick2005contribution}. 
 The lack of distinct selection signals \rev{in broad germplasm collections may be due to population-specific selection within germplasm subgroups; in this case selection should be easier to detect in populations maintained in an individual program.} This \rev{possibliity} is supported by the measured success in identifying targets of selection in individual experimental populations \rev{under directional selection for specific phenotypes such as seed size and ear number} \citep{hirsch2014insights, beissinger2014genome}. 
 
-\rev{In this study, we examine a different closed experiment whose phenotypic target and selection method --- reciprocal recurrent selection --- closely mirrors methods used in the generation of modern maize hybrids \citep{comstock1949breeding, duvick2004long}. 
-Proposed by \citet{comstock1949breeding}, reciprocal recurrent selection is a procedure to simultaneously improve two populations for their ability to produce high yielding hybrids when individuals from the two populations are crossed. 
-In this method, the two populations are kept separate and lines from each population are selected based on the phenotype of their cross-population hybrids. 
-Selected lines within each population are then intermated to generate lines for the next cycle. 
+\rev{In this study, we examine a different experiment in which the  method and target of selection --- reciprocal recurrent selection for hybrid yield --- closely mirror those used in the generation of modern maize hybrids \citep{comstock1949breeding, duvick2004long}. 
+Proposed by \citet{comstock1949breeding}, reciprocal recurrent selection simultaneously improves two populations for their ability to produce high yielding hybrids when individuals from the two populations are crossed. 
+In this method, the two populations are isolated genetically and lines from each population are selected based on the phenotype of their cross-population hybrids. 
+The superio lines within each population are then intermated to generate lines for the next cycle. 
 In this way, the two populations simultaneously evolve improved combining ability with one another. 
 The USDA-ARS at Ames, Iowa has conducted a reciprocal recurrent selection program (hereafter referred to as the Iowa RRS) with the Iowa Stiff Stalk Synthetic (BSSS) and Iowa Corn Borer Synthetic No. 1 (BSCB1) populations for 18 cycles of selection \citep{penny1971twenty}. 
 This program represents one of the best-documented public experiments on selection for combining ability and hybrid performance. 
 Extensive records on population sizes, breeding methods, selection differentials, and seed are available for all cycles of selection. 
-This set of resources on a closed population selected for hybrid yield make the Iowa RRS an ideal test case for the study of the genomic impact of intensive hybrid breeding in maize.} 
-The Iowa RRS experiment \rev{provides additional historical relevance} because lines derived from the BSSS population have had a major impact on the development of commercial hybrids \citep{duvick2004long, darrah1986}, the formation of modern heterotic groups \citep{troyer1999background, senior1998utility}, and the choice of a maize reference genome \citep{schnable2009the-b73-maize}.
+This set of resources makes the Iowa RRS an ideal test case for the study of the genomic impact of hybrid breeding in maize.} 
+The Iowa RRS experiment \rev{provides additional relevance} because lines derived from the BSSS population have had a major impact on the development of commercial hybrids \citep{duvick2004long, darrah1986}, the formation of modern heterotic groups \citep{troyer1999background, senior1998utility}, and the choice of a maize reference genome \citep{schnable2009the-b73-maize}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRO
 
 \section*{Methods}
@@ -389,7 +388,7 @@ We conducted 10,000 simulations, \rev{modeling recombination using the IBM genet
 
 Averaged across the genome, the vast majority of the reduction in diversity observed in both populations can be attributed to genetic drift. 
 Nonetheless, we do observe \rev{differences from values generated under our neutral simulations} (Figure \ref{fig:compare_to_sims})
-The observed data show higher than expected heterozygosity at cycle 4, \rev{which could be explained by several factors, including differences between simulated and actual breeding practices, under-sampling of diversity in cycle 0, selection acting to increase the frequency of initially rare haplotypes, or even selection acting to maintain heterozygosity \citep[e.g.][]{McMullen2009,Gore2009a} } \jri{where is this excess of diversity? if it's all pericentromeric can we argue for the Gore2009 hypothesis?}
+The observed data show higher than expected heterozygosity at cycle 4, \rev{which could be explained by several factors, including differences between simulated and actual breeding practices, under-sampling of diversity in cycle 0, selection acting to increase the frequency of initially rare haplotypes, or even selection acting to maintain heterozygosity \citep[e.g.][]{McMullen2009,Gore2009a} } 
 
 As the cycles progress, heterozygosity falls more rapidly than expected in both populations, and the observed values at cycle 16 are significantly lower than the simulated data.  
 Simulations across a number of different marker densities were consistent with this result (data not shown). 
@@ -420,9 +419,9 @@ In other cases, the haplotypes which eventually fixed were at moderate frequency
 Our analysis of diversity in the Iowa RRS experiment reveals a steady loss of diversity in the BSSS and BSCB1 populations as they became increasingly differentiated from one another over time.
 Principal component analysis shows that as the effective population size and the rates of inbreeding were altered, the rates of change in population structure were altered as well. 
 These patterns of population structure, diversity, and differentiation between BSSS and BSCB1 can be largely reproduced by simulation without any selection, supporting the hypothesis that the majority of the genetic structure observed can be attributed to genetic drift alone, despite effective selection for phenotypic improvement. 
-This drift was driven by inbreeding through self-pollination and the small effective population sizes used to select a limited number of high-performing, potentially related individuals at each cycle.  \jri{drosophila here. lamkey again replication isn't enough}	
+\rev{Similar observations have been recently made in other reciprocal recurrent selection programs, even in comparisons of multiple replicated populations \citep{romay2012effect,lamkey2014relative.
+These patterns differ markedly, however, from similar experimental evolution in  systems such as \emph{Drosophila} \citep{turner2011population, burke2010genome} and \emph{E. coli} \citep{tenaillon2012molecular} in which effective population sizes are maintained at levels much higher than in the present work and the effects of selection on diversity are readily discernible.}
 
-\rev{The trends observed in the Iowa RRS are reflected in similar recurrent selection experiments \citep{romay2012effect,lamkey2014relative}.
 Reciprocal recurrent selection serves as a model for the method of hybrid maize improvement \citep{duvick2004long}, and similar patterns of diversity and population structure can be seen broadly across North American maize germplasm \citep{van2012historical}. 
 Given the lack of strong selection signals in each case, genetic drift has most likely played a large role in the current genetic structure of modern maize. } 	
 Several key inbreds in the ‘stiff-stalk’ heterotic group, B73, B37 and B14, were derived from the BSSS population \citep{darrah1986, troyer1999background}. 
@@ -431,25 +430,18 @@ We examined these three inbreds at the pericentromeric regions listed in Table \
 Near isogenic lines that substitute these centromeric haplotypes from key inbreds could be used to determine if the haplotypes at high frequency in cycle 16 of BSSS provide a phenotypic advantage when crossed with BSCB1. 
 
 Both our study and previous work \citep{labate1997molecular} identified genetic differentiation between cycle 0 of BSSS and the founder inbreds, \rev{likely reflecting the loss of some rare alleles.
-If this differentiation reflects drift during population maintenance before initiation of the RRS, it may have impacted the trajectory of the RRS program and of key inbreds derived from BSSS. 
+If this differentiation reflects drift during population maintenance before initiation of the RRS, it may have impacted the trajectory of the RRS program and its derived inbreds. 
 However, cycle 0 has also undergone maintenance since the beginning of the RRS experiment, so some} drift may have occurred during this time as well.
 	
 Although drift can explain most of the genetic structure genome-wide, phenotypic data provide clear evidence that selection has altered the frequencies of favorable alleles in the BSSS and BSCB1 populations. 
-Numerous experiments have shown that the selected populations and the hybrids formed from them are superior to their cycle 0 ancestors \citep{smith1983evaluation, keeratinijakal1993responses, schnicker1993interpopulation, holthaus1995population}. 
-Improvement occurred not only for hybrid yield, but concurrently for plant architecture and tolerance to high-density planting in both hybrids and inbreds \citep{brekke2011selection, brekke2011selectionb, edwards2011changes, lauer2012morphological}. 
-Since these same trends are observed across wider North American germplasm \citep{tollenaar1989genetic}, identification and characterization of the loci conferring phenotypic improvement in BSSS and BSCB1 could reveal some of the genetic mechanisms by which maize yield has steadily improved over the decades. 
-We find that the genomic regions of extremely low diversity evident at cycle 16 are unlikely to be produced by simulation, and heterozygosity falls more than expected across the genome as a whole.  
-However, simulated and observed values are often close, so overall the signature of selection is difficult to detect at any given locus. 
-This is due in large part to a limitation of statistical power imposed by inbreeding and low effective population sizes.
-\citet{lorenz2015selection} analyze a similar selection experiment with comparable effective population size and also find little little statistical evidence for selection on individual loci in spite of genetic gain for the trait of interest.
-Nonetheless, we show that an identity-by-descent, haplotype based approach provides additional power, as it can distinguish between the fixation of rare and common haplotypes. 
-However, the results of single locus simulations are sensitive to sampling error and drift caused by population maintenance. 
-In this case, it is difficult to assess significance with only a single population to test. This type of analysis is more effective across several replicated populations, which can control for genetic drift due to the independence between the selections in each replicate \citep{lamkey2014relative}. 
+Numerous experiments have shown that the selected populations and the hybrids formed from them exhibit genetic gain for hybrid yield as well plant architecture and tolerance to high-density planting \citep{smith1983evaluation, keeratinijakal1993responses, schnicker1993interpopulation, holthaus1995population, brekke2011selection, brekke2011selectionb, edwards2011changes, lauer2012morphological}. 
+Since these same trends are observed across wider North American germplasm \citep{tollenaar1989genetic}, identification and characterization of loci conferring phenotypic improvement in BSSS and BSCB1 could reveal some of the genetic mechanisms by which maize yield has steadily improved over the decades. 
+We find that heterozygosity falls more than expected across the genome as a whole, and, \rev{though drift imposes limitations on the power to detect selection at individual loci,} genomic regions of extremely low diversity evident at cycle 16 are unlikely to be produced by simulation.  
+We show that an identity-by-descent, haplotype based approach provides additional power, as it can distinguish between the fixation of rare and common haplotypes. 
 	
-\citet{van2012historical} assessed variation in and tested for selection across a wider range of North American maize germplasm using the same SNP array. 
-Although selected loci were identified in that study, the overall effects on genomic diversity and haplotype patterns were relatively small compared with the impact of domestication. 
-That study was a wide survey across many germplasm sources. 
-The limited overall impact of selection could arise because different haplotypes and loci are selected in different breeding programs. 
+\citet{van2012historical} assessed variation in and tested for selection across a wide range of North American maize germplasm using the same SNP array. 
+In spite of the large genetic gains made in decades of maize breeding \citep{duvick2005contribution}, \citet{van2012historical} identified  few loci showing  selected loci were identified in that study, the overall effects on genomic diversity and haplotype patterns were relatively small compared with the effects of genetic drift. 
+One explanation for the limited overall impact of selection could arise because different haplotypes and loci are selected in different breeding programs. 
 In support of this idea, we find that the most likely targets of selection between the BSSS and BSCB1 populations occur at non-overlapping loci. 
 This non-overlap between putatively selected loci in complementary populations has also been observed in commercial breeding programs \citep{feng2006temporal}.
 
