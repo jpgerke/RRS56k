@@ -75,11 +75,11 @@
 
 %%%%
 
-\setcounter{footnote}{1}
+\setcounter{footnote}{0}
 
 \title{The genomic impacts of drift and selection for hybrid performance in maize}
 \author{
- \small\sfbf{Justin P. Gerke$^{\ast,1}$\thanks{
+ \small\sfbf{Justin P. Gerke$^{\ast}$\thanks{
 Corresponding author:  DuPont Pioneer, 8305 NW 62ND Ave, P.O. Box 7060
 Johnston, IA, 50131   E-mail: \mbox{justin.gerke@gmail.com}}, Jode W. Edwards$^{\dag}$, Katherine E. Guill$^{\ddag}$, Jeffrey Ross-Ibarra$^{\S}$}\thanks{
 Corresponding author:  Department of Plant Sciences, University of California, Davis, California 95616. 
@@ -336,22 +336,24 @@ These regions represent blocks of linked loci that show no evidence of recombina
    \includegraphics[width=0.8\linewidth]{Fig4/chrom4_combined}
  %  \renewcommand{\baselinestretch}{0.9}
  %  \vspace{-3mm}
-   \caption{\rev{Heterozygosity} in each cycle across chromosome 4 of the BSSS (left) and  BSCB1 (right) plotted on the physical (top) and genetic (bottom) map. \rev{Each panel consists of five plots representing cycles 0,4,8,12, and 16 of the experiment. Heterozygosity} is calculated on 15-marker sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). \rev{Shaded regions represent 2 cM windows with heterozygosity values significantly lower than expected by simulation at a given cycle at $P<0.001$.} Plots for other chromosomes are shown in in Figure \ref{fig:others2}}. Comparing the physical and genetic maps reveals that the regions of fixation are extremely small genetically, but some contain much of the physical content of the chromosome.
- 
-\vspace{-6mm}
-    \label{fig:genphys}
   \end{center}
+
+   \caption{\rev{Heterozygosity} in each cycle across chromosome 4 of the BSSS (left) and  BSCB1 (right) plotted on the physical (top) and genetic (bottom) map. \rev{Each panel consists of five plots representing cycles 0,4,8,12, and 16 of the experiment. Heterozygosity} is calculated on 15-marker sliding windows, with 5 marker steps between each calculation. Each data point is color-coded based on a linear transformation of recombination rate (red = low recombination rate). \rev{Shaded regions represent 2 cM windows with heterozygosity values significantly lower than expected by simulation at a given cycle at $P<0.001$.} Plots for other chromosomes are shown in in Figure \ref{fig:others2}.} 
+ 
+\vspace{-4mm}
+    \label{fig:genphys}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE	
 
 
 \begin{table*}[t]
 \caption{Ancestry of haplotypes fixed in the cycle 16 population.}
+\label{tab:fix}
 \fontsize{10}{12}\sf
 \centering
    \begin{threeparttable}
 
-\label{tab:fix}
+
 \begin{tabular}{llllll}
 Population &	 Chr.& Interval (cM) & Interval (Mb) &	Founder & Derived Lines \\
 BSSS       & 3          & 53.6-55.3            & 67.7-123              & CI187-2        & B94                               \\
@@ -380,7 +382,8 @@ To gauge the roles of selection and drift, we conducted simulations of the cross
 Selection was executed at random in each simulation, so the patterns observed across simulations represent the expected distribution of effects caused only by recombination and genetic drift. 
 We conducted 10,000 simulations, \rev{modeling recombination using the IBM genetic map \citep{lee2002expanding}, which is based on a cross between between a BSSS-derived inbred line used to construct the reference genome (B73) and an inbred with  with co-ancestry from both the BSSS and BSCB1 founder germplasm (Mo17).} 	
 
-\begin{figure*}[tb]   
+\begin{figure*}[tb]  
+	\centering 
    \includegraphics[width=0.7\linewidth]{Fig_S1_combined.pdf}
    \caption{Heterozygosity in each population, observed vs. simulated data. Heterozygosity was calculated as the average across all markers genome-wide  in the BSSS (A)  and BSCB1 (B) populations. The observed data is marked by the red line, the simulations by gray dots, and the median of the simulations by a green dot. \rev{Black lines represent the 99\% and 1\% quantiles of the simulated data.} } 
     \label{fig:compare_to_sims}
@@ -423,8 +426,8 @@ Our analysis of the Iowa RRS experiment reveals a steady loss of diversity in th
 Principal component analysis shows that as the effective population size and the rates of inbreeding were altered, the rates of change in population structure were altered as well. 
 These patterns of population structure, diversity, and differentiation between BSSS and BSCB1 can be largely reproduced by simulation without any selection, supporting the hypothesis that the majority of the genetic structure observed can be attributed to genetic drift alone, despite effective selection for phenotypic improvement. 
 \rev{Similar observations have been recently made in other reciprocal recurrent selection programs, even in comparisons of multiple replicated populations \citep{romay2012effect,lamkey2014relative}.
-Reciprocal recurrent selection serves as a model for the method of hybrid maize improvement \citep{duvick2004long}.
-Similar patterns of diversity and population structure can be seen broadly across North American maize germplasm \citep{van2012historical}, suggesting that genetic drift has most likely played a large role in the current genetic structure of modern maize.
+Reciprocal recurrent selection serves as a model for the method of hybrid maize improvement \citep{duvick2004long}, and similar patterns of diversity and population structure can be seen broadly across North American maize germplasm \citep{van2012historical}.
+Genetic drift has thus most likely played a large role in the current genetic structure of modern maize.
 These patterns differ markedly, however, from experimental evolution in systems such as \emph{Drosophila} \citep{turner2011population, burke2010genome} and \emph{E. coli} \citep{tenaillon2012molecular} in which the effects of selection on diversity are readily discernible. 
 A key difference between these studies and those in maize are the effective population sizes, which were kept much lower to produce a short-term phenotypic response to selection within available field testing resources.} 
 
@@ -443,14 +446,9 @@ Although we cannot rule out soft sweeps of complementary overdominant alleles, t
 \rev{Although strongly deleterious variants were likely purged during the inbreeding process leading to the founder lines, many weakly deleterious alleles can be found segregating at low frequencies among inbreds \citep{Mezmouk2014}.}
 Because deleterious alleles will be rare in both populations, most haplotypes in the second population will have a different suite of deleterious variants and will complement the fixed haplotype reasonably well.
 \rev{We expect that selection against homozygosity of the fixed haplotype will thus} have little impact on diversity in the second population.
-
-Although our results better fit the simpler dominance model, we caution that the exact outcome of particular models will depend strongly on the effects of selection, drift, and the frequencies of beneficial alleles. 
-Disentangling these factors remains a major challenge that will require careful simulation of maize breeding using a wider range of parameters. 
+Although our results better fit the simpler dominance model, the ability to distinguish between models will depend strongly on allele frequencies as well as the effects of selection, and drift. 
 This is especially true because in a model of hybrid complementation, genetic drift in one population can alter the selective value of alleles in the other population. 
-When drift and selection interact in such a manner, tests for selection that attempt to independently partition the effects of each force may not provide the full picture. 
-Furthermore, uncertainties in the fine-scale relationship between genetic and physical distance make it difficult to assign significance in forward-simulation approaches. 
-In the end, the best test for selection of specific genomic regions will ultimately be conducted by phenotypic observation in the field in balanced tests of different haplotypes. 
-In the case of individual breeding programs, genome-wide genotyping such as we conducted here can identify the lines carrying the recombinant haplotypes and introgressions necessary to conduct such an experiment. 
+Given these complexities, empirical evaluation of the effects of putatively selected haplotypes will play a key role in distinguishing opposing genetic models. 
 
 \begin{acknowledgments}
 We thank Oscar ``Howie'' Smith and members of the Ross-Ibarra lab for comments on earlier versions of the manuscript. J.P.G received support for this research as a Merck Fellow of the Life Sciences Research Foundation. This research was supported by the National Science Foundation (IOS-0820619) and funds provided to USDA-ARS (MDM). Names of products are necessary to report factually on available data: however, neither the USDA, nor any other participating institution guarantees or warrants the standard of the product and the use of the name does not imply approval of the product to the exclusion of others that may also be suitable.
