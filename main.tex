@@ -265,7 +265,7 @@ There is an especially wide gap between cycles 4 and 8, which correlates with th
 The distance between cycles then decreases dramatically after cycle 8, and corresponding to the increased effective population size (See Materials and Methods).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
-\begin{figure}[tb]   
+\begin{figure}[t]   
   \begin{center}
    \vspace{-0mm}
    \includegraphics[width=0.5\textwidth]{fig1}
@@ -284,8 +284,16 @@ Consistent with previous studies of the Iowa RRS \citep{messmer1991genetic, laba
 The loss of heterozygosity is smaller when the two populations are considered together, indicating the loss of different alleles within BSCB1 and BSSS. 
 This genetic differentiation is reflected by the tenfold increase in $F_{ST}$ between the founder lines and the populations at cycle 16. 
 
+We noticed an irregular increase in the number of polymorphic markers between BSSS cycles 4 and 8 (Table \ref{tab:contamination}). 
+All of these newly polymorphic markers were present at extremely low frequency and were spread among various individuals. 
+This may represent a series of minor alleles that were not captured in our sample of cycle 4 individuals and thus appeared to ‘resurface’ at cycle 8. 
+Alternatively, the pattern may be the result of minor contamination at some point in the population’s history. 
+It was observed that an allele of the sugary gene associated with sweet corn appeared in the population at this time (O.S. Smith, personal communication), suggesting contamination may be the cause. 
+However, the low frequency of the ‘new’ alleles (typically only one or two alleles out of 72 possible in 36 diploid samples) means their effect on population diversity is minimal.  
+We did not attempt to incorporate this contamination into our simulation approaches, as it only makes our tests for low heterozygosity slightly more conservative.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
-\begin{figure}[tb]   
+\begin{figure}[t]   
   \begin{center}
    \vspace{-0mm}
    \includegraphics[width=0.5\textwidth]{fig2}
@@ -299,13 +307,6 @@ This genetic differentiation is reflected by the tenfold increase in $F_{ST}$ be
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 
-We noticed an irregular increase in the number of polymorphic markers between BSSS cycles 4 and 8 (Table \ref{tab:contamination}). 
-All of these newly polymorphic markers were present at extremely low frequency and were spread among various individuals. 
-This may represent a series of minor alleles that were not captured in our sample of cycle 4 individuals and thus appeared to ‘resurface’ at cycle 8. 
-Alternatively, the pattern may be the result of minor contamination at some point in the population’s history. 
-It was observed that an allele of the sugary gene associated with sweet corn appeared in the population at this time (O.S. Smith, personal communication), suggesting contamination may be the cause. 
-However, the low frequency of the ‘new’ alleles (typically only one or two alleles out of 72 possible in 36 diploid samples) means their effect on population diversity is minimal.  
-We did not attempt to incorporate this contamination into our simulation approaches, as it only makes our tests for low heterozygosity slightly more conservative.
 
 \subsection*{Fixation of large genomic regions}
 Figure \ref{fig:heterotic} shows heterozygosity varying along the genome at cycle 16 of each population. 
