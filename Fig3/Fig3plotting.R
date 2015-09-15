@@ -22,4 +22,6 @@ ggplot(data=both) + aes(x=physpos/1000000, y=H, colour=Population) + facet_grid(
 dev.off()
 
 
-
+jpeg("../fig3.jpg", quality=500,  width=700, height=900)
+ggplot(data=both) + aes(x=physpos/1000000, y=H, colour=Population) + facet_grid(LG~Population) + geom_point(size=1) + scale_colour_manual(values=c("blue", "red2")) + theme_bw() + xlab("Physical Position (MB)")
+dev.off()
