@@ -8,9 +8,10 @@
 - `Fig4_combined.jpg`
 - `Fig_5.jpg` (in fig S1)
 
-###Supplementary Text: 2 Files
+###Supplementary Text: 3 Files
 - `author_summary.txt`
 - `sup1.tex`
+- `main.pdf`
 
 ###Supplementary Files: 2 Files
 
