@@ -1,0 +1,3 @@
+Maize is naturally an outcrossing organism, but modern breeding utilizes inbred lines in controlled crosses to produce hybrids. 
+Here we genotype a pair of long-term experimental populations selected for hybrid performance to understand the genomic impacts of modern hybrid breeding. 
+While our data are consistent with simulations suggesting most of the observed loss of diversity over time is due to genetic drift, we also observe signals of selection in numerous regions of the genome. We discuss the importance of drift in breeding systems and how our results point to a simple complementation as the predominant mechanism of hybrid vigor.

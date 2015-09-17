@@ -86,7 +86,7 @@ ChrBSCB1 = list(phys=myphysplot, gen=mygenplot)
 
 library(cowplot)
 allfour = plot_grid(ChrBSSS[["phys"]], ChrBSCB1[["phys"]], ChrBSSS[["gen"]], ChrBSCB1[["gen"]], labels=c("A", "B", "C", "D"), ncol=2)
-save_plot(paste("./chrom", Chrom, "_combined.pdf", sep=''), allfour,
+save_plot(paste("./chrom", Chrom, "_combined.jpg", sep=''), allfour,
           ncol = 2, # we're saving a grid plot of 2 columns
           nrow = 2, # and 2 rows
           # each individual subplot should have an aspect ratio of 1.3

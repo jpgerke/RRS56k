@@ -34,8 +34,9 @@ genplot = ggplot(data=alldata) + blocks + BSSS_H + BSCB1_H + facet_grid(LG~.) + 
   ggtitle("Genetic Space")
 #dev.off()
 
+library(cowplot)
 combined = plot_grid(physplot, genplot, labels=c("A", "B"), nrow=2)
-save_plot("../fig_S2_combined.pdf", combined,
+save_plot("../Fig3.jpg", combined,
           base_aspect_ratio = 0.9,
           base_height = 10
 )
